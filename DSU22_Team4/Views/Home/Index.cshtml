@@ -1,17 +1,28 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+@model HomeViewModel
 <body>
-    <div class="container-flex">
-        <div class="container-last-session">
-            <div class="last-session-items">
-                <h3>2022-01-27</h3>
-                <div id="last-session-shots">
-                    <h3>Liggande</h3>
-                    <h4>77%</h4>
-                </div>
-            </div>
-        </div>
+
+<div class="container-last-session">
+   
+    <div class="container-date">
+        <h3 class="date-time">@Model.Session.Date</h3>
+    </div>
+    <div class="container-shots">
+        <h3 class="stance">@Model.Series.Where(x=> x.Id == 1).FirstOrDefault().Stance </h3> 
+        <h4 class="hit-rate ">Träffpercent: </h4>
+    </div>
+</div>
+<div class="container-other-sessions1">
+    <div class="flex-item">
+        <h4 class="date-time">Dagens datum och tid:1</h4>
+        <h4 class="hit-rate ">Träffpercent: </h4>
+    </div>
+    <div class="flex-item">
+        <h4 class="date-time">Dagens datum och tid:2</h4>
+        <h4 class="hit-rate ">Träffpercent: </h4>
+
     </div>
 
     <div class="container-other-sessions">
