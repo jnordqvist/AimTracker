@@ -8,8 +8,8 @@
         },
     "location":"Skidstadion Östersund",
     "ibuId":"BTSUI12705196701",
-    "results": 
-        {
+    //"results": 
+    //    {
             "series":[
             {
                 "id": 1,
@@ -91,6 +91,6 @@
                 ]
             }
         ]
-        }   
+        //}   
     
 }
