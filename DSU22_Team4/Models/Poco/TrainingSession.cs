@@ -7,10 +7,10 @@ namespace DSU22_Team4.Models.Poco
 {
     public class TrainingSession
     {
-        public int Id { get; set; }
-        public int Date { get; set; }
+        public string Id { get; set; }
+        public DateTime Date { get; set; }
         public  string Location { get; set; }
-        public int IbuId { get; set;  }
+        public string IbuId { get; set;  }
 
         public ICollection<Serie>  Series { get; set; }
 

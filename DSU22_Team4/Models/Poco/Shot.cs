@@ -11,7 +11,7 @@ namespace DSU22_Team4.Models.Poco
         public int ShotNr { get; set; }
         public string  TimeToFire { get; set; }
 
-        public string Result { get;  }
+        public string Result { get; set; }
 
         
     }
