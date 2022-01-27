@@ -2,27 +2,34 @@
     background-color: lightslategrey;
 }
 
-.container-flex {
-    display: flex;
-    margin: auto;
-    justify-content: center;
-    align-items: center;
-}
+
 
 .container-last-session {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 5%;
+    margin: auto;
     background-color: ghostwhite;
     border-radius: 5%;
     height: 640px;
     width: 640px;
 }
 
-.last-session-items {
-    justify-content: center;
-    align-content: center;
+
+.last-session-date {
+   margin-top:5%;
+ align-self:flex-start;
+ 
+    
+}
+.last-session-stance {
+    
+   align-self:end;   
+   margin-bottom:5%;
+}
+.last-session-percentage{
+   align-self:center;
+   
 }
 
 .items-other-session {
@@ -43,5 +50,71 @@
 }
 
 
+@media screen and (max-width:768px){
+
+    .container-flex{
+        flex-direction:column;
+    }
+    .container-other-sessions{
+
+        flex-direction:column;
+    }
+}
+@media screen and (max-width:375px) {
+
+    .container-flex {
+        flex-direction: column;
+    }
+
+    .container-other-sessions {
+        flex-direction: column;
+    }
+}
+   
+}
+
+.last-session-stance {
+}
+
+.last-session-percentage {
+}
+
+.items-other-session {
+    flex: 50%;
+    padding: 10%;
+    margin: 5%;
+    align-content: space-evenly;
+    background-color: ghostwhite;
+    border-radius: 5%;
+}
+
+.container-other-sessions {
+    display: flex;
+    flex-direction: row;
+    margin: 5%;
+    background-color: lightslategray;
+    border-radius: 5%;
+}
 
 
+@media screen and (max-width:768px) {
+
+    .container-flex {
+        flex-direction: column;
+    }
+
+    .container-other-sessions {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width:375px) {
+
+    .container-flex {
+        flex-direction: column;
+    }
+
+    .container-other-sessions {
+        flex-direction: column;
+    }
+}
