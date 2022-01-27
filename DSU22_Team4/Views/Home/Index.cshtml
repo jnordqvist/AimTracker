@@ -10,7 +10,8 @@
     </div>
     <div class="container-shots">
         <h3 class="stance">@Model.Series.Where(x=> x.Id == 1).FirstOrDefault().Stance </h3> 
-        <h4 class="hit-rate ">Träffpercent: </h4>
+        <h4 class="hit-rate ">Träffpercent: @Model.GetSessionTotalHitPercentage(Model.Session)</h4>
+        <p>@Model.GetTotalNumOfHits(Model.Session) / @Model.GetTotalNumOfShots(Model.Session)</p>
     </div>
 </div>
 <div class="container-other-sessions1">
