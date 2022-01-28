@@ -6,6 +6,7 @@
 
 
     <div class="container-last-session">
+
         <div class="last-session-top">
             <div class="last-session-date">
                 <h3>Senaste pass </h3> <h2>@Model.Session.Date</h2>
@@ -41,6 +42,17 @@
             </div>
             <div class="last-session-pulse"> <i class="fa fa-heartbeat"></i> </div>
             <div class="last-session-weather"><i class="fa fa-sun"></i></div>
+
+        <div class="last-session-date">
+            <h3>@Model.Athlete.TrainingSession.FirstOrDefault().Date</h3>   
+        </div>
+        <div class="last-session-stance">
+            <h3>@Model.Athlete.TrainingSession.FirstOrDefault().Series.Where(x => x.Id == 1).FirstOrDefault().Stance</h3>
+        </div>
+        <div class="last-session-percentage ">
+            <h4>Träffpercent: @Model.GetSessionTotalHitPercentage(Model.Athlete.TrainingSession.FirstOrDefault())</h4>
+            <h4>Träffar: @Model.GetTotalNumOfHits(Model.Athlete.TrainingSession.FirstOrDefault()) / @Model.GetTotalNumOfShots(Model.Athlete.TrainingSession.FirstOrDefault())</h4>
+
         </div>
     </div>
 

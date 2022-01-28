@@ -4,23 +4,41 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace DSU22_Team4.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class initialcreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "TrainingSessions",
+                name: "Athlete",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Date = table.Column<int>(type: "integer", nullable: false),
-                    Location = table.Column<string>(type: "text", nullable: true),
-                    IbuId = table.Column<int>(type: "integer", nullable: false)
+                    Id = table.Column<string>(type: "text", nullable: false),
+                    Name = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_TrainingSessions", x => x.Id);
+                    table.PrimaryKey("PK_Athlete", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "TrainingSession",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "text", nullable: false),
+                    Date = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
+                    Location = table.Column<string>(type: "text", nullable: true),
+                    IbuId = table.Column<string>(type: "text", nullable: true),
+                    AthleteId = table.Column<string>(type: "text", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TrainingSession", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_TrainingSession_Athlete_AthleteId",
+                        column: x => x.AthleteId,
+                        principalTable: "Athlete",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -31,15 +49,15 @@ namespace DSU22_Team4.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Stance = table.Column<string>(type: "text", nullable: true),
                     DateTime = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
-                    TrainingSessionId = table.Column<int>(type: "integer", nullable: true)
+                    TrainingSessionId = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Serie", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Serie_TrainingSessions_TrainingSessionId",
+                        name: "FK_Serie_TrainingSession_TrainingSessionId",
                         column: x => x.TrainingSessionId,
-                        principalTable: "TrainingSessions",
+                        principalTable: "TrainingSession",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -52,6 +70,7 @@ namespace DSU22_Team4.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     ShotNr = table.Column<int>(type: "integer", nullable: false),
                     TimeToFire = table.Column<string>(type: "text", nullable: true),
+                    Result = table.Column<string>(type: "text", nullable: true),
                     SerieId = table.Column<int>(type: "integer", nullable: true)
                 },
                 constraints: table =>
@@ -74,6 +93,11 @@ namespace DSU22_Team4.Migrations
                 name: "IX_Shot_SerieId",
                 table: "Shot",
                 column: "SerieId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_TrainingSession_AthleteId",
+                table: "TrainingSession",
+                column: "AthleteId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -85,7 +109,10 @@ namespace DSU22_Team4.Migrations
                 name: "Serie");
 
             migrationBuilder.DropTable(
-                name: "TrainingSessions");
+                name: "TrainingSession");
+
+            migrationBuilder.DropTable(
+                name: "Athlete");
         }
     }
 }

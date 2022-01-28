@@ -8,6 +8,7 @@ namespace DSU22_Team4.Repositories
 {
     public interface IStatsDbRepository
     {
-        Task<TrainingSession> GetSessionAsync();
+        Task<Athlete> GetAthleteAsync();
+        Athlete GetAthleteById(string id);
     }
 }

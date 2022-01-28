@@ -12,7 +12,7 @@ namespace DSU22_Team4.Models.Poco
         public  string Location { get; set; }
         public string IbuId { get; set;  }
 
-        public ICollection<Serie>  Series { get; set; }
+        public virtual ICollection<Serie> Series { get; set; }
 
     }
 }

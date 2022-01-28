@@ -23,8 +23,9 @@ namespace DSU22_Team4.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var trainingSession = await _repo.GetSessionAsync();
-            return View(new HomeViewModel(trainingSession));
+            await Task.Delay(0);
+            var athlete = _repo.GetAthleteById("1");
+            return View(new HomeViewModel(athlete));
         }
 
         public IActionResult Privacy()
