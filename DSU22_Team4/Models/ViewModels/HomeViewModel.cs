@@ -8,16 +8,19 @@ namespace DSU22_Team4.Models.ViewModels
 {
     public class HomeViewModel
     {
-        public TrainingSession Session { get; set; }
-        public DateTime Date { get; set; }
-        public ICollection<Serie> Series { get; set; }
-        public HomeViewModel(TrainingSession session)
+        public Athlete Athlete { get; set; }
+        //public Athlete newAthlete;
+        //public TrainingSession Session { get; set; }
+        //public DateTime Date { get; set; }
+        //public ICollection<Serie> Series { get; set; }
+
+
+        public HomeViewModel(Athlete athlete)
         {
-            Session = session;
-            Series = session.Series;
+            Athlete = athlete;
             // CalculateSeriesHitPercentage(Series.FirstOrDefault());
-            GetSessionTotalHitPercentage(session);
-            GetSessionAverageHitPercentage(session);
+            GetSessionTotalHitPercentage(athlete.TrainingSession.FirstOrDefault());
+            GetSessionAverageHitPercentage(athlete.TrainingSession.FirstOrDefault());
             //Date = session.Date;
         }
 

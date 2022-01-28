@@ -18,10 +18,10 @@ namespace DSU22_Team4.Repositories
             basePath = $@"{environment.ContentRootPath}\Mock\";
         }
 
-        public async Task<TrainingSession> GetSessionAsync()
+        public async Task<Athlete> GetAthleteAsync()
         {
             await Task.Delay(0);
-            return GetTestData<TrainingSession>("shootings.json");
+            return GetTestData<Athlete>("shootings.json");
         }
 
         public T GetTestData<T>(string testfile)
