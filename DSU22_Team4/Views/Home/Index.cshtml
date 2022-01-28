@@ -9,6 +9,26 @@
         <div class="last-session-date">
             <h3>@Model.Session.Date</h3>   
         </div>
+        <div class="pie-chart-shooting">
+            <svg viewBox="0 0 36 36" style="width: 200px; height: 200px;">
+                
+                <path fill="none" stroke="#eee" stroke-width=1
+                      d="M18 2.0845
+          a 15.9155 15.9155 0 0 1 0 31.831
+          a 15.9155 15.9155 0 0 1 0 -31.831" />
+                <path class="circle"
+                      stroke-dasharray="10, 100"
+                      fill="none"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      style="stroke: #ff0000; animation: progress 1s ease-out forwards"
+                      d="M18 2.0845
+          a 15.9155 15.9155 0 0 1 0 31.831
+          a 15.9155 15.9155 0 0 1 0 -31.831" />
+                <text x="18" y="20.35" class="percentage" style="fill: red; font-family: sans-serif; font-size: .5em; text-anchor: middle">@Model.GetSessionTotalHitPercentage(Model.Session)</text>
+            </svg>
+
+        </div>
         <div class="last-session-stance">
             <h3>@Model.Series.Where(x => x.Id == 1).FirstOrDefault().Stance</h3>
         </div>
