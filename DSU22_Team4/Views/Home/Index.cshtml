@@ -3,35 +3,45 @@
 }
 @model HomeViewModel
 <body>
-<div class="container-last-session">
-   
-    <div class="container-date">
-        <h3 class="date-time">@Model.Session.Date</h3>
+
+
+    <div class="container-last-session">
+        <div class="last-session-date">
+            <h3>@Model.Session.Date</h3>   
+        </div>
+        <div class="last-session-stance">
+            <h3>@Model.Series.Where(x => x.Id == 1).FirstOrDefault().Stance</h3>
+        </div>
+        <div class="last-session-percentage ">
+            <h4>Träffpercent: @Model.GetSessionTotalHitPercentage(Model.Session)</h4>
+            <h4>Träffar: @Model.GetTotalNumOfHits(Model.Session) / @Model.GetTotalNumOfShots(Model.Session)</h4>
+        </div>
+
     </div>
-    <div class="container-shots">
-        <h3 class="stance">@Model.Series.Where(x=> x.Id == 1).FirstOrDefault().Stance </h3> 
-        <h4 class="hit-rate ">Träffpercent: </h4>
-    </div>
-</div>
-<div class="container-other-sessions1">
-    <div class="flex-item">
-        <h4 class="date-time">Dagens datum och tid:1</h4>
-        <h4 class="hit-rate ">Träffpercent: </h4>
-    </div>
-    <div class="flex-item">
-        <h4 class="date-time">Dagens datum och tid:2</h4>
-        <h4 class="hit-rate ">Träffpercent: </h4>
-    </div>
-    </div>
-    <div class="container-other-sessions2">
-        <div class="flex-item">
-            <h4 class="date-time">Dagens datum och tid:3</h4>
+
+
+
+    <div class="container-other-sessions">
+        <div class="items-other-session">
+            <h4 class="date-time">2022-01-27</h4>
             <h4 class="hit-rate ">Träffpercent: </h4>
         </div>
-        <div class="flex-item">
-            <h4 class="date-time">Dagens datum och tid:4</h4>
-            <h4 class="hit-rate ">Träffpercent: </h4>
+        <div class="items-other-session">
+            <h4 class="date-time">2022-01-27</h4>
+            <h4 class="hit-rate ">70%:</h4>
         </div>
     </div>
-    
-    </body>
+    <div class="container-other-sessions">
+        <div class="items-other-session">
+            <h4 class="date-time">2022-01-27</h4>
+            <h4 class="hit-rate ">60%</h4>
+        </div>
+        <div class="items-other-session">
+            <h4 class="date-time">2022-01-27</h4>
+            <h4 class="hit-rate ">90%</h4>
+        </div>
+    </div>
+
+
+
+</body>

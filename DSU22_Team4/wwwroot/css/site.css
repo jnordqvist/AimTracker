@@ -1,32 +1,99 @@
-﻿body{
- background-color: lightcoral;
-}
-.container-last-session{
-    margin:5%;
-   background-color:white;
-}
-.flex-item {
-    flex: 50%;
-    padding: 10%;
-    margin:5%;
-    align-content:space-evenly;
-    background-color:white;
+﻿body {
+    background-color: lightslategrey;
 }
 
-.container-other-sessions1 {
+
+
+.container-last-session {
     display: flex;
-    flex-direction: row;
-    flex: 50%;
-    margin: 5%;
-    background-color: aqua;
-  
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    background-color: ghostwhite;
+    border-radius: 5%;
+    height: 640px;
+    width: 640px;
 }
-.container-other-sessions2 {
+
+
+.last-session-date {
+   margin-top:5%;
+ align-self:flex-start;
+ 
+    
+}
+.last-session-stance {
+    
+   align-self:end;   
+   margin-bottom:5%;
+}
+.last-session-percentage{
+   align-self:center;
+   
+}
+
+.items-other-session {
+    flex: 50%;
+    padding: 10%;
+    margin: 5%;
+    align-content: space-evenly;
+    background-color: ghostwhite;
+    border-radius: 5%;
+}
+
+.container-other-sessions {
     display: flex;
     flex-direction: row;
-    flex: 50%;
-    background-color: burlywood;
     margin: 5%;
+    background-color: lightslategray;
+    border-radius: 5%;
+}
+
+
+@media screen and (max-width:768px){
+
+    .container-flex{
+        flex-direction:column;
+    }
+    .container-other-sessions{
+
+        flex-direction:column;
+    }
+}
+@media screen and (max-width:375px) {
+
+    .container-flex {
+        flex-direction: column;
+    }
+
+    .container-other-sessions {
+        flex-direction: column;
+    }
+}
+   
+}
+
+.last-session-stance {
+}
+
+.last-session-percentage {
+}
+
+.items-other-session {
+    flex: 50%;
+    padding: 10%;
+    margin: 5%;
+    align-content: space-evenly;
+    background-color: ghostwhite;
+    border-radius: 5%;
+}
+
+.container-other-sessions {
+    display: flex;
+    flex-direction: row;
+    margin: 5%;
+    background-color: lightslategray;
+    border-radius: 5%;
 }
 
 body {
@@ -88,4 +155,25 @@ body {
         display: flex;
     }
     
+}
+@media screen and (max-width:768px) {
+
+    .container-flex {
+        flex-direction: column;
+    }
+
+    .container-other-sessions {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width:375px) {
+
+    .container-flex {
+        flex-direction: column;
+    }
+
+    .container-other-sessions {
+        flex-direction: column;
+    }
 }
