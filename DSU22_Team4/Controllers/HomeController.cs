@@ -23,7 +23,8 @@ namespace DSU22_Team4.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var athlete = await _repo.GetAthleteAsync();
+            await Task.Delay(0);
+            var athlete = _repo.GetAthleteById("1");
             return View(new HomeViewModel(athlete));
         }
 
