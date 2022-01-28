@@ -1,4 +1,6 @@
 ﻿using DSU22_Team4.Models;
+using DSU22_Team4.Models.ViewModels;
+using DSU22_Team4.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -12,15 +14,17 @@ namespace DSU22_Team4.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly IStatsDbRepository _repo;
+        public HomeController(ILogger<HomeController> logger, IStatsDbRepository repo)
         {
             _logger = logger;
+            _repo = repo;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var athlete = await _repo.GetAthleteAsync();
+            return View(new HomeViewModel(athlete));
         }
 
         public IActionResult Privacy()
