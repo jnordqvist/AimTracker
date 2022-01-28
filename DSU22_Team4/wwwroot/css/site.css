@@ -104,10 +104,9 @@ body {
 
 .topnav {
     overflow: hidden;
-    background-color: white;
+    background-color: #212977;
     position: relative;
-    
-   
+    margin-bottom: 30px;
 }
 
     .topnav #myLinks {
@@ -116,29 +115,57 @@ body {
     }
 
     .topnav a {
-        color: black;
+        color: white;
         padding: 14px 16px;
         text-decoration: none;
         font-size: 17px;
+        justify-items: center;
         display: block;
     }
-
+    
         .topnav a.icon {
-            background: black;
-            display: block;
+            background: transparent;
+            display: flex;
             position: absolute;
             right: 0;
             top: 0;
+            padding: 40px;
         }
 
-        .topnav a:hover {
-            background-color: #ddd;
+      .icon {
+             transition: all .2s ease-in-out;
+           }
+        .icon:hover {
+            transform: scale(1.04);
+        }
+#myLinks a:hover {
+    transform: scale(1.2);
+}
+#myLinks a {
+    transition: all .2s ease-in-out;
+}
+
+.grow {
+    transition: all .2s ease-in-out;
+}
+    .grow:hover {
+        transform: scale(1.04);
+    }
+
+
+       /* .topnav a:hover {
+            background-color: #2c37a0;
             color: black;
         }
+        */
 
 .active {
-    background-color: #04AA6D;
+    background-color: #212977;
     color: white;
+}
+#navimg {
+    
+    max-width: 100px;
 }
 
 @media screen and (min-width: 1000px)
@@ -147,12 +174,17 @@ body {
   .topnav #myLinks {
       display: flex;
       flex-direction: row;
+      padding-top: 30px;
   }
     .topnav a.icon {
         display: none;
     }
     .topnav {
         display: flex;
+    }
+    .topnav a
+    {
+        justify-items: center;
     }
     
 }
