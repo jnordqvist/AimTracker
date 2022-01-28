@@ -92,5 +92,14 @@ namespace DSU22_Team4.Models.ViewModels
             double hitPercentage = Math.Round((((double)hits / (double)shots) * 100), 2);
             return $"{hitPercentage}%";
         }
+
+        public string GetSessionTotalHitPercentageRounded(TrainingSession session)
+        {
+            int shots = GetTotalNumOfShots(session);
+            int hits = GetTotalNumOfHits(session);
+
+            double hitPercentage = Math.Round((((double)hits / (double)shots) * 100),0);
+            return $"{hitPercentage}";
+        }
     }
 }
