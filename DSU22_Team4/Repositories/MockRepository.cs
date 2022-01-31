@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DSU22_Team4.Repositories
 {
-    public class MockRepository //: //IStatsDbRepository
+    public class MockRepository:IStatsDbRepository
     {
         private readonly string basePath;
         private readonly AppDbContext _db;
@@ -26,6 +26,11 @@ namespace DSU22_Team4.Repositories
         {
             await Task.Delay(0);
             return GetTestData<Athlete>("shootings.json");
+        }
+
+        public Athlete GetAthleteById(string id)
+        {
+            throw new NotImplementedException();
         }
 
         public T GetTestData<T>(string testfile)

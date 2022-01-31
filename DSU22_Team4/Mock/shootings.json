@@ -1,181 +1,2732 @@
-{
-  "id":  "1",
-  "trainingsession": [
-    {
-      "id": "0b99600a-5386-46f2-a4cc-46e359d188b6",
-      "shooter": "1",
-      "date": "2021-05-12T14:00:00.000Z",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [ 63.19058632541173, 14.658354353372323 ]
-      },
-      "location": "Skidstadion Östersund",
-      "ibuId": "BTSUI12705196701",
-      "series": [
-        {
-          "id": 1,
-          "stance": "Prone",
-          "dateTime": "2021-05-12T14:36:35.000Z",
-          "shots": [
-            {
-              "shotNr": 1,
-              "result": "hit",
-              "firingAngle": "-1.9",
-              "firingIndex": 2097,
-              "firingCords": {
-                "x": "230.4\r",
-                "y": "-94.3\r"
-              },
-              "shotXY": [
-                {
-                  "x": "182.8",
-                  "y": "-511.9"
-                },
-                {
-                  "x": "182.8",
-                  "y": "-511.9"
-                }
-              ],
-              "timeToFire": "8.4"
-            },
-            {
-              "shotNr": 2,
-              "result": "miss",
-              "firingAngle": "-1.9",
-              "firingIndex": 2097,
-              "firingCords": {
-                "x": "230.4\r",
-                "y": "-94.3\r"
-              },
-              "shotXY": [
-                {
-                  "x": "182.8",
-                  "y": "-511.9"
-                },
-                {
-                  "x": "182.8",
-                  "y": "-511.9"
-                }
-              ],
-              "timeToFire": "7.5"
-            }
-          ]
+[
+  {
+    "id": "1",
+    "trainingsession": [
+      {
+        "id": "0b99600a-5386-46f2-a4cc-46e359d188b6",
+        "shooter": "1",
+        "date": "2021-05-12T14:00:00.000Z",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [ 63.19058632541173, 14.658354353372323 ]
         },
-        {
-          "id": 2,
-          "stance": "Standing",
-          "dateTime": "2021-05-12T15:01:35.000Z",
-          "shots": [
-            {
-              "shotNr": 1,
-              "result": "hit",
-              "firingAngle": "-1.9",
-              "firingIndex": 2097,
-              "firingCords": {
-                "x": "230.4\r",
-                "y": "-94.3\r"
-              },
-              "shotXY": [
-                {
-                  "x": "182.8",
-                  "y": "-511.9"
+        "location": "Skidstadion Östersund",
+        "ibuId": "BTSUI12705196701",
+        "series": [
+          {
+            "id": 1,
+            "stance": "Prone",
+            "dateTime": "2021-05-12T14:36:35.000Z",
+            "shots": [
+              {
+                "shotNr": 1,
+                "result": "hit",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
                 },
-                {
-                  "x": "182.8",
-                  "y": "-511.9"
-                }
-              ],
-              "timeToFire": "8.4"
-            },
-            {
-              "shotNr": 2,
-              "result": "miss",
-              "firingAngle": "-1.9",
-              "firingIndex": 2097,
-              "firingCords": {
-                "x": "230.4\r",
-                "y": "-94.3\r"
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "8.4"
               },
-              "shotXY": [
-                {
-                  "x": "182.8",
-                  "y": "-511.9"
+              {
+                "shotNr": 2,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
                 },
-                {
-                  "x": "182.8",
-                  "y": "-511.9"
-                }
-              ],
-              "timeToFire": "7.5"
-            },
-            {
-              "shotNr": 3,
-              "result": "miss",
-              "firingAngle": "-1.9",
-              "firingIndex": 2097,
-              "firingCords": {
-                "x": "230.4\r",
-                "y": "-94.3\r"
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "7.5"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "stance": "Standing",
+            "dateTime": "2021-05-12T15:01:35.000Z",
+            "shots": [
+              {
+                "shotNr": 1,
+                "result": "hit",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "8.4"
               },
-              "shotXY": [
-                {
-                  "x": "182.8",
-                  "y": "-511.9"
+              {
+                "shotNr": 2,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
                 },
-                {
-                  "x": "182.8",
-                  "y": "-511.9"
-                }
-              ],
-              "timeToFire": "11.2"
-            },
-            {
-              "shotNr": 4,
-              "result": "miss",
-              "firingAngle": "-1.9",
-              "firingIndex": 2097,
-              "firingCords": {
-                "x": "230.4\r",
-                "y": "-94.3\r"
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "7.5"
               },
-              "shotXY": [
-                {
-                  "x": "182.8",
-                  "y": "-511.9"
+              {
+                "shotNr": 3,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
                 },
-                {
-                  "x": "182.8",
-                  "y": "-511.9"
-                }
-              ],
-              "timeToFire": "10.2"
-            },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "11.2"
+              },
+              {
+                "shotNr": 4,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "10.2"
+              },
 
-            {
-              "shotNr": 5,
-              "result": "miss",
-              "firingAngle": "-1.9",
-              "firingIndex": 2097,
-              "firingCords": {
-                "x": "230.4\r",
-                "y": "-94.3\r"
-              },
-              "shotXY": [
-                {
-                  "x": "182.8",
-                  "y": "-511.9"
+              {
+                "shotNr": 5,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
                 },
-                {
-                  "x": "182.8",
-                  "y": "-511.9"
-                }
-              ],
-              "timeToFire": "11.2"
-            }
-          ]
-        }
-      ]
-    }
-  ]
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "11.2"
+              }
+            ]
+          }
+        ]
+      }
+    ]
 
-}
+  },
+
+  {
+    "id": "2",
+    "trainingsession": [
+      {
+        "id": "0b99600a-5386-46f2-a4cc-46e359d188b6",
+        "shooter": "1",
+        "date": "2022-01-10T14:00:00.000Z",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [ 63.19058632541173, 14.658354353372323 ]
+        },
+        "location": "Duved",
+        "ibuId": "BTSUI12705196701",
+        "series": [
+          {
+            "id": 1,
+            "stance": "Prone",
+            "dateTime": "2021-05-12T14:36:35.000Z",
+            "shots": [
+              {
+                "shotNr": 1,
+                "result": "hit",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "8.4"
+              },
+              {
+                "shotNr": 2,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "7.5"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "stance": "Standing",
+            "dateTime": "2021-05-12T15:01:35.000Z",
+            "shots": [
+              {
+                "shotNr": 1,
+                "result": "hit",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "8.4"
+              },
+              {
+                "shotNr": 2,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "7.5"
+              },
+              {
+                "shotNr": 3,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "11.2"
+              },
+              {
+                "shotNr": 4,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "10.2"
+              },
+
+              {
+                "shotNr": 5,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "11.2"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+
+  },
+
+  {
+    "id": "3",
+    "trainingsession": [
+      {
+        "id": "0b99600a-5386-46f2-a4cc-46e359d188b6",
+        "shooter": "1",
+        "date": "2022-02-01T14:00:00.000Z",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [ 63.19058632541173, 14.658354353372323 ]
+        },
+        "location": "Björnen",
+        "ibuId": "BTSUI12705196701",
+        "series": [
+          {
+            "id": 1,
+            "stance": "Prone",
+            "dateTime": "2021-05-12T14:36:35.000Z",
+            "shots": [
+              {
+                "shotNr": 1,
+                "result": "hit",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "8.4"
+              },
+              {
+                "shotNr": 2,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "7.5"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "stance": "Standing",
+            "dateTime": "2021-05-12T15:01:35.000Z",
+            "shots": [
+              {
+                "shotNr": 1,
+                "result": "hit",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "8.4"
+              },
+              {
+                "shotNr": 2,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "7.5"
+              },
+              {
+                "shotNr": 3,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "11.2"
+              },
+              {
+                "shotNr": 4,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "10.2"
+              },
+
+              {
+                "shotNr": 5,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "11.2"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+
+  },
+
+  {
+    "id": "4",
+    "trainingsession": [
+      {
+        "id": "0b99600a-5386-46f2-a4cc-46e359d188b6",
+        "shooter": "1",
+        "date": "2022-01-31T14:00:00.000Z",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [ 63.19058632541173, 14.658354353372323 ]
+        },
+        "location": "Skidstadion Östersund",
+        "ibuId": "BTSUI12705196701",
+        "series": [
+          {
+            "id": 1,
+            "stance": "Prone",
+            "dateTime": "2021-05-12T14:36:35.000Z",
+            "shots": [
+              {
+                "shotNr": 1,
+                "result": "hit",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "8.4"
+              },
+              {
+                "shotNr": 2,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "7.5"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "stance": "Standing",
+            "dateTime": "2021-05-12T15:01:35.000Z",
+            "shots": [
+              {
+                "shotNr": 1,
+                "result": "hit",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "8.4"
+              },
+              {
+                "shotNr": 2,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "7.5"
+              },
+              {
+                "shotNr": 3,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "11.2"
+              },
+              {
+                "shotNr": 4,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "10.2"
+              },
+
+              {
+                "shotNr": 5,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "11.2"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+
+  },
+
+  {
+    "id": "5",
+    "trainingsession": [
+      {
+        "id": "0b99600a-5386-46f2-a4cc-46e359d188b6",
+        "shooter": "1",
+        "date": "2021-01-15T14:00:00.000Z",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [ 63.19058632541173, 14.658354353372323 ]
+        },
+        "location": "Skidstadion Östersund",
+        "ibuId": "BTSUI12705196701",
+        "series": [
+          {
+            "id": 1,
+            "stance": "Prone",
+            "dateTime": "2021-05-12T14:36:35.000Z",
+            "shots": [
+              {
+                "shotNr": 1,
+                "result": "hit",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "8.4"
+              },
+              {
+                "shotNr": 2,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "7.5"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "stance": "Standing",
+            "dateTime": "2021-05-12T15:01:35.000Z",
+            "shots": [
+              {
+                "shotNr": 1,
+                "result": "hit",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "8.4"
+              },
+              {
+                "shotNr": 2,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "7.5"
+              },
+              {
+                "shotNr": 3,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "11.2"
+              },
+              {
+                "shotNr": 4,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "10.2"
+              },
+
+              {
+                "shotNr": 5,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "11.2"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+
+  },
+
+  {
+    "id": "1",
+    "trainingsession": [
+      {
+        "id": "0b99600a-5386-46f2-a4cc-46e359d188b6",
+        "shooter": "1",
+        "date": "2021-05-12T14:00:00.000Z",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [ 63.19058632541173, 14.658354353372323 ]
+        },
+        "location": "Skidstadion Östersund",
+        "ibuId": "BTSUI12705196701",
+        "series": [
+          {
+            "id": 1,
+            "stance": "Prone",
+            "dateTime": "2021-05-12T14:36:35.000Z",
+            "shots": [
+              {
+                "shotNr": 1,
+                "result": "hit",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "8.4"
+              },
+              {
+                "shotNr": 2,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "7.5"
+              }
+            ]
+          },
+          {
+            "id": 6,
+            "stance": "Standing",
+            "dateTime": "2021-12-12T15:01:35.000Z",
+            "shots": [
+              {
+                "shotNr": 1,
+                "result": "hit",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "8.4"
+              },
+              {
+                "shotNr": 2,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "7.5"
+              },
+              {
+                "shotNr": 3,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "11.2"
+              },
+              {
+                "shotNr": 4,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "10.2"
+              },
+
+              {
+                "shotNr": 5,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "11.2"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+
+  },
+
+  {
+    "id": "7",
+    "trainingsession": [
+      {
+        "id": "0b99600a-5386-46f2-a4cc-46e359d188b6",
+        "shooter": "1",
+        "date": "2021-12-30T14:00:00.000Z",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [ 63.19058632541173, 14.658354353372323 ]
+        },
+        "location": "Skidstadion Östersund",
+        "ibuId": "BTSUI12705196701",
+        "series": [
+          {
+            "id": 1,
+            "stance": "Prone",
+            "dateTime": "2021-05-12T14:36:35.000Z",
+            "shots": [
+              {
+                "shotNr": 1,
+                "result": "hit",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "8.4"
+              },
+              {
+                "shotNr": 2,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "7.5"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "stance": "Standing",
+            "dateTime": "2021-05-12T15:01:35.000Z",
+            "shots": [
+              {
+                "shotNr": 1,
+                "result": "hit",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "8.4"
+              },
+              {
+                "shotNr": 2,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "7.5"
+              },
+              {
+                "shotNr": 3,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "11.2"
+              },
+              {
+                "shotNr": 4,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "10.2"
+              },
+
+              {
+                "shotNr": 5,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "11.2"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+
+  },
+
+  {
+    "id": "8",
+    "trainingsession": [
+      {
+        "id": "0b99600a-5386-46f2-a4cc-46e359d188b6",
+        "shooter": "1",
+        "date": "2022-01-10T14:00:00.000Z",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [ 63.19058632541173, 14.658354353372323 ]
+        },
+        "location": "Skidstadion Östersund",
+        "ibuId": "BTSUI12705196701",
+        "series": [
+          {
+            "id": 1,
+            "stance": "Prone",
+            "dateTime": "2021-05-12T14:36:35.000Z",
+            "shots": [
+              {
+                "shotNr": 1,
+                "result": "hit",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "8.4"
+              },
+              {
+                "shotNr": 2,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "7.5"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "stance": "Standing",
+            "dateTime": "2021-05-12T15:01:35.000Z",
+            "shots": [
+              {
+                "shotNr": 1,
+                "result": "hit",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "8.4"
+              },
+              {
+                "shotNr": 2,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "7.5"
+              },
+              {
+                "shotNr": 3,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "11.2"
+              },
+              {
+                "shotNr": 4,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "10.2"
+              },
+
+              {
+                "shotNr": 5,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "11.2"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+
+  },
+
+  {
+    "id": "9",
+    "trainingsession": [
+      {
+        "id": "0b99600a-5386-46f2-a4cc-46e359d188b6",
+        "shooter": "1",
+        "date": "2021-01-20T14:00:00.000Z",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [ 63.19058632541173, 14.658354353372323 ]
+        },
+        "location": "Mora",
+        "ibuId": "BTSUI12705196701",
+        "series": [
+          {
+            "id": 1,
+            "stance": "Prone",
+            "dateTime": "2021-05-12T14:36:35.000Z",
+            "shots": [
+              {
+                "shotNr": 1,
+                "result": "hit",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "8.4"
+              },
+              {
+                "shotNr": 2,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "7.5"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "stance": "Standing",
+            "dateTime": "2021-05-12T15:01:35.000Z",
+            "shots": [
+              {
+                "shotNr": 1,
+                "result": "hit",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "8.4"
+              },
+              {
+                "shotNr": 2,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "7.5"
+              },
+              {
+                "shotNr": 3,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "11.2"
+              },
+              {
+                "shotNr": 4,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "10.2"
+              },
+
+              {
+                "shotNr": 5,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "11.2"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+
+  },
+
+  {
+    "id": "10",
+    "trainingsession": [
+      {
+        "id": "0b99600a-5386-46f2-a4cc-46e359d188b6",
+        "shooter": "1",
+        "date": "2021-11-10T14:00:00.000Z",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [ 63.19058632541173, 14.658354353372323 ]
+        },
+        "location": "Riksgränsen",
+        "ibuId": "BTSUI12705196701",
+        "series": [
+          {
+            "id": 1,
+            "stance": "Prone",
+            "dateTime": "2021-05-12T14:36:35.000Z",
+            "shots": [
+              {
+                "shotNr": 1,
+                "result": "hit",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "8.4"
+              },
+              {
+                "shotNr": 2,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "7.5"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "stance": "Standing",
+            "dateTime": "2021-05-12T15:01:35.000Z",
+            "shots": [
+              {
+                "shotNr": 1,
+                "result": "hit",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "8.4"
+              },
+              {
+                "shotNr": 2,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "7.5"
+              },
+              {
+                "shotNr": 3,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "11.2"
+              },
+              {
+                "shotNr": 4,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "10.2"
+              },
+
+              {
+                "shotNr": 5,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "11.2"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+
+  },
+
+  {
+    "id": "11",
+    "trainingsession": [
+      {
+        "id": "0b99600a-5386-46f2-a4cc-46e359d188b6",
+        "shooter": "1",
+        "date": "2021-11-15T14:00:00.000Z",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [ 63.19058632541173, 14.658354353372323 ]
+        },
+        "location": "Riksgränsen",
+        "ibuId": "BTSUI12705196701",
+        "series": [
+          {
+            "id": 1,
+            "stance": "Prone",
+            "dateTime": "2021-05-12T14:36:35.000Z",
+            "shots": [
+              {
+                "shotNr": 1,
+                "result": "hit",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "8.4"
+              },
+              {
+                "shotNr": 2,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "7.5"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "stance": "Standing",
+            "dateTime": "2021-05-12T15:01:35.000Z",
+            "shots": [
+              {
+                "shotNr": 1,
+                "result": "hit",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "8.4"
+              },
+              {
+                "shotNr": 2,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "7.5"
+              },
+              {
+                "shotNr": 3,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "11.2"
+              },
+              {
+                "shotNr": 4,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "10.2"
+              },
+
+              {
+                "shotNr": 5,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "11.2"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+
+  },
+
+  {
+    "id": "12",
+    "trainingsession": [
+      {
+        "id": "0b99600a-5386-46f2-a4cc-46e359d188b6",
+        "shooter": "1",
+        "date": "2022-01-03T14:00:00.000Z",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [ 63.19058632541173, 14.658354353372323 ]
+        },
+        "location": "St Anton",
+        "ibuId": "BTSUI12705196701",
+        "series": [
+          {
+            "id": 1,
+            "stance": "Prone",
+            "dateTime": "2021-05-12T14:36:35.000Z",
+            "shots": [
+              {
+                "shotNr": 1,
+                "result": "hit",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "8.4"
+              },
+              {
+                "shotNr": 2,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "7.5"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "stance": "Standing",
+            "dateTime": "2021-05-12T15:01:35.000Z",
+            "shots": [
+              {
+                "shotNr": 1,
+                "result": "hit",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "8.4"
+              },
+              {
+                "shotNr": 2,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "7.5"
+              },
+              {
+                "shotNr": 3,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "11.2"
+              },
+              {
+                "shotNr": 4,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "10.2"
+              },
+
+              {
+                "shotNr": 5,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "11.2"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+
+  },
+
+  {
+    "id": "13",
+    "trainingsession": [
+      {
+        "id": "0b99600a-5386-46f2-a4cc-46e359d188b6",
+        "shooter": "1",
+        "date": "2021-01-18T14:00:00.000Z",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [ 63.19058632541173, 14.658354353372323 ]
+        },
+        "location": "Whistler",
+        "ibuId": "BTSUI12705196701",
+        "series": [
+          {
+            "id": 1,
+            "stance": "Prone",
+            "dateTime": "2021-05-12T14:36:35.000Z",
+            "shots": [
+              {
+                "shotNr": 1,
+                "result": "hit",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "8.4"
+              },
+              {
+                "shotNr": 2,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "7.5"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "stance": "Standing",
+            "dateTime": "2021-05-12T15:01:35.000Z",
+            "shots": [
+              {
+                "shotNr": 1,
+                "result": "hit",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "8.4"
+              },
+              {
+                "shotNr": 2,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "7.5"
+              },
+              {
+                "shotNr": 3,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "11.2"
+              },
+              {
+                "shotNr": 4,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "10.2"
+              },
+
+              {
+                "shotNr": 5,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "11.2"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+
+  },
+
+  {
+    "id": "14",
+    "trainingsession": [
+      {
+        "id": "0b99600a-5386-46f2-a4cc-46e359d188b6",
+        "shooter": "1",
+        "date": "2021-12-05T14:00:00.000Z",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [ 63.19058632541173, 14.658354353372323 ]
+        },
+        "location": "Skidstadion Östersund",
+        "ibuId": "BTSUI12705196701",
+        "series": [
+          {
+            "id": 1,
+            "stance": "Prone",
+            "dateTime": "2021-05-12T14:36:35.000Z",
+            "shots": [
+              {
+                "shotNr": 1,
+                "result": "hit",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "8.4"
+              },
+              {
+                "shotNr": 2,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "7.5"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "stance": "Standing",
+            "dateTime": "2021-05-12T15:01:35.000Z",
+            "shots": [
+              {
+                "shotNr": 1,
+                "result": "hit",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "8.4"
+              },
+              {
+                "shotNr": 2,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "7.5"
+              },
+              {
+                "shotNr": 3,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "11.2"
+              },
+              {
+                "shotNr": 4,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "10.2"
+              },
+
+              {
+                "shotNr": 5,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "11.2"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+
+  },
+
+  {
+    "id": "15",
+    "trainingsession": [
+      {
+        "id": "0b99600a-5386-46f2-a4cc-46e359d188b6",
+        "shooter": "1",
+        "date": "2021-12-11T14:00:00.000Z",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [ 63.19058632541173, 14.658354353372323 ]
+        },
+        "location": "Skidstadion Östersund",
+        "ibuId": "BTSUI12705196701",
+        "series": [
+          {
+            "id": 1,
+            "stance": "Prone",
+            "dateTime": "2021-05-12T14:36:35.000Z",
+            "shots": [
+              {
+                "shotNr": 1,
+                "result": "hit",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "8.4"
+              },
+              {
+                "shotNr": 2,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "7.5"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "stance": "Standing",
+            "dateTime": "2021-05-12T15:01:35.000Z",
+            "shots": [
+              {
+                "shotNr": 1,
+                "result": "hit",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "8.4"
+              },
+              {
+                "shotNr": 2,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "7.5"
+              },
+              {
+                "shotNr": 3,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "11.2"
+              },
+              {
+                "shotNr": 4,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "10.2"
+              },
+
+              {
+                "shotNr": 5,
+                "result": "miss",
+                "firingAngle": "-1.9",
+                "firingIndex": 2097,
+                "firingCords": {
+                  "x": "230.4\r",
+                  "y": "-94.3\r"
+                },
+                "shotXY": [
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  },
+                  {
+                    "x": "182.8",
+                    "y": "-511.9"
+                  }
+                ],
+                "timeToFire": "11.2"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+
+  }
+
+]
