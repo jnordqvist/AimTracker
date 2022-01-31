@@ -42,29 +42,57 @@
             </div>
             <div class="last-session-pulse"> <i class="fa fa-heartbeat"></i> </div>
             <div class="last-session-weather"><i class="fa fa-sun"></i></div>
+
+
+            <div class="last-session-date">
+                <h3>@Model.Athlete.TrainingSession.FirstOrDefault().Date</h3>
+            </div>
+            <div class="last-session-stance">
+                <h3>@Model.Athlete.TrainingSession.FirstOrDefault().Series.Where(x => x.Id == 1).FirstOrDefault().Stance</h3>
+            </div>
+            <div class="last-session-percentage ">
+                <h4>Träffpercent: @Model.GetSessionTotalHitPercentage(Model.Athlete.TrainingSession.FirstOrDefault())</h4>
+                <h4>Träffar: @Model.GetTotalNumOfHits(Model.Athlete.TrainingSession.FirstOrDefault()) / @Model.GetTotalNumOfShots(Model.Athlete.TrainingSession.FirstOrDefault())</h4>
+
+            </div>
+        </div>
+
+ 
+
+
+        <div class="container-other-sessions">
+            <div class="items-other-session">
+                <h4 class="date-time">2022-01-27</h4>
+                <h4 class="hit-rate ">Träffpercent: </h4>
+            </div>
+            <div class="items-other-session">
+                <h4 class="date-time">2022-01-27</h4>
+                <h4 class="hit-rate ">70%:</h4>
+            </div>
+        </div>
+        <div class="container-other-sessions">
+            <div class="items-other-session">
+                <h4 class="date-time">2022-01-27</h4>
+                <h4 class="hit-rate ">60%</h4>
+            </div>
+            <div class="items-other-session">
+                <h4 class="date-time">2022-01-27</h4>
+                <h4 class="hit-rate ">90%</h4>
+            </div>
+        </div>
+
     </div>
 
-    <div class="container-other-sessions">
-        <div class="items-other-session">
-            <h4 class="date-time">2022-01-27</h4>
-            <h4 class="hit-rate ">Träffpercent: </h4>
-        </div>
-        <div class="items-other-session">
-            <h4 class="date-time">2022-01-27</h4>
-            <h4 class="hit-rate ">70%:</h4>
-        </div>
-    </div>
-    <div class="container-other-sessions">
-        <div class="items-other-session">
-            <h4 class="date-time">2022-01-27</h4>
-            <h4 class="hit-rate ">60%</h4>
-        </div>
-        <div class="items-other-session">
-            <h4 class="date-time">2022-01-27</h4>
-            <h4 class="hit-rate ">90%</h4>
-        </div>
-    </div>
+    <div class="flex-container-home">
 
-</div>
+        @foreach (var trainingSession in @Model.allTrainingSessions)
+        {
+            <section class="training-session">
+                <h1>@trainingSession.Date</h1>
+                <h3>Location</h3>
+                <p>@trainingSession.Location</p>
+            </section>
+        }
+    </div>
 
 </body>
