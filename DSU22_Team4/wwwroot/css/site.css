@@ -1,5 +1,5 @@
 ﻿body {
-    background-color: #ccebff;
+    background-color: white;
     margin: 0;
 }
 
@@ -95,6 +95,7 @@
     border-radius: 5%;
 }
 
+/* NAV*/
 .topnav {
     overflow: hidden;
     background-color: #212977;
@@ -161,6 +162,121 @@
     max-width: 100px;
 }
 
+/*
+LOGIN*/
+.imgcontainer 
+{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top:10px;
+}
+
+
+.container {
+    font: normal 18px/1.5 "Fira Sans", "Helvetica Neue", sans-serif;
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+    .container * {
+        box-sizing: border-box;
+    }
+    .btns {
+        margin-left: auto;
+    }
+    .btns button
+    {
+        padding: 5px;
+    }
+.flex-outer,
+.flex-inner {
+    list-style-type: none;
+    padding: 0;
+}
+
+.flex-outer {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+    .flex-outer li,
+    .flex-inner {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+.flex-inner {
+    padding: 0 8px;
+    justify-content: space-between;
+}
+
+.flex-outer > li:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.flex-outer li label,
+.flex-outer li p {
+    padding: 8px;
+    font-weight: 300;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+}
+
+.flex-outer > li > label,
+.flex-outer li p {
+    flex: 1 0 120px;
+    max-width: 220px;
+}
+
+    .flex-outer > li > label + *,
+    .flex-inner {
+        flex: 1 0 220px;
+    }
+
+.flex-outer li p {
+    margin: 0;
+}
+
+.flex-outer li input:not([type='checkbox']),
+.flex-outer li textarea {
+    padding: 15px;
+    border: 1px solid #a3a3a3
+}
+
+/*.register-login-button {
+    display: flex;
+    align-content: center;
+}
+.register-login-button button{
+    margin-left: auto;
+    padding: 8px 16px;
+    border: none;
+    background: #212977;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: .09em;
+    border-radius: 2px;
+    margin-top: 20px;
+}*/
+.flex-outer li button {
+    margin-left: auto;
+    padding: 8px 16px;
+    border: none;
+    background: #212977;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: .09em;
+    border-radius: 2px;
+}
+
+.flex-inner li {
+    width: 100px;
+}
+
 @media screen and (min-width: 1000px)
 {
  
@@ -182,14 +298,26 @@
     
 }
 
-@media screen and (max-width:768px) {
 
+@media screen and (max-width: 600px)
+{
+    .register-login-button {
+        flex-direction: column;
+        margin-left: auto;
+    }
+}
+
+@media screen and (max-width:768px) {
     .container-flex {
         flex-direction: column;
     }
 
     .container-other-sessions {
         flex-direction: column;
+    }
+    .register-login-button {
+        flex-direction: column;
+        margin-left:auto;
     }
 }
 
@@ -197,9 +325,14 @@
 
     .container-flex {
         flex-direction: column;
+        justify-content: center;
     }
 
     .container-other-sessions {
         flex-direction: column;
+    }
+    .register-login-button {
+        flex-direction: column;
+        margin-left: auto;
     }
 }
