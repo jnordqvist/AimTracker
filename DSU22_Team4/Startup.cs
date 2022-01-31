@@ -3,6 +3,7 @@ using DSU22_Team4.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -28,9 +29,17 @@ namespace DSU22_Team4
         {
             services.AddScoped<IStatsDbRepository, StatsDbRepository>();
 
-            string connection = Configuration["ConnectionString:Default"];
+            string connection = Configuration["ConnectionStrings:Default"];
+
             services.AddDbContext<AppDbContext>(o => o.UseNpgsql(connection,
             options => options.SetPostgresVersion(new Version(14, 1))));
+
+            services.AddDbContext<LoginDbContext>(o => o.UseNpgsql(connection,
+            options => options.SetPostgresVersion(new Version(13, 2))));
+
+            services.AddIdentity<IdentityUser, IdentityRole>()
+            .AddEntityFrameworkStores<LoginDbContext>(); ;
+
             services.AddControllersWithViews();
         }
 
@@ -52,13 +61,14 @@ namespace DSU22_Team4
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Account}/{action=Index}/{id?}");
             });
         }
     }
