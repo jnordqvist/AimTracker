@@ -6,11 +6,9 @@
 .container-last-session {
     display: flex;
     flex-direction: column;
-    margin: 10%;
     background-color: #e6f5ff;
     border-radius: 5%;
     height: 640px;
-    width: 640px;
 }
 
 .last-session-top {

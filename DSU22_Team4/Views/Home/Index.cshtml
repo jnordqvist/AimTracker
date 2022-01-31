@@ -9,12 +9,12 @@
 
         <div class="last-session-top">
             <div class="last-session-date">
-                <h3>Senaste pass </h3> <h2>@Model.Athlete.TrainingSession.FirstOrDefault().Date</h2>
+                <h3>Last session </h3> <h2>@Model.Athlete.TrainingSession.FirstOrDefault().Date</h2>
             </div>
         </div>
         <div class="last-session-middle">
             <div class="last-session-percentage">
-                <p>Träffar: @Model.GetTotalNumOfHits(Model.Athlete.TrainingSession.FirstOrDefault()) / @Model.GetTotalNumOfShots(Model.Athlete.TrainingSession.FirstOrDefault())</p>
+                <p>Hits: @Model.GetTotalNumOfHits(Model.Athlete.TrainingSession.FirstOrDefault()) / @Model.GetTotalNumOfShots(Model.Athlete.TrainingSession.FirstOrDefault())</p>
             </div>
             <div class="pie-chart-shooting">
                 <svg viewBox="0 0 36 36" style="width: 200px; height: 200px;">
@@ -43,6 +43,7 @@
             <div class="last-session-pulse"> <i class="fa fa-heartbeat"></i> </div>
             <div class="last-session-weather"><i class="fa fa-sun"></i></div>
 
+
             <div class="last-session-date">
                 <h3>@Model.Athlete.TrainingSession.FirstOrDefault().Date</h3>
             </div>
@@ -55,6 +56,9 @@
 
             </div>
         </div>
+
+ 
+
 
         <div class="container-other-sessions">
             <div class="items-other-session">
