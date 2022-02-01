@@ -34,11 +34,9 @@ function displayLinks(mediaquery) {
 }
 
 
-const switchers = [...document.querySelectorAll('.switcher')]
+document.querySelectorAll('#register-form').forEach(item => {
 
-switchers.forEach(item => {
-    item.addEventListener('click', function () {
-        switchers.forEach(item => item.parentElement.classList.remove('is-active'))
-        this.parentElement.classList.add('is-active')
+    document.querySelector('#register').addEventListener('click', function () {
+        item.style.visibility = "visible";
     })
 })

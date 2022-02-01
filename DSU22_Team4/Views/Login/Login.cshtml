@@ -6,6 +6,7 @@
 <div class="imgcontainer">
     <img id="login" src="~/img/aimlogo-mod.png" alt="Avatar" class="avatar">
 </div>
+
 <div class="container">
 
     <form>
@@ -19,37 +20,16 @@
                 <label for="phone">Password</label>
                 <input type="tel" id="phone" placeholder="Enter your password here">
             </li>
-            <li>
-                <div class="btns">
-                    <button type="submit">Register</button>
-                    <button type="submit">Login</button>
-                </div>
-            </li>
-            
 
-        </ul>
+            <li id="register-form">
 
-    </form>
-    
-</div>
-<div class="container">
-    <form>
-        <ul class="flex-outer">
-
-            <li>
-                <label for="email">Email</label>
-                <input type="email" id="email" placeholder="Enter your email here">
-            </li>
-            <li>
-                <label for="phone">Password</label>
-                <input type="tel" id="phone" placeholder="Enter your password here">
-            </li>
-            <li>
                 <label for="phone">Confirm Password</label>
                 <input type="tel" id="phone" placeholder="Enter your password here">
+
+
             </li>
-            <li>
-                <p>Jag är:</p>
+            <li id="register-form">
+                <label for="role"> Jag är:</label>
                 <ul class="flex-inner">
 
                     <li>
@@ -62,7 +42,17 @@
                     </li>
                 </ul>
             </li>
-           
+
+            <li>
+                <div class="btns">
+                    <button id="register-submit" type="button">Register</button>
+                    <button type="submit">Login</button>
+                </div>
+            </li>
+
+
         </ul>
+
     </form>
+    <button id="register" type="button">Registrera nytt konto</button>
 </div>

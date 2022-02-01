@@ -177,6 +177,7 @@ LOGIN*/
     max-width: 1200px;
     margin: 0 auto;
     padding-top: 50px;
+    
 }
 
     .container * {
@@ -198,6 +199,7 @@ LOGIN*/
 .flex-outer {
     max-width: 800px;
     margin: 0 auto;
+    
 }
 
     .flex-outer li,
@@ -245,21 +247,9 @@ LOGIN*/
     border: 1px solid #a3a3a3
 }
 
-/*.register-login-button {
-    display: flex;
-    align-content: center;
+#register-form{
+     visibility: hidden;
 }
-.register-login-button button{
-    margin-left: auto;
-    padding: 8px 16px;
-    border: none;
-    background: #212977;
-    color: white;
-    text-transform: uppercase;
-    letter-spacing: .09em;
-    border-radius: 2px;
-    margin-top: 20px;
-}*/
 .flex-outer li button {
     margin-left: auto;
     padding: 8px 16px;
