@@ -4,8 +4,8 @@
 // Write your JavaScript code.
 
 // Declaration of necessary variables 
-var topnav = document.getElementById("myLinks");
-var mediaquery = window.matchMedia("(min-width: 1000px)")
+let topnav = document.getElementById("myLinks");
+let mediaquery = window.matchMedia("(min-width: 1000px)")
 
 displayLinks(mediaquery) // Calls function on runtime
 
@@ -34,3 +34,9 @@ function displayLinks(mediaquery) {
 }
 
 
+document.querySelectorAll('#register-form').forEach(item => {
+
+    document.querySelector('#register').addEventListener('click', function () {
+        item.style.visibility = "visible";
+    })
+})

@@ -11,6 +11,7 @@ namespace DSU22_Team4.Repositories
     public class StatsDbRepository : IStatsDbRepository
     {
         private readonly AppDbContext _db;
+       
         public StatsDbRepository(AppDbContext db)
         {
             _db = db;
@@ -32,5 +33,7 @@ namespace DSU22_Team4.Repositories
         {
             throw new NotImplementedException();
         }
+
+       
     }
 }

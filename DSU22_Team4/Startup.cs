@@ -1,5 +1,7 @@
 using DSU22_Team4.Data;
+using DSU22_Team4.Infrastructure;
 using DSU22_Team4.Repositories;
+using DSU22_Team4.Repositories.OpenWeather;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -27,10 +29,24 @@ namespace DSU22_Team4
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IRepository, Repository>();
+            services.AddSingleton<IApiClient, ApiClient>();
             services.AddScoped<IStatsDbRepository, StatsDbRepository>();
 
             string connection = Configuration["ConnectionStrings:Default"];
 
+            try
+            {
+                string weatherKey = Configuration["ConnectionString:Weather"];
+                services.AddSingleton<IOpenWeather>(provider => new OpenWeather(provider.GetService<IApiClient>(), weatherKey));
+            }
+            catch
+            {
+                
+            }
+
+            string connection = Configuration["ConnectionString:Default"];
+          
             services.AddDbContext<AppDbContext>(o => o.UseNpgsql(connection,
             options => options.SetPostgresVersion(new Version(14, 1))));
 
@@ -79,6 +95,7 @@ namespace DSU22_Team4
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Account}/{action=Login}/{id?}");
+
             });
             //{
             //    endpoints.MapControllerRoute(
