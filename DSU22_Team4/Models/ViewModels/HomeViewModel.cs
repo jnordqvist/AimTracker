@@ -1,4 +1,5 @@
-﻿using DSU22_Team4.Models.Poco;
+﻿using DSU22_Team4.Models.Dto;
+using DSU22_Team4.Models.Poco;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,16 +15,17 @@ namespace DSU22_Team4.Models.ViewModels
         public DateTime Date { get; set; }
         public ICollection<Serie> Series { get; set; }
 
-
+        public WeatherInfoDto weather { get; set; }
         public List<TrainingSession> allTrainingSessions { get; set; }
 
 
-        public HomeViewModel(Athlete athlete, List<TrainingSession> trainingSessions)
+        public HomeViewModel(Athlete athlete, List<TrainingSession> trainingSessions, WeatherInfoDto weather)
         {
             Athlete = athlete;
            //CalculateSeriesHitPercentage(Series.FirstOrDefault());
              GetSessionTotalHitPercentage(athlete.TrainingSession.FirstOrDefault());
             GetSessionAverageHitPercentage(athlete.TrainingSession.FirstOrDefault());
+            this.weather = weather;
             allTrainingSessions = trainingSessions;
         }
         public HomeViewModel()

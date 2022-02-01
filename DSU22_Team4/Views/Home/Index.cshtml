@@ -9,7 +9,9 @@
 
         <div class="last-session-top">
             <div class="last-session-date">
-                <h3>Last session </h3> <h2>@Model.Athlete.TrainingSession.FirstOrDefault().Date</h2>
+                <h3>Last session </h3> 
+                <h2>@Model.Athlete.TrainingSession.FirstOrDefault().Date</h2>
+                <h2>@Model.weather.Current.Temp °C</h2>
             </div>
         </div>
         <div class="last-session-middle">
