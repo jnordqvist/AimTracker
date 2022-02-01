@@ -44,8 +44,6 @@ namespace DSU22_Team4
             {
                 
             }
-
-            string connection = Configuration["ConnectionString:Default"];
           
             services.AddDbContext<AppDbContext>(o => o.UseNpgsql(connection,
             options => options.SetPostgresVersion(new Version(14, 1))));
@@ -94,7 +92,7 @@ namespace DSU22_Team4
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Account}/{action=Login}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
 
             });
             //{
