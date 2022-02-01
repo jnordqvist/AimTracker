@@ -1,7 +1,9 @@
 ﻿using DSU22_Team4.Models;
+using DSU22_Team4.Models.Dto;
 using DSU22_Team4.Models.Poco;
 using DSU22_Team4.Models.ViewModels;
 using DSU22_Team4.Repositories;
+using DSU22_Team4.Repositories.OpenWeather;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -16,25 +18,27 @@ namespace DSU22_Team4.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IStatsDbRepository _repo;
-        private IRepository repository;
+        private IRepository _repository;
         private List<TrainingSession> trainingSessions;
+        private IOpenWeather _weather;
 
-        public HomeController(ILogger<HomeController> logger, IStatsDbRepository repo, IRepository repository)
+        public HomeController(ILogger<HomeController> logger, IStatsDbRepository repo, IRepository repository, IOpenWeather weather)
         {
             _logger = logger;
             _repo = repo;
-            this.repository = repository;
+            _repository = repository;
+            _weather = weather;
         }
 
         public async Task<IActionResult> Index()
         {
             await Task.Delay(0);
             var athlete = _repo.GetAthleteById("1");
+            var weather = new WeatherInfoDto();
             try
             {
-                trainingSessions = await repository.GetTrainingSessions();
-                //var model = new HomeViewModel(athlete, trainingSessions);
-                //return View(model);
+                trainingSessions = await _repository.GetTrainingSessions();
+                weather = await _weather.GetWeatherByPointAndTimeAsync(63.190586, 14.658355, new DateTime(2022, 01, 30, 18, 38, 00));
             }
             catch (System.Exception)
             {
@@ -44,7 +48,7 @@ namespace DSU22_Team4.Controllers
                 throw;
             }
 
-            return View(new HomeViewModel(athlete, trainingSessions));
+            return View(new HomeViewModel(athlete, trainingSessions, weather));
         }
 
         //public HomeController(IRepository repository)
