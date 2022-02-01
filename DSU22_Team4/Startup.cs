@@ -1,6 +1,7 @@
 using DSU22_Team4.Data;
 using DSU22_Team4.Infrastructure;
 using DSU22_Team4.Repositories;
+using DSU22_Team4.Repositories.OpenWeather;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,8 +29,18 @@ namespace DSU22_Team4
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IRepository, Repository>();
-            services.AddScoped<IApiClient, ApiClient>();
+            services.AddSingleton<IApiClient, ApiClient>();
             services.AddScoped<IStatsDbRepository, StatsDbRepository>();
+
+            try
+            {
+                string weatherKey = Configuration["ConnectionString:Weather"];
+                services.AddSingleton<IOpenWeather>(provider => new OpenWeather(provider.GetService<IApiClient>(), weatherKey));
+            }
+            catch
+            {
+                
+            }
 
             string connection = Configuration["ConnectionString:Default"];
             services.AddDbContext<AppDbContext>(o => o.UseNpgsql(connection,
