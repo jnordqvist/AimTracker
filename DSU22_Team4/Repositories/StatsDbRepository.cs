@@ -21,7 +21,7 @@ namespace DSU22_Team4.Repositories
         public Athlete GetAthleteById(string id)
         {
             var athlete = _db.Athlete
-                 .Where(x => x.Id == id).Where(x => x.Id == id)
+                 .Where(x => x.Id == id).Include(i => i.Sleep)
                  .Include(t => t.TrainingSession.OrderByDescending(y => y.Date)/*.Take(5)*/)
                  .ThenInclude(s => s.Results)
                  .ThenInclude(z => z.Shots);
@@ -29,16 +29,43 @@ namespace DSU22_Team4.Repositories
             return athlete.FirstOrDefault();
         }
 
+        public Athlete GetSleep(string id, DateTime date)
+        {
+            var athlete = _db.Athlete.Where(x => x.Id == id)
+                .Include(s => s.Sleep.Where(d => d.AwakeTime.Date == date.Date))
+                .Include(t => t.TrainingSession.Where(dd => dd.Date.Date == date.Date))
+                .FirstOrDefault();
+
+            return athlete;
+        }
+
+
         public void Seed(Athlete a)
         {
             _db.Add(a);
             _db.SaveChanges();
         }
 
+        public Athlete GetAthleteWithSleep(string id)
+        {
+            var athlete = _db.Athlete
+                 .Where(x => x.Id == id).Where(x => x.Id == id)
+                 .Include(s => s.Sleep).FirstOrDefault();
+
+            return athlete;
+        }
+
         public void UpdateAthlete(Athlete athlete)
         {
             var session = athlete.TrainingSession.FirstOrDefault();
             _db.Update(session);
+            _db.SaveChanges();
+        }
+
+        public void AddSleepToAthlete(Athlete athlete, Sleep sleep)
+        {
+            athlete.Sleep.Add(sleep);
+            _db.Update(athlete);
             _db.SaveChanges();
         }
 

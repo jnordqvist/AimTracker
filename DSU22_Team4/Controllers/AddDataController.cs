@@ -27,8 +27,17 @@ namespace DSU22_Team4.Controllers
         {
             return View();
         }
-        public async Task<IActionResult> Success()
+
+        [HttpPost]
+        public async Task<IActionResult> Success(AddDataViewModel model)
         {
+            var sleep = new Sleep()
+            {
+                SleepTime = model.SleepTime,
+                AwakeTime = model.AwakeTime,
+                Quality = model.Quality
+            };
+
             var res = await _repository.GetAimTrackerData();
             var aimTrackerData = res.FirstOrDefault();
 
@@ -45,7 +54,19 @@ namespace DSU22_Team4.Controllers
 
             }
 
-            //var athlete = _db.GetAthleteById("1");
+            //var sleep = new Sleep()
+            //{
+            //    SleepTime = new DateTime(2022, 2, 1, 22, 00, 00),
+            //    AwakeTime = new DateTime(2022, 02, 02, 8, 00, 00),
+            //    Quality = "Bad"
+            //};
+
+            //var athlete = _db.GetAthleteWithSleep("1");
+            var athlete = _db.GetAthleteById("1");
+            _db.AddSleepToAthlete(athlete, sleep);
+            athlete = _db.GetSleep("1", new DateTime(2022, 02, 02, 08, 00, 00));
+
+
 
             //athlete.TrainingSession.Add(res.FirstOrDefault());
 
@@ -53,8 +74,10 @@ namespace DSU22_Team4.Controllers
             var a = new Athlete(){ Id = "1", TrainingSession = res};
             //_db.UpdateAthlete(athlete);
 
-            var athlete = _db.GetAthleteById("1");
             return View(new SuccessViewModel(athlete));
         }
+
+        
+
     }
 }
