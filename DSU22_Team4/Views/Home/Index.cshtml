@@ -11,7 +11,7 @@
             <div class="last-session-date">
                 <h3>Last session </h3> 
                 <h2>@Model.Athlete.TrainingSession.FirstOrDefault().Date</h2>
-                <h2>@Model.weather.Current.Temp °C</h2>
+                <h2>@Model.Weather.Current.Temp °C</h2>
             </div>
         </div>
         <div class="last-session-middle">
@@ -40,7 +40,7 @@
         </div>
         <div class="last-session-bottom">
             <div class="last-session-stance">
-                <h3>@Model.Athlete.TrainingSession.FirstOrDefault().Series.Where(x => x.Id == 1).FirstOrDefault().Stance</h3>
+                @*<h3>@Model.Athlete.TrainingSession.FirstOrDefault().Results.Where(x => x.Id == 1).FirstOrDefault().Stance</h3>*@
             </div>
             <div class="last-session-pulse"> <i class="fa fa-heartbeat"></i> </div>
             <div class="last-session-weather"><i class="fa fa-sun"></i></div>
@@ -50,7 +50,7 @@
                 <h3>@Model.Athlete.TrainingSession.FirstOrDefault().Date</h3>
             </div>
             <div class="last-session-stance">
-                <h3>@Model.Athlete.TrainingSession.FirstOrDefault().Series.Where(x => x.Id == 1).FirstOrDefault().Stance</h3>
+                @*<h3>@Model.Athlete.TrainingSession.FirstOrDefault().Results.Where(x => x.Id == 1).FirstOrDefault().Stance</h3>*@
             </div>
             <div class="last-session-percentage ">
                 <h4>Träffpercent: @Model.GetSessionTotalHitPercentage(Model.Athlete.TrainingSession.FirstOrDefault())</h4>
@@ -58,9 +58,6 @@
 
             </div>
         </div>
-
- 
-
 
         <div class="container-other-sessions">
             <div class="items-other-session">
@@ -87,7 +84,7 @@
 
     <div class="flex-container-home">
 
-        @foreach (var trainingSession in @Model.allTrainingSessions)
+        @foreach (var trainingSession in @Model.AllTrainingSessions)
         {
             <section class="training-session">
                 <h1>@trainingSession.Date</h1>
@@ -96,5 +93,7 @@
             </section>
         }
     </div>
+
+    <a class="addDatabtn" asp-action="Index" asp-controller="AddData" asp-area="">Add Data</a>
 
 </body>

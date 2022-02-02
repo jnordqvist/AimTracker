@@ -17,28 +17,30 @@ namespace DSU22_Team4.Repositories
             this.apiClient = apiClient;
         }
 
-        public async Task<List<TrainingSession>> GetTrainingSessions()
+        public async Task<List<TrainingSession>> GetAimTrackerData()
         {
-            var athleteId = "BTSUI12705196701";
+            var athleteId = "BTSUI12705196702";
             var trainingSessions = await apiClient.GetAsync<TrainingSession>($"{baseEndPoint}{athleteId}");
-            await DoAsync(trainingSessions);
-            List<TrainingSession> trainingSessions1 = new List<TrainingSession>();
-            trainingSessions1.Add(trainingSessions);
+            //await DoAsync(trainingSessions);
+            List<TrainingSession> trainingSessions1 = new List<TrainingSession>
+            {
+                trainingSessions
+            };
             return trainingSessions1;
         }
 
-        private async Task<TrainingSession> DoAsync(TrainingSession trainingSession)
-        {
-            var athleteId = 1;
-            var result = await apiClient.GetAsync<TrainingSession>($"{baseEndPoint}{athleteId}");
-            trainingSession.Date = result.Date;
-            trainingSession.IbuId = result.IbuId;
-            trainingSession.Id = result.Id;
-            trainingSession.Location = result.Location;
-            trainingSession.Series = result.Series;
+        //private async Task<TrainingSession> DoAsync(TrainingSession trainingSession)
+        //{
+        //    var athleteId = 1;
+        //    var result = await apiClient.GetAsync<TrainingSession>($"{baseEndPoint}{athleteId}");
+        //    trainingSession.Date = result.Date;
+        //    trainingSession.IbuId = result.IbuId;
+        //    trainingSession.Id = result.Id;
+        //    trainingSession.Location = result.Location;
+        //    trainingSession.Results = result.Results;
 
-            return trainingSession;
-        }
+        //    return trainingSession;
+        //}
 
     }
 }
