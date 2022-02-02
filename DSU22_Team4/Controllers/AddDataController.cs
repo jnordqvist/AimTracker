@@ -13,8 +13,8 @@ namespace DSU22_Team4.Controllers
     public class AddDataController : Controller
     {
         private readonly IStatsDbRepository _db;
-        private IRepository _repository;
-        private IOpenWeather _weather;
+        private readonly IRepository _repository;
+        private readonly IOpenWeather _weather;
         
 
         public AddDataController(IStatsDbRepository db, IRepository repository, IOpenWeather weather)
@@ -54,13 +54,7 @@ namespace DSU22_Team4.Controllers
 
             }
 
-            //var sleep = new Sleep()
-            //{
-            //    SleepTime = new DateTime(2022, 2, 1, 22, 00, 00),
-            //    AwakeTime = new DateTime(2022, 02, 02, 8, 00, 00),
-            //    Quality = "Bad"
-            //};
-
+            
             //var athlete = _db.GetAthleteWithSleep("1");
             var athlete = _db.GetAthleteById("1");
             _db.AddSleepToAthlete(athlete, sleep);
