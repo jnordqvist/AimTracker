@@ -33,7 +33,7 @@ namespace DSU22_Team4
             services.AddSingleton<IApiClient, ApiClient>();
             services.AddScoped<IStatsDbRepository, StatsDbRepository>();
 
-            string connection = Configuration["ConnectionStrings:Default"];
+            string connection = Configuration["ConnectionString:Default"];
 
             try
             {
