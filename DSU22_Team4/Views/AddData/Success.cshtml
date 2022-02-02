@@ -1,0 +1,10 @@
+﻿@model SuccessViewModel
+
+@foreach (var session in Model.Athlete.TrainingSession)
+{
+    <div style="border:dashed; margin:5px;">
+        <div>@session.Date</div>
+        <div>@session.IbuId</div>
+        @*<div>@session.Weather.Temp</div>*@
+    </div>
+}

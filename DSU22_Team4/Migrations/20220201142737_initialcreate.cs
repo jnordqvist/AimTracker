@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -21,6 +22,32 @@ namespace DSU22_Team4.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Geometry",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Coordinates = table.Column<List<double>>(type: "double precision[]", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Geometry", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "WeatherCurrentDto",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Temp = table.Column<double>(type: "double precision", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_WeatherCurrentDto", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "TrainingSession",
                 columns: table => new
                 {
@@ -28,6 +55,8 @@ namespace DSU22_Team4.Migrations
                     Date = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
                     Location = table.Column<string>(type: "text", nullable: true),
                     IbuId = table.Column<string>(type: "text", nullable: true),
+                    GeometryId = table.Column<int>(type: "integer", nullable: true),
+                    WeatherId = table.Column<int>(type: "integer", nullable: true),
                     AthleteId = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
@@ -37,6 +66,18 @@ namespace DSU22_Team4.Migrations
                         name: "FK_TrainingSession_Athlete_AthleteId",
                         column: x => x.AthleteId,
                         principalTable: "Athlete",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_TrainingSession_Geometry_GeometryId",
+                        column: x => x.GeometryId,
+                        principalTable: "Geometry",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_TrainingSession_WeatherCurrentDto_WeatherId",
+                        column: x => x.WeatherId,
+                        principalTable: "WeatherCurrentDto",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -98,6 +139,16 @@ namespace DSU22_Team4.Migrations
                 name: "IX_TrainingSession_AthleteId",
                 table: "TrainingSession",
                 column: "AthleteId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_TrainingSession_GeometryId",
+                table: "TrainingSession",
+                column: "GeometryId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_TrainingSession_WeatherId",
+                table: "TrainingSession",
+                column: "WeatherId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -113,6 +164,12 @@ namespace DSU22_Team4.Migrations
 
             migrationBuilder.DropTable(
                 name: "Athlete");
+
+            migrationBuilder.DropTable(
+                name: "Geometry");
+
+            migrationBuilder.DropTable(
+                name: "WeatherCurrentDto");
         }
     }
 }

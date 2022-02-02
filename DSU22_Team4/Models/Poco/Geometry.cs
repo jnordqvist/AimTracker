@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace DSU22_Team4.Models.Dto
+namespace DSU22_Team4.Models.Poco
 {
-    public class WeatherCurrentDto
+    public class Geometry
     {
         public int Id { get; set; }
-        public double Temp { get; set; }
-
+        public List<double> Coordinates { get; set; }
     }
 }

@@ -20,7 +20,7 @@ namespace DSU22_Team4.Repositories.OpenWeather
         public async Task<WeatherInfoDto> GetWeatherByPointAndTimeAsync(double lat, double lon, DateTime date)
         {
             var time = ((DateTimeOffset)date).ToUnixTimeSeconds();
-            var res = await _client.GetAsync<WeatherInfoDto>($"http://api.openweathermap.org/data/2.5/onecall/timemachine?lat=60.99&lon=30.9&dt={time}&units=metric&appid={_apikey}");
+            var res = await _client.GetAsync<WeatherInfoDto>($"http://api.openweathermap.org/data/2.5/onecall/timemachine?lat={lat}&lon={lon}&dt={time}&units=metric&appid={_apikey}");
             return res;
         }
     }
