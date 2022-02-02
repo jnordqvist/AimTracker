@@ -40,7 +40,7 @@
         </div>
         <div class="last-session-bottom">
             <div class="last-session-stance">
-                <h3>@Model.Athlete.TrainingSession.FirstOrDefault().Results.Where(x => x.Id == 1).FirstOrDefault().Stance</h3>
+                @*<h3>@Model.Athlete.TrainingSession.FirstOrDefault().Results.Where(x => x.Id == 1).FirstOrDefault().Stance</h3>*@
             </div>
             <div class="last-session-pulse"> <i class="fa fa-heartbeat"></i> </div>
             <div class="last-session-weather"><i class="fa fa-sun"></i></div>
@@ -50,7 +50,7 @@
                 <h3>@Model.Athlete.TrainingSession.FirstOrDefault().Date</h3>
             </div>
             <div class="last-session-stance">
-                <h3>@Model.Athlete.TrainingSession.FirstOrDefault().Results.Where(x => x.Id == 1).FirstOrDefault().Stance</h3>
+                @*<h3>@Model.Athlete.TrainingSession.FirstOrDefault().Results.Where(x => x.Id == 1).FirstOrDefault().Stance</h3>*@
             </div>
             <div class="last-session-percentage ">
                 <h4>Träffpercent: @Model.GetSessionTotalHitPercentage(Model.Athlete.TrainingSession.FirstOrDefault())</h4>

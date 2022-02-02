@@ -72,7 +72,7 @@ namespace DSU22_Team4
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=AddData}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
