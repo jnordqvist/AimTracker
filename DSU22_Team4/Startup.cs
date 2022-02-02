@@ -5,6 +5,7 @@ using DSU22_Team4.Repositories.OpenWeather;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -32,6 +33,8 @@ namespace DSU22_Team4
             services.AddSingleton<IApiClient, ApiClient>();
             services.AddScoped<IStatsDbRepository, StatsDbRepository>();
 
+            string connection = Configuration["ConnectionStrings:Default"];
+
             try
             {
                 string weatherKey = Configuration["ConnectionString:Weather"];
@@ -41,11 +44,27 @@ namespace DSU22_Team4
             {
                 
             }
-
-            string connection = Configuration["ConnectionString:Default"];
+          
             services.AddDbContext<AppDbContext>(o => o.UseNpgsql(connection,
             options => options.SetPostgresVersion(new Version(14, 1))));
+
+            services.AddDbContext<LoginDbContext>(o => o.UseNpgsql(connection,
+            options => options.SetPostgresVersion(new Version(13, 2))));
+
+            services.AddIdentity<IdentityUser, IdentityRole>()
+            .AddEntityFrameworkStores<LoginDbContext>(); ;
+
             services.AddControllersWithViews();
+
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.Password.RequireDigit = false;
+                options.Password.RequiredLength = 5;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
+            }
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -66,6 +85,7 @@ namespace DSU22_Team4
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
@@ -73,7 +93,16 @@ namespace DSU22_Team4
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+
+
+
             });
+            //{
+            //    endpoints.MapControllerRoute(
+            //        name: "default",
+            //        pattern: "{controller=Account}/{action=Register}/{id?}");
+            //});
         }
     }
 }
