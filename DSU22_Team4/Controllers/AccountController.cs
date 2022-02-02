@@ -20,6 +20,12 @@ namespace DSU22_Team4.Controllers
             _signInManager = signInManager;
         }
 
+        public IActionResult Account(AccountViewModel model)
+        {
+            return View(model);
+        }
+
+
         public IActionResult Login()
         {
             return View();
@@ -78,7 +84,7 @@ namespace DSU22_Team4.Controllers
 
                 foreach (var error in result.Errors)
                 {
-                    ModelState.AddModelError("", "Login failed");
+                    ModelState.AddModelError("", "Something went wrong");
                 }
             }
 

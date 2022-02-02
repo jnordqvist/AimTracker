@@ -19,6 +19,5 @@ namespace DSU22_Team4.Models.ViewModels
         [Display(Name = "Confirm Password")]
         [Compare("Password", ErrorMessage = "The Password doesn't match")]
         public string ConfirmPassword { get; set; }
-
     }
 }

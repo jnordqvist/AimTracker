@@ -1,0 +1,25 @@
+﻿@model LoginViewModel
+
+    <div class="container">
+
+
+        <form asp-controller="Account" asp-action="Login" method="post">
+            <ul class="flex-outer">
+
+                <li id="login-form">
+                    <label asp-for="Email">Email</label>
+                    <input asp-for="Email" id="email" placeholder="Enter your email here">
+                </li>
+                <li id="login-form">
+                    <label asp-for="Password">Password</label>
+                    <input asp-for="Password" id="phone" placeholder="Enter your password here">
+                </li>
+                <li id="login-form">
+                    <div class="btns">
+                        <button type="submit">Login</button>
+                    </div>
+                </li>
+            </ul>
+        </form>
+        <button id="register" type="button">Registrera nytt konto</button> @*Användss för att få fram formulär*@
+</div>

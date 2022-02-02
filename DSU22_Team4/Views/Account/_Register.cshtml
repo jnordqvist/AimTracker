@@ -1,0 +1,42 @@
+﻿@model RegisterViewModel
+
+    <div class="container">
+
+        <form asp-controller="Account" asp-action="Register" method="post">
+            <ul class="flex-outer">
+
+                <li id="register-form">
+                    <label asp-for="Email">Email</label>
+                    <input asp-for="Email" id="email" placeholder="Enter your email here">
+                </li>
+                <li id="register-form">
+                    <label asp-for="Password">Password</label>
+                    <input asp-for="Password" id="phone" placeholder="Enter your password here">
+                </li>
+
+                <li id="register-form">
+                    <label asp-for="ConfirmPassword">Confirm Password</label>
+                    <input asp-for="ConfirmPassword" id="phone" placeholder="Enter your password here">
+                </li>
+                <li id="register-form">
+                    <label for="role"> Jag är:</label>
+                    <ul class="flex-inner">
+                        <li>
+                            <input type="checkbox">
+                            <label for="coach">Coach</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="athlete">
+                            <label for="athlete">Athlete</label>
+                        </li>
+                    </ul>
+                </li>
+                <li id="register-form">
+                    <div class="btns">
+                        <button id="register-submit" type="submit">Register</button>
+                    </div>
+                </li>
+            </ul>
+        </form>
+
+        </div>

@@ -29,32 +29,32 @@ namespace DSU22_Team4
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<IRepository, Repository>();
-            services.AddSingleton<IApiClient, ApiClient>();
-            services.AddScoped<IStatsDbRepository, StatsDbRepository>();
+            //services.AddScoped<IRepository, Repository>();
+            //services.AddSingleton<IApiClient, ApiClient>();
+            //services.AddScoped<IStatsDbRepository, StatsDbRepository>();
 
             string connection = Configuration["ConnectionStrings:Default"];
 
-            try
-            {
-                string weatherKey = Configuration["ConnectionString:Weather"];
-                services.AddSingleton<IOpenWeather>(provider => new OpenWeather(provider.GetService<IApiClient>(), weatherKey));
-            }
-            catch
-            {
+            //try
+            //{
+            //    string weatherKey = Configuration["ConnectionString:Weather"];
+            //    services.AddSingleton<IOpenWeather>(provider => new OpenWeather(provider.GetService<IApiClient>(), weatherKey));
+            //}
+            //catch
+            //{
                 
-            }
+            //}
           
-            services.AddDbContext<AppDbContext>(o => o.UseNpgsql(connection,
-            options => options.SetPostgresVersion(new Version(14, 1))));
+            //services.AddDbContext<AppDbContext>(o => o.UseNpgsql(connection,
+            //options => options.SetPostgresVersion(new Version(14, 1))));
 
             services.AddDbContext<LoginDbContext>(o => o.UseNpgsql(connection,
-            options => options.SetPostgresVersion(new Version(13, 2))));
+            options => options.SetPostgresVersion(new Version(14, 1))));
 
             services.AddIdentity<IdentityUser, IdentityRole>()
             .AddEntityFrameworkStores<LoginDbContext>(); ;
 
-            services.AddControllersWithViews();
+
 
             services.Configure<IdentityOptions>(options =>
             {
@@ -65,6 +65,8 @@ namespace DSU22_Team4
                 options.Password.RequireUppercase = false;
             }
             );
+
+            services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -89,17 +91,17 @@ namespace DSU22_Team4
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
-
-            });
             //{
             //    endpoints.MapControllerRoute(
             //        name: "default",
-            //        pattern: "{controller=Account}/{action=Register}/{id?}");
+            //        pattern: "{controller=Home}/{action=Index}/{id?}");
+
             //});
+            {
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Account}/{action=Account}/{id?}");
+            });
         }
     }
 }
