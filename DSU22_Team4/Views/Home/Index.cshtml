@@ -35,7 +35,7 @@
             </div>
             <div class="last-session-bottom">
                 <div class="last-session-stance">
-                    <h3 id="stance">Stance: <br /> @Model.Athlete.TrainingSession.FirstOrDefault().Series.Where(x => x.Id == 1).FirstOrDefault().Stance</h3>
+                    <h3 id="stance">Stance: <br /> @Model.Athlete.TrainingSession.FirstOrDefault().Results.Where(x => x.Id == 1).FirstOrDefault().Stance</h3>
                 </div>
                 <h3 id="average-pulse">Average Pulse:</h3>
                 <div class="last-session-pulse"> <i class="fa fa-heartbeat"></i> </div>
