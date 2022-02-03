@@ -14,19 +14,18 @@
 
 </head>
 
-    <body>
-        <div id="page-container">
-            <div id="content-wrap">
-                <!-- Top Navigation Menu -->
-                <div class="topnav">
-                    <a href="#home" class="active"><img id="navimg" class="grow" src="~/img/aimlogo.png"></a>
-                    <div id="myLinks">
-                        <a href="#Home">Hem</a>
-                        <a href="#Min profil">Min profil</a>
-                        <a href="#Inställningar">Inställningar</a>
-                    </div>
-                    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                        <i class="fa fa-bars fa-2x"></i>
+
+        <!-- Top Navigation Menu -->
+    <div class="topnav">
+        <a id="navimg" asp-controller="Home" asp-action="Index" class="active"><img id="navimg" class="grow" src="~/img/aimlogo.png"></a>
+        <div id="myLinks">
+            <a asp-controller="Home" asp-action="Index"> Hem</a>
+            <a href="#Min profil">Min profil</a>
+            <a href="#Inställningar">Inställningar</a>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars fa-2x"></i>
+
 
                     </a>
                 </div>

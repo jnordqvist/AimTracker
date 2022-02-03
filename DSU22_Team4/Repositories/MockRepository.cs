@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DSU22_Team4.Repositories
 {
-    public class MockRepository:IStatsDbRepository
+    public class MockRepository//://IStatsDbRepository
     {
         private readonly string basePath;
         private readonly AppDbContext _db;
@@ -59,6 +59,11 @@ namespace DSU22_Team4.Repositories
                 _db.Add(athletes);
                 _db.SaveChanges();
             }
+        }
+
+        public void AddSleepToAthlete(Athlete athlete, Sleep sleep)
+        {
+            throw new NotImplementedException();
         }
     }
 }
