@@ -13,8 +13,7 @@
     <script src="https://use.fontawesome.com/42b241fb0c.js"></script>
 
 </head>
-<body>
-    
+
 
         <!-- Top Navigation Menu -->
     <div class="topnav">
@@ -27,23 +26,26 @@
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
             <i class="fa fa-bars fa-2x"></i>
 
-        </a>
-    </div>
-        
-        <div class="container">
-            <main role="main" class="pb-3">
-                @RenderBody()
-            </main>
+
+                    </a>
+                </div>
+
+                <div class="container">
+                    <main role="main" class="pb-3">
+                        @RenderBody()
+                    </main>
+                </div>
+            </div>
+                <footer id="footer">
+                    <div class="container">
+                        &copy; AimTracker - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                    </div>
+                </footer>
+                <script src="~/lib/jquery/dist/jquery.min.js"></script>
+                <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+                <script src="~/js/site.js" asp-append-version="true"></script>
+                @await RenderSectionAsync("Scripts", required: false)
         </div>
 
-        <footer class="border-top footer text-muted">
-            <div class="container">
-                &copy; 2022 - DSU22_Team4 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-            </div>
-        </footer>
-        <script src="~/lib/jquery/dist/jquery.min.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
-        @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

@@ -34,6 +34,7 @@ namespace DSU22_Team4
             services.AddScoped<IStatsDbRepository, StatsDbRepository>();
 
             string connection = Configuration["ConnectionString:Default"];
+            string connection2 = Configuration["ConnectionString:Develop"];
 
             try
             {
@@ -42,19 +43,17 @@ namespace DSU22_Team4
             }
             catch
             {
-                
-            }
-          
-            services.AddDbContext<AppDbContext>(o => o.UseNpgsql(connection,
+
+            }                                                      
+
+            services.AddDbContext<AppDbContext>(o => o.UseNpgsql(connection2,
             options => options.SetPostgresVersion(new Version(14, 1))));
 
             services.AddDbContext<LoginDbContext>(o => o.UseNpgsql(connection,
-            options => options.SetPostgresVersion(new Version(13, 2))));
+            options => options.SetPostgresVersion(new Version(14, 1))));
 
             services.AddIdentity<IdentityUser, IdentityRole>()
             .AddEntityFrameworkStores<LoginDbContext>(); ;
-
-            services.AddControllersWithViews();
 
             services.Configure<IdentityOptions>(options =>
             {
@@ -65,6 +64,8 @@ namespace DSU22_Team4
                 options.Password.RequireUppercase = false;
             }
             );
+
+            services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -92,17 +93,8 @@ namespace DSU22_Team4
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
-
-
-
-
+                    pattern: "{controller=Account}/{action=Login}/{id?}");
             });
-            //{
-            //    endpoints.MapControllerRoute(
-            //        name: "default",
-            //        pattern: "{controller=Account}/{action=Register}/{id?}");
-            //});
         }
     }
 }

@@ -33,10 +33,3 @@ function displayLinks(mediaquery) {
     }
 }
 
-
-document.querySelectorAll('#register-form').forEach(item => {
-
-    document.querySelector('#register').addEventListener('click', function () {
-        item.style.visibility = "visible";
-    })
-})

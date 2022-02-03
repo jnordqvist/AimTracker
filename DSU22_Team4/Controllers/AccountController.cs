@@ -20,6 +20,12 @@ namespace DSU22_Team4.Controllers
             _signInManager = signInManager;
         }
 
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+        #region Login
         public IActionResult Login()
         {
             return View();
@@ -42,7 +48,6 @@ namespace DSU22_Team4.Controllers
                 }
                 ModelState.AddModelError(string.Empty, "Login failed");
             }
-
             return View(model);
         }
 
@@ -51,6 +56,8 @@ namespace DSU22_Team4.Controllers
             await _signInManager.SignOutAsync();
             return RedirectToAction("Account", "Login");
         }
+        #endregion
+
         #region Register
         public IActionResult Register()
         {
@@ -78,15 +85,11 @@ namespace DSU22_Team4.Controllers
 
                 foreach (var error in result.Errors)
                 {
-                    ModelState.AddModelError("", "Login failed");
+                    ModelState.AddModelError("", "Something went wrong");
                 }
             }
-
             return View(model);
         }
-
         #endregion
-
-        
     }
 }
