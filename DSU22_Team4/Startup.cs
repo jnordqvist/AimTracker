@@ -29,32 +29,31 @@ namespace DSU22_Team4
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddScoped<IRepository, Repository>();
-            //services.AddSingleton<IApiClient, ApiClient>();
-            //services.AddScoped<IStatsDbRepository, StatsDbRepository>();
+            services.AddScoped<IRepository, Repository>();
+            services.AddSingleton<IApiClient, ApiClient>();
+            services.AddScoped<IStatsDbRepository, StatsDbRepository>();
 
             string connection = Configuration["ConnectionString:Default"];
+            string connection2 = Configuration["ConnectionString:Develop"];
 
-            //try
-            //{
-            //    string weatherKey = Configuration["ConnectionString:Weather"];
-            //    services.AddSingleton<IOpenWeather>(provider => new OpenWeather(provider.GetService<IApiClient>(), weatherKey));
-            //}
-            //catch
-            //{
-                
-            //}
-          
-            //services.AddDbContext<AppDbContext>(o => o.UseNpgsql(connection,
-            //options => options.SetPostgresVersion(new Version(14, 1))));
+            try
+            {
+                string weatherKey = Configuration["ConnectionString:Weather"];
+                services.AddSingleton<IOpenWeather>(provider => new OpenWeather(provider.GetService<IApiClient>(), weatherKey));
+            }
+            catch
+            {
+
+            }                                                      
+
+            services.AddDbContext<AppDbContext>(o => o.UseNpgsql(connection2,
+            options => options.SetPostgresVersion(new Version(14, 1))));
 
             services.AddDbContext<LoginDbContext>(o => o.UseNpgsql(connection,
             options => options.SetPostgresVersion(new Version(14, 1))));
 
             services.AddIdentity<IdentityUser, IdentityRole>()
             .AddEntityFrameworkStores<LoginDbContext>(); ;
-
-
 
             services.Configure<IdentityOptions>(options =>
             {

@@ -64,8 +64,6 @@ namespace DSU22_Team4.Controllers
 
             };
             _repo.Seed(athlete);
-
-
         }
 
         //public HomeController(IRepository repository)
@@ -101,5 +99,7 @@ namespace DSU22_Team4.Controllers
         //{
         //    return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         //}
+
+
     }
 }
