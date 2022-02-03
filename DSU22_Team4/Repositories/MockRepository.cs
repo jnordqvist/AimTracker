@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DSU22_Team4.Repositories
 {
-    public class MockRepository:IStatsDbRepository
+    public class MockRepository/*:*//*IStatsDbRepository*/
     {
         private readonly string basePath;
         private readonly AppDbContext _db;

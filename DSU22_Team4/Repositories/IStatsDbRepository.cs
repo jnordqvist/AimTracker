@@ -12,5 +12,7 @@ namespace DSU22_Team4.Repositories
         Task<Athlete> GetAthleteAsync();
         Athlete GetAthleteById(string id);
         void Seed(Athlete a);
+   
+        TrainingSession GetTrainingSession(string id);
     }
 }
