@@ -9,7 +9,7 @@
             <div class="last-session-date">
                 <h2>Last session </h2>
                 <h3>@Model.Athlete.TrainingSession.FirstOrDefault().Date</h3>
-                <h3>@Model.weather.Current.Temp °C</h3>
+                <h3>@Model.Weather.Current.Temp °C</h3>
             </div>
         </div>
         <div id="flex-container-last-session">
@@ -67,7 +67,6 @@
 
         @* //API
             <div class="flex-container-home">
-
             @foreach (var trainingSession in @Model.allTrainingSessions)
             {
                 <section class="training-session">
@@ -78,3 +77,4 @@
             }
         </div>*@
  
+

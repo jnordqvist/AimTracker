@@ -15,18 +15,31 @@ namespace DSU22_Team4.Repositories
         public StatsDbRepository(AppDbContext db)
         {
             _db = db;
-            GetAthleteById("1");
+            //GetAthleteById("1");
         }
 
         public Athlete GetAthleteById(string id)
         {
             var athlete = _db.Athlete
                  .Where(x => x.Id == id).Where(x => x.Id == id)
-                 .Include(t => t.TrainingSession)
-                 .ThenInclude(s => s.Series)
+                 .Include(t => t.TrainingSession.OrderByDescending(y => y.Date)/*.Take(5)*/)
+                 .ThenInclude(s => s.Results)
                  .ThenInclude(z => z.Shots);
 
             return athlete.FirstOrDefault();
+        }
+
+        public void Seed(Athlete a)
+        {
+            _db.Add(a);
+            _db.SaveChanges();
+        }
+
+        public void UpdateAthlete(Athlete athlete)
+        {
+            var session = athlete.TrainingSession.FirstOrDefault();
+            _db.Update(session);
+            _db.SaveChanges();
         }
 
         public Task<Athlete> GetAthleteAsync()

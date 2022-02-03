@@ -94,6 +94,9 @@ namespace DSU22_Team4
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+
+
+
             });
             //{
             //    endpoints.MapControllerRoute(

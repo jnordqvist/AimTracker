@@ -33,11 +33,13 @@ namespace DSU22_Team4.Controllers
         public async Task<IActionResult> Index()
         {
             await Task.Delay(0);
+            //await FillAimTrackerDatabase();
             var athlete = _repo.GetAthleteById("1");
+          
             var weather = new WeatherInfoDto();
             try
             {
-                trainingSessions = await _repository.GetTrainingSessions();
+                trainingSessions = await _repository.GetAimTrackerData();
                 weather = await _weather.GetWeatherByPointAndTimeAsync(63.190586, 14.658355, new DateTime(2022, 01, 30, 18, 38, 00));
             }
             catch (System.Exception)
@@ -49,6 +51,21 @@ namespace DSU22_Team4.Controllers
             }
 
             return View(new HomeViewModel(athlete, trainingSessions, weather));
+        }
+
+        public async Task  FillAimTrackerDatabase()
+        {
+            var data =  await _repository.GetAimTrackerData();
+
+            var athlete = new Athlete()
+            {
+                Id = "1",
+                TrainingSession = data
+
+            };
+            _repo.Seed(athlete);
+
+
         }
 
         //public HomeController(IRepository repository)
