@@ -14,38 +14,40 @@
 
 </head>
 
-
-        <!-- Top Navigation Menu -->
-    <div class="topnav">
-        <a id="navimg" asp-controller="Home" asp-action="Index" class="active"><img id="navimg" class="grow" src="~/img/aimlogo.png"></a>
-        <div id="myLinks">
-            <a asp-controller="Home" asp-action="Index"> Hem</a>
-            <a href="#Min profil">Min profil</a>
-            <a href="#Inställningar">Inställningar</a>
-        </div>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            <i class="fa fa-bars fa-2x"></i>
-
-
-                    </a>
+ 
+<body>
+    <div id="page-container">
+        <div id="content-wrap">
+            <!-- Top Navigation Menu -->
+            <div class="topnav">
+                <a href="#home" class="active"><img id="navimg" class="grow" src="~/img/aimlogo.png"></a>
+                <div id="myLinks">
+                    <a href="#Home">Hem</a>
+                    <a href="#Min profil">Min profil</a>
+                    <a href="#Inställningar">Inställningar</a>
                 </div>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars fa-2x"></i>
 
-                <div class="container">
-                    <main role="main" class="pb-3">
-                        @RenderBody()
-                    </main>
-                </div>
+                </a>
             </div>
-                <footer id="footer">
-                    <div class="container">
-                        &copy; AimTracker - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                    </div>
-                </footer>
-                <script src="~/lib/jquery/dist/jquery.min.js"></script>
-                <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-                <script src="~/js/site.js" asp-append-version="true"></script>
-                @await RenderSectionAsync("Scripts", required: false)
+
+            <div class="container">
+                <main role="main" class="pb-3">
+                    @RenderBody()
+                </main>
+            </div>
         </div>
+        <footer id="footer">
+            <div class="container">
+                &copy; AimTracker - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </div>
+        </footer>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        @await RenderSectionAsync("Scripts", required: false)
+    </div>
 
 </body>
 </html>
