@@ -33,7 +33,7 @@ namespace DSU22_Team4
             services.AddSingleton<IApiClient, ApiClient>();
             services.AddScoped<IStatsDbRepository, StatsDbRepository>();
 
-            string connection = Configuration["ConnectionStrings:Default"];
+            string connection = Configuration["ConnectionString:Default"];
 
             try
             {
@@ -49,7 +49,7 @@ namespace DSU22_Team4
             options => options.SetPostgresVersion(new Version(14, 1))));
 
             services.AddDbContext<LoginDbContext>(o => o.UseNpgsql(connection,
-            options => options.SetPostgresVersion(new Version(13, 2))));
+            options => options.SetPostgresVersion(new Version(14, 1))));
 
             services.AddIdentity<IdentityUser, IdentityRole>()
             .AddEntityFrameworkStores<LoginDbContext>(); ;
