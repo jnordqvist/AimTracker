@@ -15,8 +15,8 @@ namespace DSU22_Team4.Models.ViewModels
         public DateTime Date { get; set; }
         public ICollection<Serie> Series { get; set; }
 
-        public WeatherInfoDto weather { get; set; }
-        public List<TrainingSession> allTrainingSessions { get; set; }
+        public WeatherInfoDto Weather { get; set; }
+        public List<TrainingSession> AllTrainingSessions { get; set; }
 
 
         public HomeViewModel(Athlete athlete, List<TrainingSession> trainingSessions, WeatherInfoDto weather)
@@ -25,8 +25,8 @@ namespace DSU22_Team4.Models.ViewModels
            //CalculateSeriesHitPercentage(Series.FirstOrDefault());
              GetSessionTotalHitPercentage(athlete.TrainingSession.FirstOrDefault());
             GetSessionAverageHitPercentage(athlete.TrainingSession.FirstOrDefault());
-            this.weather = weather;
-            allTrainingSessions = trainingSessions;
+            this.Weather = weather;
+            AllTrainingSessions = trainingSessions;
         }
         public HomeViewModel()
         {
@@ -59,11 +59,11 @@ namespace DSU22_Team4.Models.ViewModels
         public string GetSessionAverageHitPercentage(TrainingSession session)
         {
             double hitPercentage = 0;
-            foreach (var serie in session.Series)
+            foreach (var serie in session.Results)
             {
                 hitPercentage += CalculateHitPercentage(serie);
             }
-            double series = (double)session.Series.Count();
+            double series = (double)session.Results.Count();
             double result = hitPercentage / series;
             return $"{result * 100}%";
         }
@@ -71,7 +71,7 @@ namespace DSU22_Team4.Models.ViewModels
         public int GetTotalNumOfShots(TrainingSession session)
         {
             int shots = 0;
-            foreach (var serie in session.Series)
+            foreach (var serie in session.Results)
             {
                 foreach (var shot in serie.Shots)
                 {
@@ -84,7 +84,7 @@ namespace DSU22_Team4.Models.ViewModels
         public int GetTotalNumOfHits(TrainingSession session)
         {
             int hits = 0;
-            foreach (var serie in session.Series)
+            foreach (var serie in session.Results)
             {
                 foreach (var shot in serie.Shots)
                 {

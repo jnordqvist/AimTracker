@@ -33,7 +33,7 @@ namespace DSU22_Team4
             //services.AddSingleton<IApiClient, ApiClient>();
             //services.AddScoped<IStatsDbRepository, StatsDbRepository>();
 
-            string connection = Configuration["ConnectionStrings:Default"];
+            string connection = Configuration["ConnectionString:Default"];
 
             //try
             //{
@@ -91,12 +91,6 @@ namespace DSU22_Team4
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
-            //{
-            //    endpoints.MapControllerRoute(
-            //        name: "default",
-            //        pattern: "{controller=Home}/{action=Index}/{id?}");
-
-            //});
             {
                 endpoints.MapControllerRoute(
                     name: "default",

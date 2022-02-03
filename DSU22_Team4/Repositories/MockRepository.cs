@@ -22,6 +22,11 @@ namespace DSU22_Team4.Repositories
             SeedAthletes();
         }
 
+        public void UpdateAthlete(Athlete athlete)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<Athlete> GetAthleteAsync()
         {
             await Task.Delay(0);
@@ -39,6 +44,11 @@ namespace DSU22_Team4.Repositories
             string data = File.ReadAllText(path);
             var test = JsonConvert.DeserializeObject<T>(data);
             return test;
+        }
+
+        public void Seed(Athlete a)
+        {
+            throw new NotImplementedException();
         }
 
         private async void SeedAthletes()
