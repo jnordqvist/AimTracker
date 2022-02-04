@@ -11,6 +11,7 @@ namespace DSU22_Team4.Repositories
     {
         private readonly IApiClient apiClient;
         private readonly string baseEndPoint = "https://grupp8.dsvkurs.miun.se/api/Training/";
+        private readonly string basePoint = "https://grupp8.dsvkurs.miun.se/api/history/Date/";
 
         public Repository(IApiClient apiClient)
         {
@@ -22,7 +23,7 @@ namespace DSU22_Team4.Repositories
             var athleteId = "BTSWE11008199501";
             var trainingSessions = await apiClient.GetAsync<TrainingSession>($"{baseEndPoint}{athleteId}");
             //await DoAsync(trainingSessions);
-            List<TrainingSession> trainingSessions1 = new List<TrainingSession>
+            List<TrainingSession> trainingSessions1 = new List <TrainingSession>
             {
                 trainingSessions
             };
@@ -30,18 +31,34 @@ namespace DSU22_Team4.Repositories
             return trainingSessions1;
 
         }
-            //private async Task<TrainingSession> DoAsync(TrainingSession trainingSession)
-            //{
-            //    var athleteId = 1;
-            //    var result = await apiClient.GetAsync<TrainingSession>($"{baseEndPoint}{athleteId}");
-            //    trainingSession.Date = result.Date;
-            //    trainingSession.IbuId = result.IbuId;
-            //    trainingSession.Id = result.Id;
-            //    trainingSession.Location = result.Location;
-            //    trainingSession.Results = result.Results;
 
-            //    return trainingSession;
-            //}
+        public async Task<List<TrainingSession>> GetAimTrackerDataByDate()
+        {
+            var athlete = "BTSWE11008199501";
+            var startDate = "startDate=220103";
+            var endDate = "endDate=220105";
+
+            var training = await apiClient.GetAsync <List<TrainingSession>>($"{basePoint}{athlete}?{startDate}&{endDate}");
+
+            
+            return training;
+
+        
 
         }
+
+        //private async Task<TrainingSession> DoAsync(TrainingSession trainingSession)
+        //{
+        //    var athleteId = 1;
+        //    var result = await apiClient.GetAsync<TrainingSession>($"{baseEndPoint}{athleteId}");
+        //    trainingSession.Date = result.Date;
+        //    trainingSession.IbuId = result.IbuId;
+        //    trainingSession.Id = result.Id;
+        //    trainingSession.Location = result.Location;
+        //    trainingSession.Results = result.Results;
+
+        //    return trainingSession;
+        //}
+
+    }
 }

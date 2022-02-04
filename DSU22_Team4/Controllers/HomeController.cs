@@ -20,6 +20,7 @@ namespace DSU22_Team4.Controllers
         private readonly IStatsDbRepository _repo;
         private IRepository _repository;
         private List<TrainingSession> trainingSessions;
+        private List<TrainingSession> sessions;
         private IOpenWeather _weather;
 
         public HomeController(ILogger<HomeController> logger, IStatsDbRepository repo, IRepository repository, IOpenWeather weather)
@@ -38,8 +39,10 @@ namespace DSU22_Team4.Controllers
           
             var weather = new WeatherInfoDto();
             //try
-            //{
+            //{ s
                 trainingSessions = await _repository.GetAimTrackerData();
+                sessions = await _repository.GetAimTrackerDataByDate();
+                 
                 weather = await _weather.GetWeatherByPointAndTimeAsync(63.190586, 14.658355, new DateTime(2022, 02, 03, 18, 38, 00));
             //}
             //catch (System.Exception)
