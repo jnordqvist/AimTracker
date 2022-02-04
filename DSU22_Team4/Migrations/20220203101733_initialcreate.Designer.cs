@@ -11,7 +11,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace DSU22_Team4.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220201142737_initialcreate")]
+    [Migration("20220203101733_initialcreate")]
     partial class initialcreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,21 +21,6 @@ namespace DSU22_Team4.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 63)
                 .HasAnnotation("ProductVersion", "5.0.13")
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
-
-            modelBuilder.Entity("DSU22_Team4.Models.Dto.WeatherCurrentDto", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
-
-                    b.Property<double>("Temp")
-                        .HasColumnType("double precision");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("WeatherCurrentDto");
-                });
 
             modelBuilder.Entity("DSU22_Team4.Models.Poco.Athlete", b =>
                 {
@@ -114,6 +99,32 @@ namespace DSU22_Team4.Migrations
                     b.ToTable("Shot");
                 });
 
+            modelBuilder.Entity("DSU22_Team4.Models.Poco.Sleep", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<string>("AthleteId")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("AwakeTime")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("Quality")
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("SleepTime")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AthleteId");
+
+                    b.ToTable("Sleep");
+                });
+
             modelBuilder.Entity("DSU22_Team4.Models.Poco.TrainingSession", b =>
                 {
                     b.Property<string>("Id")
@@ -134,16 +145,11 @@ namespace DSU22_Team4.Migrations
                     b.Property<string>("Location")
                         .HasColumnType("text");
 
-                    b.Property<int?>("WeatherId")
-                        .HasColumnType("integer");
-
                     b.HasKey("Id");
 
                     b.HasIndex("AthleteId");
 
                     b.HasIndex("GeometryId");
-
-                    b.HasIndex("WeatherId");
 
                     b.ToTable("TrainingSession");
                 });
@@ -162,6 +168,13 @@ namespace DSU22_Team4.Migrations
                         .HasForeignKey("SerieId");
                 });
 
+            modelBuilder.Entity("DSU22_Team4.Models.Poco.Sleep", b =>
+                {
+                    b.HasOne("DSU22_Team4.Models.Poco.Athlete", null)
+                        .WithMany("Sleep")
+                        .HasForeignKey("AthleteId");
+                });
+
             modelBuilder.Entity("DSU22_Team4.Models.Poco.TrainingSession", b =>
                 {
                     b.HasOne("DSU22_Team4.Models.Poco.Athlete", null)
@@ -172,17 +185,13 @@ namespace DSU22_Team4.Migrations
                         .WithMany()
                         .HasForeignKey("GeometryId");
 
-                    b.HasOne("DSU22_Team4.Models.Dto.WeatherCurrentDto", "Weather")
-                        .WithMany()
-                        .HasForeignKey("WeatherId");
-
                     b.Navigation("Geometry");
-
-                    b.Navigation("Weather");
                 });
 
             modelBuilder.Entity("DSU22_Team4.Models.Poco.Athlete", b =>
                 {
+                    b.Navigation("Sleep");
+
                     b.Navigation("TrainingSession");
                 });
 

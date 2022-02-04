@@ -6,15 +6,12 @@
     <title>@ViewData["Title"] - DSU22_Team4</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
-
     <link href="~/css/font-awesome/css/fontawesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/lib/Font-Awesome/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script src="https://use.fontawesome.com/42b241fb0c.js"></script>
-
 </head>
-
-
     <body>
         <div id="page-container">
             <div id="content-wrap">
@@ -28,11 +25,8 @@
                     </div>
                     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                         <i class="fa fa-bars fa-2x"></i>
-
                     </a>
-
             </div>
-
             <div class="container">
                 <main role="main" class="pb-3">
                     @RenderBody()
@@ -40,7 +34,7 @@
             </div>
         </div>
         <footer id="footer">
-            <div class="container">
+             <div class="container-footer">
                 &copy; AimTracker - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
             </div>
         </footer>
@@ -49,6 +43,5 @@
         <script src="~/js/site.js" asp-append-version="true"></script>
         @await RenderSectionAsync("Scripts", required: false)
     </div>
-
 </body>
 </html>

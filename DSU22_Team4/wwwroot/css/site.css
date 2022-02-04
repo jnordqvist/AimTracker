@@ -6,21 +6,21 @@ body {
 }
 
 #content-wrap {
-    padding-bottom: 8rem; /* Footer height */
+    padding-bottom: 4rem; /* Footer height */
+}
+
+.container-footer {
+    margin-top:3vh;
 }
 
 #footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 8rem;
+    height: 4rem;
     text-align: center;
     background-color: #212977;
     color: white;
-}
-
-h3 {
-    font-size: 1.3rem;
 }
 
 #page-container {
@@ -28,10 +28,57 @@ h3 {
     min-height: 100vh;
 }
 
+/*HOME PAGE*/
+
+#img-profile {
+    border-radius: 100%;
+    height: 50px;
+    width: 50px;
+}
+#container-welcome {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
 
 #container-home-content {
     display: flex;
     flex-direction: column;
+}
+
+p {
+    margin-top:0;
+    margin-bottom:0;
+}
+
+#parameter-btns {
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+}
+
+#parameter-btns .btn {
+     background-color: #212977;
+     border: none;
+     color: white;
+     cursor: pointer;
+     margin: 1.5vh;
+     margin-bottom: 5vh;
+}
+#edit-btn {
+    background-color: #212977;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 12px;
+    margin-top:10px;
+}
+
+#parameter-btns .btn:hover {
+   background-color: RoyalBlue;
+
 }
 
 .container-last-session {
@@ -39,47 +86,45 @@ h3 {
     flex-direction: column;
     background-color: #fff;
     border-radius: 50px;
-    border: 5px solid black;
+    border: 2px solid black;
 }
 
+
+
 .last-session-top, #previous-sessions {
-    padding: 30px;
+    padding: 5px;
     color: #fff;
     display: flex;
     flex-direction: row;
     text-align: center;
     justify-content: center;
     background-color: #212977;
-    
 }
 
 .last-session-top {
-    border-top-right-radius: 44px;
-    border-top-left-radius: 44px;
+    border-top-right-radius: 48px;
+    border-top-left-radius: 48px;
+    padding-bottom: 10px;
 }
-    .last-session-middle {
+
+.last-session-middle {
         display: flex;
         flex-direction: column;
         flex: 33%;
         padding: 20px;
-    }
+}
 @keyframes progress {
     0% {
         stroke-dasharray: 0 100;
     }
 }
 
-#hits, #average-pulse, #stance {
-    padding: 20px;
-    color:#212977;
+#hits, #average-pulse, #stance, #welcome {
+    color: #000;
 }
 
 #average-pulse {
     text-align:right;
-}
-
-.fa {
-    margin-right: 5vh;
 }
 
 .pie-chart-percentage {
@@ -92,44 +137,35 @@ h3 {
 #flex-container-last-session {
     display: flex;
     flex-direction: row;
-    border: 2px dashed black;
+    font-size:12px;
 }
 
 .last-session-percentage {
     margin-left: 10%;
     text-align: center;
 }
-    .last-session-percentage p {
+
+.last-session-percentage p {
         font-size: 24px;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-weight: bold;
         color: #212977;
         margin-top: 50%;
-    }
+}
+
 .last-session-bottom {
     display: flex;
     flex-direction: column;
     padding: 20px;
+    padding-bottom:10px;
     align-items: end;
     justify-content: center;
 }
-.last-session-stance {
-    flex: 33%;
-    text-align: center;
-    color: #212977;
-    font-size: 44px;
-}
+
 .last-session-pulse {
     flex: 33%;
     text-align: center;
     color: red;
-    font-size: 44px;
-}
-.last-session-weather {
-    flex: 33%;
-    text-align: center;
-    color: orange;
-    font-size: 44px;
 }
 
 .container-other-sessions {
@@ -140,12 +176,13 @@ h3 {
 }
 
 .items-other-session {
-
-    padding: 10%;
+    padding: 2vh;
     margin: 5%;
     align-content: space-evenly;
     background-color: ghostwhite;
     border-radius: 50px;
+    text-align:center;
+    font-size:12px;
 }
 
 /* NAV*/
