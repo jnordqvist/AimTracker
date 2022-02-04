@@ -4,18 +4,28 @@
 @model HomeViewModel
 
 <div id="container-home-content">
+    <div id="container-welcome">
+        <img id="img-profile" src="~/img/profilepic.jpg" default="Profile Pic" />
+        <p id="welcome">Linn Persson</p>
+    </div>
+    <div id="parameter-btns">
+        <button class="btn"><i class="fa fa-home"></i> Sleep</button>
+        <button class="btn"><i class="fa fa-home"></i> Food</button>
+        <button class="btn"><i class="fa fa-home"></i> Injuries</button>
+    </div>
     <div class="container-last-session">
         <div class="last-session-top">
             <div class="last-session-date">
-                <h2>Last session </h2>
-                <h3>@Model.Athlete.TrainingSession.FirstOrDefault().Date</h3>
-                <h3>@Model.Weather.Current.Temp °C</h3>
+                
+                <p>Last session </p>
+                <p>@Model.Athlete.TrainingSession.FirstOrDefault().Date</p>
+                <p>@Model.Weather.Current.Temp °C</p>
             </div>
         </div>
         <div id="flex-container-last-session">
             <div class="last-session-middle">
-                <h3 id="hits">Hits: <br /> @Model.GetTotalNumOfHits(Model.Athlete.TrainingSession.FirstOrDefault()) / @Model.GetTotalNumOfShots(Model.Athlete.TrainingSession.FirstOrDefault())</h3>
-                <svg viewBox="0 0 36 36" style="width: 100px; height: 100px;">
+                <p id="hits">Hits: <br /> @Model.GetTotalNumOfHits(Model.Athlete.TrainingSession.FirstOrDefault()) / @Model.GetTotalNumOfShots(Model.Athlete.TrainingSession.FirstOrDefault())</p>
+                <svg viewBox="0 0 36 36" style="width: 50px; height: 50px;">
                     <path fill="none" stroke="#eee" stroke-width=1
                           d="M18 2.0845
                                 a 15.9155 15.9155 0 0 1 0 31.831
@@ -35,46 +45,36 @@
             </div>
             <div class="last-session-bottom">
                 <div class="last-session-stance">
-                    <h3 id="stance">Stance: <br /> @Model.Athlete.TrainingSession.FirstOrDefault().Series.Where(x => x.Id == 1).FirstOrDefault().Stance</h3>
+                    <p id="stance">@*Stance: <br />*@ @Model.Athlete.TrainingSession.FirstOrDefault().Results.Where(x => x.Id == 1).FirstOrDefault().Stance</p>
                 </div>
-                <h3 id="average-pulse">Average Pulse:</h3>
-                <div class="last-session-pulse"> <i class="fa fa-heartbeat"></i> </div>
-                <div class="last-session-weather"><i class="fa fa-sun"></i></div>
+                @*<p id="average-pulse">Average Pulse:</p>*@
+                <div class="last-session-pulse">
+                <p id="pulse">189 <i class="fa fa-heartbeat"></i></p> </div>
+                <button class="btn" id="edit-btn"><i class="fa fa-home"></i> Edit</button>
             </div>
         </div>
-        <h3 id="previous-sessions">Previous Sessions</h3>
+        <p id="previous-sessions">Previous Sessions</p>
         <div class="container-other-sessions">
             <div class="items-other-session">
-                <h4 class="date-time">@Model.Athlete.TrainingSession.FirstOrDefault().Date</h4>
-                <h4 class="hit-rate ">Hits: @Model.GetTotalNumOfHits(Model.Athlete.TrainingSession.FirstOrDefault()) / @Model.GetTotalNumOfShots(Model.Athlete.TrainingSession.FirstOrDefault())</h4>
+                <p class="date-time">@Model.Athlete.TrainingSession.FirstOrDefault().Date</p>
+                <p class="hit-rate ">Hits: @Model.GetTotalNumOfHits(Model.Athlete.TrainingSession.FirstOrDefault()) / @Model.GetTotalNumOfShots(Model.Athlete.TrainingSession.FirstOrDefault())</p>
             </div>
             <div class="items-other-session">
-                <h4 class="date-time">@Model.Athlete.TrainingSession.FirstOrDefault().Date</h4>
-                <h4 class="hit-rate ">Hits: @Model.GetTotalNumOfHits(Model.Athlete.TrainingSession.FirstOrDefault()) / @Model.GetTotalNumOfShots(Model.Athlete.TrainingSession.FirstOrDefault())</h4>
+                <p class="date-time">@Model.Athlete.TrainingSession.FirstOrDefault().Date</p>
+                <p class="hit-rate ">Hits: @Model.GetTotalNumOfHits(Model.Athlete.TrainingSession.FirstOrDefault()) / @Model.GetTotalNumOfShots(Model.Athlete.TrainingSession.FirstOrDefault())</p>
             </div>
 
             <div class="items-other-session">
-                <h4 class="date-time">@Model.Athlete.TrainingSession.FirstOrDefault().Date</h4>
-                <h4 class="hit-rate ">Hits: @Model.GetTotalNumOfHits(Model.Athlete.TrainingSession.FirstOrDefault()) / @Model.GetTotalNumOfShots(Model.Athlete.TrainingSession.FirstOrDefault())</h4>
+                <p class="date-time">@Model.Athlete.TrainingSession.FirstOrDefault().Date</p>
+                <p class="hit-rate ">Hits: @Model.GetTotalNumOfHits(Model.Athlete.TrainingSession.FirstOrDefault()) / @Model.GetTotalNumOfShots(Model.Athlete.TrainingSession.FirstOrDefault())</p>
             </div>
             <div class="items-other-session">
-                <h4 class="date-time">@Model.Athlete.TrainingSession.FirstOrDefault().Date</h4>
-                <h4 class="hit-rate ">Hits: @Model.GetTotalNumOfHits(Model.Athlete.TrainingSession.FirstOrDefault()) / @Model.GetTotalNumOfShots(Model.Athlete.TrainingSession.FirstOrDefault())</h4>
+                <p class="date-time">@Model.Athlete.TrainingSession.FirstOrDefault().Date</p>
+                <p class="hit-rate ">Hits: @Model.GetTotalNumOfHits(Model.Athlete.TrainingSession.FirstOrDefault()) / @Model.GetTotalNumOfShots(Model.Athlete.TrainingSession.FirstOrDefault())</p>
             </div>
         </div>
     </div>
 </div>
 
-        @* //API
-            <div class="flex-container-home">
-            @foreach (var trainingSession in @Model.allTrainingSessions)
-            {
-                <section class="training-session">
-                    <h1>@trainingSession.Date</h1>
-                    <h3>Location</h3>
-                    <p>@trainingSession.Location</p>
-                </section>
-            }
-        </div>*@
  
 
