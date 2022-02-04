@@ -72,7 +72,9 @@ namespace DSU22_Team4.Controllers
                 var user = new IdentityUser
                 {
                     UserName = model.Email,
-                    Email = model.Email
+                    Email = model.Email,
+                    Id = model.IbuId,
+                                      
                 };
 
                 var result = await _userManager.CreateAsync(user, model.Password);
