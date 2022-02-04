@@ -17,7 +17,7 @@ namespace DSU22_Team4.Models.ViewModels
         //public ICollection<Serie> Series { get; set; }
 
         public WeatherInfoDto Weather { get; set; }
-        //public List<TrainingSession> AllTrainingSessions { get; set; }
+        public List<TrainingSession> TrainingSessions { get; set; }
 
 
         public HomeViewModel(Athlete athlete, List<TrainingSession> trainingSessions, WeatherInfoDto weather)
@@ -27,7 +27,7 @@ namespace DSU22_Team4.Models.ViewModels
              GetSessionTotalHitPercentage(athlete.TrainingSession.FirstOrDefault());
             GetSessionAverageHitPercentage(athlete.TrainingSession.FirstOrDefault());
             Weather = weather;
-            //AllTrainingSessions = trainingSessions;
+           TrainingSessions = trainingSessions;
         }
         public HomeViewModel()
         {
