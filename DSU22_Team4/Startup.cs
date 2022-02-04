@@ -46,7 +46,7 @@ namespace DSU22_Team4
 
             }                                                      
 
-            services.AddDbContext<AppDbContext>(o => o.UseNpgsql(connection2,
+            services.AddDbContext<AppDbContext>(o => o.UseNpgsql(connection,
             options => options.SetPostgresVersion(new Version(14, 1))));
 
             services.AddDbContext<LoginDbContext>(o => o.UseNpgsql(connection,
