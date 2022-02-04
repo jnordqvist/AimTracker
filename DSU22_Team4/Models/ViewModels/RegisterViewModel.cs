@@ -11,6 +11,12 @@ namespace DSU22_Team4.Models.ViewModels
         [Required]
         [EmailAddress]
         public string Email { get; set; }
+        [DataType(DataType.Text)]
+        public string FirstName { get; set; }
+        [DataType(DataType.Text)]
+        public string LastName { get; set; }
+        [DataType(DataType.Text)]
+        public string IbuId { get; set; }
         [Required]
         [DataType(DataType.Password)]
         public string Password { get; set; }
@@ -19,6 +25,5 @@ namespace DSU22_Team4.Models.ViewModels
         [Display(Name = "Confirm Password")]
         [Compare("Password", ErrorMessage = "The Password doesn't match")]
         public string ConfirmPassword { get; set; }
-
     }
 }

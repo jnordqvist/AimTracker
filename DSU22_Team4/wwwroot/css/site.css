@@ -1,4 +1,5 @@
-﻿body {
+﻿/* HOME*/
+body {
     background-color: white;
     margin: 0;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -215,25 +216,6 @@ p {
             padding: 40px;
         }
 
-      .icon {
-             transition: all .2s ease-in-out;
-           }
-        .icon:hover {
-            transform: scale(1.04);
-        }
-#myLinks a:hover {
-    transform: scale(1.2);
-}
-#myLinks a {
-    transition: all .2s ease-in-out;
-}
-
-.grow {
-    transition: all .2s ease-in-out;
-}
-    .grow:hover {
-        transform: scale(1.04);
-    }
 
 
 
@@ -331,9 +313,6 @@ LOGIN*/
     border: 1px solid #a3a3a3
 }
 
-#register-form{
-     visibility: hidden;
-}
 .flex-outer li button {
     margin-left: auto;
     padding: 8px 16px;
@@ -347,6 +326,32 @@ LOGIN*/
 
 .flex-inner li {
     width: 100px;
+}
+
+div.login-logout-tab div.card-header {
+    padding: 0px 0px 12px 0px;
+}
+
+div.login-logout-tab ul.nav-tabs {
+    margin: 0px 0px -12px 0px;
+}
+
+div.login-logout-tab li.nav-item {
+    width: 50%;
+}
+
+div.login-logout-tab a.nav-link {
+    font-size: 25px;
+    color: #495057;
+    text-align: center;
+}
+
+div.card-content {
+    padding: 10px 20px;
+}
+
+div.login-form-icon {
+    text-align: center;
 }
 
 @media screen and (min-width: 1000px)
@@ -367,6 +372,31 @@ LOGIN*/
     {
         justify-items: center;
     }
+
+    .icon {
+        transition: all .2s ease-in-out;
+    }
+
+        .icon:hover {
+            transform: scale(1.04);
+        }
+
+    #myLinks a:hover {
+        transform: scale(1.2);
+    }
+
+    #myLinks a {
+        transition: all .2s ease-in-out;
+    }
+
+    .grow {
+        transition: all .2s ease-in-out;
+    }
+
+        .grow:hover {
+            transform: scale(1.04);
+        }
+
 
     /*ADD DATA*/
     .btn-scale {

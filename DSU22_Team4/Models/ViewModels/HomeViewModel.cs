@@ -10,13 +10,14 @@ namespace DSU22_Team4.Models.ViewModels
     public class HomeViewModel
     {
         public Athlete Athlete { get; set; }
-        public Athlete newAthlete;
-        public TrainingSession Session { get; set; }
-        public DateTime Date { get; set; }
-        public ICollection<Serie> Series { get; set; }
+
+ 
+        //public TrainingSession Session { get; set; }
+        //public DateTime Date { get; set; }
+        //public ICollection<Serie> Series { get; set; }
 
         public WeatherInfoDto Weather { get; set; }
-        public List<TrainingSession> AllTrainingSessions { get; set; }
+        public List<TrainingSession> TrainingSessions { get; set; }
 
 
         public HomeViewModel(Athlete athlete, List<TrainingSession> trainingSessions, WeatherInfoDto weather)
@@ -25,8 +26,8 @@ namespace DSU22_Team4.Models.ViewModels
            //CalculateSeriesHitPercentage(Series.FirstOrDefault());
              GetSessionTotalHitPercentage(athlete.TrainingSession.FirstOrDefault());
             GetSessionAverageHitPercentage(athlete.TrainingSession.FirstOrDefault());
-            this.Weather = weather;
-            AllTrainingSessions = trainingSessions;
+            Weather = weather;
+           TrainingSessions = trainingSessions;
         }
         public HomeViewModel()
         {
@@ -115,4 +116,6 @@ namespace DSU22_Team4.Models.ViewModels
             return $"{hitPercentage}";
         }
     }
+
+    
 }
