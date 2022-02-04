@@ -5,17 +5,28 @@
 }
 
 <div class="container">
-    <form asp-controller="Account" asp-action="Register" method="post">
+    <form method="post">
         <ul class="flex-outer">
             <li id="register-form">
                 <label asp-for="Email">Email</label>
                 <input asp-for="Email" id="email" placeholder="Enter your email here">
             </li>
             <li id="register-form">
+                <label asp-for="FirstName">Firstname</label>
+                <input asp-for="FirstName" id="firstname" placeholder="Enter your first name here">
+            </li>
+            <li id="register-form">
+                <label asp-for="LastName">Lastname</label>
+                <input asp-for="LastName" id="lastname" placeholder="Enter your last name here">
+            </li>
+            <li id="register-form">
+                <label asp-for="IbuId">IbuId</label>
+                <input asp-for="IbuId" id="ibuid" placeholder="Enter your IbuID here">
+            </li>
+            <li id="register-form">
                 <label asp-for="Password">Password</label>
                 <input asp-for="Password" id="phone" placeholder="Enter your password here">
             </li>
-
             <li id="register-form">
                 <label asp-for="ConfirmPassword">Confirm Password</label>
                 <input asp-for="ConfirmPassword" id="phone" placeholder="Enter your password here">
@@ -24,7 +35,7 @@
                 <label for="role"> Jag är:</label>
                 <ul class="flex-inner">
                     <li>
-                        <input type="checkbox">
+                        <input type="checkbox" id="coach" runat="server" >
                         <label for="coach">Coach</label>
                     </li>
                     <li>
