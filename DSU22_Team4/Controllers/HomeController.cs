@@ -53,6 +53,7 @@ namespace DSU22_Team4.Controllers
                  
                 weather = await _weather.GetWeatherByPointAndTimeAsync(63.190586, 14.658355, new DateTime(2022, 02, 04, 18, 38, 00));
             }
+
             catch (System.Exception)
             {
                 var model = new HomeViewModel();
