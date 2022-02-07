@@ -10,8 +10,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace DSU22_Team4.Migrations.LoginDb
 {
     [DbContext(typeof(LoginDbContext))]
-    [Migration("20220201174935_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20220207140428_initialcreate")]
+    partial class initialcreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
