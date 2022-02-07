@@ -12,7 +12,7 @@ namespace DSU22_Team4.Models.Poco
         public string  TimeToFire { get; set; }
 
         public string Result { get; set; }
-
+        public FiringCoords FiringCoords { get; set; }
         
     }
 }

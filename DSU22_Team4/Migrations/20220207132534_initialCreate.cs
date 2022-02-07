@@ -5,7 +5,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace DSU22_Team4.Migrations
 {
-    public partial class initialcreate : Migration
+    public partial class initialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -19,6 +19,20 @@ namespace DSU22_Team4.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Athlete", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "FiringCoords",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    X = table.Column<double>(type: "double precision", nullable: false),
+                    Y = table.Column<double>(type: "double precision", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_FiringCoords", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -114,11 +128,18 @@ namespace DSU22_Team4.Migrations
                     ShotNr = table.Column<int>(type: "integer", nullable: false),
                     TimeToFire = table.Column<string>(type: "text", nullable: true),
                     Result = table.Column<string>(type: "text", nullable: true),
+                    FiringCoordsId = table.Column<int>(type: "integer", nullable: true),
                     SerieId = table.Column<int>(type: "integer", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Shot", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Shot_FiringCoords_FiringCoordsId",
+                        column: x => x.FiringCoordsId,
+                        principalTable: "FiringCoords",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Shot_Serie_SerieId",
                         column: x => x.SerieId,
@@ -131,6 +152,11 @@ namespace DSU22_Team4.Migrations
                 name: "IX_Serie_TrainingSessionId",
                 table: "Serie",
                 column: "TrainingSessionId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Shot_FiringCoordsId",
+                table: "Shot",
+                column: "FiringCoordsId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Shot_SerieId",
@@ -160,6 +186,9 @@ namespace DSU22_Team4.Migrations
 
             migrationBuilder.DropTable(
                 name: "Sleep");
+
+            migrationBuilder.DropTable(
+                name: "FiringCoords");
 
             migrationBuilder.DropTable(
                 name: "Serie");
