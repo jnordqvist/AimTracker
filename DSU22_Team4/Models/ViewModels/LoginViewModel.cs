@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DSU22_Team4.Models.Poco;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -8,6 +9,7 @@ namespace DSU22_Team4.Models.ViewModels
 {
     public class LoginViewModel
     {
+        public User User { get; set; }
         [Required]
         [EmailAddress]
         public string Email { get; set; }

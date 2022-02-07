@@ -33,12 +33,12 @@ namespace DSU22_Team4
             services.AddSingleton<IApiClient, ApiClient>();
             services.AddScoped<IStatsDbRepository, StatsDbRepository>();
 
-            string connection = Configuration["ConnectionString:Default"];
-            string connection2 = Configuration["ConnectionString:Develop"];
+            string connection = Configuration["ConnectionStrings:Default"];
+            string connection2 = Configuration["ConnectionStrings:Develop"];
 
             try
             {
-                string weatherKey = Configuration["ConnectionString:Weather"];
+                string weatherKey = Configuration["ConnectionStrings:Weather"];
                 services.AddSingleton<IOpenWeather>(provider => new OpenWeather(provider.GetService<IApiClient>(), weatherKey));
             }
             catch
@@ -46,7 +46,7 @@ namespace DSU22_Team4
 
             }                                                      
 
-            services.AddDbContext<AppDbContext>(o => o.UseNpgsql(connection,
+            services.AddDbContext<AppDbContext>(o => o.UseNpgsql(connection2,
             options => options.SetPostgresVersion(new Version(14, 1))));
 
             services.AddDbContext<LoginDbContext>(o => o.UseNpgsql(connection,

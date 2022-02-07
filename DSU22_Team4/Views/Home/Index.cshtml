@@ -3,7 +3,7 @@
 }
 @model HomeViewModel
 
-<div id="container-home-content">
+<<div id="container-home-content">
     <div id="container-welcome">
         <img id="img-profile" src="~/img/profilepic.jpg" default="Profile Pic" />
         <p id="welcome">Linn Persson</p>
@@ -14,7 +14,7 @@
         <button class="btn"><i class="fa fa-home"></i> Injuries</button>
     </div>
     <div class="container-last-session">
-         <a asp-action="Index" asp-controller="SessionDetails" asp-route-id="@Model.Athlete.TrainingSession.ToList()[0].Id">
+         <a asp-action="Index" asp-controller="SessionDetails" asp-route-id="@Model.Athlete.TrainingSession.ToList()[0].Id"/>
         <div class="last-session-top">
             <div class="last-session-date">
                 
@@ -54,6 +54,7 @@
                 <button class="btn" id="edit-btn"><i class="fa fa-home"></i> Edit</button>
             </div>
         </div>
+    </div>
         <p id="previous-sessions">Previous Sessions</p>
         <div class="container-other-sessions">
             <div class="items-other-session">
@@ -74,8 +75,8 @@
                 <p class="hit-rate ">Hits: @Model.GetTotalNumOfHits(Model.Athlete.TrainingSession.FirstOrDefault()) / @Model.GetTotalNumOfShots(Model.Athlete.TrainingSession.FirstOrDefault())</p>
 
             </div>
-</div>
-</div>
+<       </div>
+<</div>
 
  
 

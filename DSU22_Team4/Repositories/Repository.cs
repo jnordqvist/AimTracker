@@ -12,6 +12,8 @@ namespace DSU22_Team4.Repositories
         private readonly IApiClient apiClient;
         private readonly string baseEndPoint = "https://grupp8.dsvkurs.miun.se/api/Training/";
         private readonly string basePoint = "https://grupp8.dsvkurs.miun.se/api/history/Date/";
+        private readonly string startDateEndpoint = "startDate=";
+        private readonly string endDateEndpoint = "endDate=";
 
         public Repository(IApiClient apiClient)
         {
@@ -29,22 +31,14 @@ namespace DSU22_Team4.Repositories
             };
 
             return trainingSessions1;
-
         }
 
-        public async Task<List<TrainingSession>> GetAimTrackerDataByDate()
+        public async Task<List<TrainingSession>> GetAimTrackerDataByDate(string athleteId, string startDate, string endDate)
         {
-            var athlete = "BTSWE11008199501";
-            var startDate = "startDate=220103";
-            var endDate = "endDate=220105";
-
-            var training = await apiClient.GetAsync <List<TrainingSession>>($"{basePoint}{athlete}?{startDate}&{endDate}");
-
+            var training = await apiClient.GetAsync <List<TrainingSession>>($"{basePoint}" +
+                $"{athleteId}?{startDateEndpoint}{startDate}&{endDateEndpoint}{endDate}");
             
             return training;
-
-        
-
         }
 
         //private async Task<TrainingSession> DoAsync(TrainingSession trainingSession)

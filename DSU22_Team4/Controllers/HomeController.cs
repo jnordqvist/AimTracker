@@ -4,6 +4,7 @@ using DSU22_Team4.Models.Poco;
 using DSU22_Team4.Models.ViewModels;
 using DSU22_Team4.Repositories;
 using DSU22_Team4.Repositories.OpenWeather;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -21,13 +22,15 @@ namespace DSU22_Team4.Controllers
         private IRepository _repository;
         private List<TrainingSession> trainingSessions;
         private List<TrainingSession> sessions;
+        private readonly UserManager<IdentityUser> _userManager;
         private IOpenWeather _weather;
 
-        public HomeController(ILogger<HomeController> logger, IStatsDbRepository repo, IRepository repository, IOpenWeather weather)
+        public HomeController(ILogger<HomeController> logger, IStatsDbRepository repo, IRepository repository, UserManager<IdentityUser> userManager, IOpenWeather weather)
         {
             _logger = logger;
             _repo = repo;
             _repository = repository;
+            _userManager = userManager;
             _weather = weather;
         }
 
@@ -36,22 +39,27 @@ namespace DSU22_Team4.Controllers
             await Task.Delay(0);
             //await FillAimTrackerDatabase();
             var athlete = _repo.GetAthleteById("1");
-          
+
+            var user = await _userManager.GetUserAsync(HttpContext.User);
+            string athleteId = user.Id;
+            string startDate = "220123";
+            string endDate = "220206";
+
             var weather = new WeatherInfoDto();
-            //try
-            //{ s
+            try
+            {
                 trainingSessions = await _repository.GetAimTrackerData();
-                sessions = await _repository.GetAimTrackerDataByDate();
+                sessions = await _repository.GetAimTrackerDataByDate(athleteId, startDate, endDate);
                  
-                weather = await _weather.GetWeatherByPointAndTimeAsync(63.190586, 14.658355, new DateTime(2022, 02, 03, 18, 38, 00));
-            //}
-            //catch (System.Exception)
-            //{
-            //    //var model = new HomeViewModel();
-            //    //ModelState.AddModelError(string.Empty, "Failed to connect to api");
-            //    //return View(model);
-            //    //throw;
-            //}
+                weather = await _weather.GetWeatherByPointAndTimeAsync(63.190586, 14.658355, new DateTime(2022, 02, 04, 18, 38, 00));
+            }
+            catch (System.Exception)
+            {
+                var model = new HomeViewModel();
+                ModelState.AddModelError(string.Empty, "Failed to connect to api");
+                return View(model);
+                throw;
+            }
 
             return View(new HomeViewModel(athlete, trainingSessions, weather));
         }
@@ -59,7 +67,6 @@ namespace DSU22_Team4.Controllers
         public async Task  FillAimTrackerDatabase()
         {
             var data =  await _repository.GetAimTrackerData();
-
             var athlete = new Athlete()
             {
                 Id = "1",
