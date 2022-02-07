@@ -194,8 +194,7 @@ p {
 }
 
     .topnav #myLinks {
-        display: none;
-        
+        display: none;        
     }
 
     .topnav a {
@@ -215,9 +214,6 @@ p {
             top: 0;
             padding: 40px;
         }
-
-
-
 
 .active {
     background-color: #212977;

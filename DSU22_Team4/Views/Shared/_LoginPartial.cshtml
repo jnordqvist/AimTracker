@@ -1,0 +1,10 @@
+﻿@using System.Security.Claims
+
+@if (User.Identity.IsAuthenticated)
+{
+    var claims = (ClaimsIdentity)User.Identity;
+    var fullName = claims.FindFirst(x => x.Type == "FullName").Value;
+
+        <a id="user" asp-action="Index" asp-controller="Home">@fullName</a>
+        <a id="user" asp-action="Logout" asp-controller="Account">Log out</a>
+} 

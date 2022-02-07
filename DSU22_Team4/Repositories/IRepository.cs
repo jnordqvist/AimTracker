@@ -9,6 +9,6 @@ namespace DSU22_Team4.Repositories
     public interface IRepository
     {
         Task<List<TrainingSession>>GetAimTrackerData();
-        Task<List<TrainingSession>> GetAimTrackerDataByDate();
+        Task<List<TrainingSession>> GetAimTrackerDataByDate(string athleteId, string startDate, string endDate);
     }
 }

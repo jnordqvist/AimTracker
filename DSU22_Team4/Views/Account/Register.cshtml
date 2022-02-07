@@ -35,11 +35,11 @@
                 <label for="role"> Jag är:</label>
                 <ul class="flex-inner">
                     <li>
-                        <input type="checkbox" id="coach" runat="server" >
+                        <input type="checkbox" id="coach" asp-for="IsCoach" >
                         <label for="coach">Coach</label>
                     </li>
                     <li>
-                        <input type="checkbox" id="athlete">
+                        <input type="checkbox" id="athlete" asp-for="IsAthlete">
                         <label for="athlete">Athlete</label>
                     </li>
                 </ul>
