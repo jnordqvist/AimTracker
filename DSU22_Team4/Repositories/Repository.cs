@@ -35,8 +35,8 @@ namespace DSU22_Team4.Repositories
         public async Task<List<TrainingSession>> GetAimTrackerDataByDate()
         {
             var athlete = "BTSWE11008199501";
-            var startDate = "startDate=220103";
-            var endDate = "endDate=220105";
+            var startDate = "startDate=220127";
+            var endDate = "endDate=220204";
 
             var training = await apiClient.GetAsync <List<TrainingSession>>($"{basePoint}{athlete}?{startDate}&{endDate}");
 
