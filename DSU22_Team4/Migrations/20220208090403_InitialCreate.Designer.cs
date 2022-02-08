@@ -11,8 +11,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace DSU22_Team4.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220203101733_initialcreate")]
-    partial class initialcreate
+    [Migration("20220208090403_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
