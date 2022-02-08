@@ -4,11 +4,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace DSU22_Team4.Migrations.LoginDb
 {
-<<<<<<< HEAD:DSU22_Team4/Migrations/LoginDb/20220208090454_InitialCreate.cs
     public partial class InitialCreate : Migration
-=======
-    public partial class initialcreate : Migration
->>>>>>> 112b129c931806608d61595e318ac136491ab369:DSU22_Team4/Migrations/LoginDb/20220207140428_initialcreate.cs
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

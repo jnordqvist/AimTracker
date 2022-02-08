@@ -34,7 +34,6 @@ namespace DSU22_Team4
             services.AddScoped<IStatsDbRepository, StatsDbRepository>();
 
             string connection = Configuration["ConnectionStrings:Default"];
-            string connection2 = Configuration["ConnectionStrings:Develop"];
 
             try
             {
