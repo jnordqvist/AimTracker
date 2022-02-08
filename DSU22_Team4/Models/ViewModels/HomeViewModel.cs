@@ -71,10 +71,10 @@ namespace DSU22_Team4.Models.ViewModels
             return $"{result * 100}%";
         }
 
-        public int GetTotalNumOfShots(TrainingSession session)
+        public int GetTotalNumOfShots(TrainingSession trainingsession)
         {
             int shots = 0;
-            foreach (var serie in session.Results)
+            foreach (var serie in trainingsession.Results)
             {
                 foreach (var shot in serie.Shots)
                 {
@@ -84,10 +84,10 @@ namespace DSU22_Team4.Models.ViewModels
             return shots;
         }
 
-        public int GetTotalNumOfHits(TrainingSession session)
+        public int GetTotalNumOfHits(TrainingSession trainingsession)
         {
             int hits = 0;
-            foreach (var serie in session.Results)
+            foreach (var serie in trainingsession.Results)
             {
                 foreach (var shot in serie.Shots)
                 {

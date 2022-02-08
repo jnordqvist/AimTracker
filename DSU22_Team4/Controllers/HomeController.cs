@@ -24,7 +24,7 @@ namespace DSU22_Team4.Controllers
         private List<TrainingSession> sessions;
         private readonly UserManager<IdentityUser> _userManager;
         private IOpenWeather _weather;
-        private List<Athlete> athletes;
+        private List<AthleteDto> athletes;
         public HomeController(ILogger<HomeController> logger, IStatsDbRepository repo, IRepository repository, UserManager<IdentityUser> userManager, IOpenWeather weather)
         {
             _logger = logger;
@@ -37,18 +37,22 @@ namespace DSU22_Team4.Controllers
         public async Task<IActionResult> Index()
         {
             await Task.Delay(0);
-            //await FillAimTrackerDatabase();
-            var athlete = _repo.GetAthleteById("1");
+            
+            //await FillDataToAthlete();
+
+
 
             var user = await _userManager.GetUserAsync(HttpContext.User);
             string athleteId = user.Id;
             string startDate = "220123";
             string endDate = "220206";
-
+            
+            var athlete = _repo.GetAthleteById(user.Id);
+            //await FillAimTrackerDatabase();
             var weather = new WeatherInfoDto();
             try
             {
-                trainingSessions = await _repository.GetAimTrackerData();
+                trainingSessions = await _repository.GetAimTrackerData(athleteId);
                 sessions = await _repository.GetAimTrackerDataByDate(athleteId, startDate, endDate);
                 athletes = await _repository.GetAthletesAsync();
                 weather = await _weather.GetWeatherByPointAndTimeAsync(63.190586, 14.658355, new DateTime(2022, 02, 04, 18, 38, 00));
@@ -65,17 +69,33 @@ namespace DSU22_Team4.Controllers
             return View(new HomeViewModel(athlete, trainingSessions, weather));
         }
 
-        public async Task  FillAimTrackerDatabase()
-        {
-            var data =  await _repository.GetAimTrackerData();
-            var athlete = new Athlete()
-            {
-                Id = "1",
-                TrainingSession = data
+        //public async Task FillAimTrackerDatabase()
+        //{
+        //    //var data = await _repository.GetAimTrackerData();
+        //    var athlete = new Athlete()
+        //    {
+                
+        //        TrainingSession = data
 
-            };
-            _repo.Seed(athlete);
+        //    };
+        //    _repo.Seed(athlete);
+        //}
+
+        public async Task FillDataToAthlete()
+        {
+            var data = await _repository.GetAthletesAsync();
+            
+            foreach (var a in data)
+            {
+                var athlete = new Athlete();
+                athlete.Id = a.IbuId;
+                _repository.SeedAthletes(athlete);
+
+            }
+           
         }
+    }
+
 
         //public HomeController(IRepository repository)
         //{
@@ -113,4 +133,4 @@ namespace DSU22_Team4.Controllers
 
 
     }
-}
+

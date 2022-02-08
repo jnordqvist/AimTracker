@@ -11,8 +11,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace DSU22_Team4.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220208095322_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20220208131505_initialCreate")]
+    partial class initialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -25,9 +25,6 @@ namespace DSU22_Team4.Migrations
             modelBuilder.Entity("DSU22_Team4.Models.Poco.Athlete", b =>
                 {
                     b.Property<string>("Id")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Name")
                         .HasColumnType("text");
 
                     b.HasKey("Id");

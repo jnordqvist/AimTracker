@@ -10,6 +10,7 @@ namespace DSU22_Team4.Data
     public class AppDbContext: DbContext
     {    
         public DbSet <Athlete> Athlete { get; set; }
+        
         public DbSet<TrainingSession> TrainingSession { get; set; }
         public DbSet<Sleep> Sleep { get; set; }
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
