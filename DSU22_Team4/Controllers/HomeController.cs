@@ -24,7 +24,7 @@ namespace DSU22_Team4.Controllers
         private List<TrainingSession> sessions;
         private readonly UserManager<IdentityUser> _userManager;
         private IOpenWeather _weather;
-
+        private List<Athlete> athletes;
         public HomeController(ILogger<HomeController> logger, IStatsDbRepository repo, IRepository repository, UserManager<IdentityUser> userManager, IOpenWeather weather)
         {
             _logger = logger;
@@ -50,7 +50,7 @@ namespace DSU22_Team4.Controllers
             {
                 trainingSessions = await _repository.GetAimTrackerData();
                 sessions = await _repository.GetAimTrackerDataByDate(athleteId, startDate, endDate);
-                 
+                athletes = await _repository.GetAthletesAsync();
                 weather = await _weather.GetWeatherByPointAndTimeAsync(63.190586, 14.658355, new DateTime(2022, 02, 04, 18, 38, 00));
             }
 

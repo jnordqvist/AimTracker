@@ -12,6 +12,7 @@ namespace DSU22_Team4.Repositories
         private readonly IApiClient apiClient;
         private readonly string baseEndPoint = "https://grupp8.dsvkurs.miun.se/api/Training/";
         private readonly string basePoint = "https://grupp8.dsvkurs.miun.se/api/history/Date/";
+        private readonly string baseEndPointAthlete = "https://grupp8.dsvkurs.miun.se/api/athletes";
         private readonly string startDateEndpoint = "startDate=";
         private readonly string endDateEndpoint = "endDate=";
 
@@ -41,18 +42,12 @@ namespace DSU22_Team4.Repositories
             return training;
         }
 
-        //private async Task<TrainingSession> DoAsync(TrainingSession trainingSession)
-        //{
-        //    var athleteId = 1;
-        //    var result = await apiClient.GetAsync<TrainingSession>($"{baseEndPoint}{athleteId}");
-        //    trainingSession.Date = result.Date;
-        //    trainingSession.IbuId = result.IbuId;
-        //    trainingSession.Id = result.Id;
-        //    trainingSession.Location = result.Location;
-        //    trainingSession.Results = result.Results;
+        public async Task<List<Athlete>> GetAthletesAsync()
+        {
+            var athletes = await apiClient.GetAsync<List<Athlete>>($"{baseEndPointAthlete}");
+            return athletes;
+        }
 
-        //    return trainingSession;
-        //}
 
     }
 }
