@@ -44,11 +44,8 @@ namespace DSU22_Team4.Repositories
 
         public async Task<List<Athlete>> GetAthletesAsync()
         {
-
             var athletes = await apiClient.GetAsync<List<Athlete>>($"{baseEndPointAthlete}");
             return athletes;
-
-
         }
 
 
