@@ -33,6 +33,24 @@ namespace DSU22_Team4.Migrations
                     b.ToTable("Athlete");
                 });
 
+            modelBuilder.Entity("DSU22_Team4.Models.Poco.FiringCoords", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<double>("X")
+                        .HasColumnType("double precision");
+
+                    b.Property<double>("Y")
+                        .HasColumnType("double precision");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("FiringCoords");
+                });
+
             modelBuilder.Entity("DSU22_Team4.Models.Poco.Geometry", b =>
                 {
                     b.Property<int>("Id")
@@ -78,6 +96,9 @@ namespace DSU22_Team4.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
+                    b.Property<int?>("FiringCoordsId")
+                        .HasColumnType("integer");
+
                     b.Property<string>("Result")
                         .HasColumnType("text");
 
@@ -91,6 +112,8 @@ namespace DSU22_Team4.Migrations
                         .HasColumnType("text");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("FiringCoordsId");
 
                     b.HasIndex("SerieId");
 
@@ -161,9 +184,15 @@ namespace DSU22_Team4.Migrations
 
             modelBuilder.Entity("DSU22_Team4.Models.Poco.Shot", b =>
                 {
+                    b.HasOne("DSU22_Team4.Models.Poco.FiringCoords", "FiringCoords")
+                        .WithMany()
+                        .HasForeignKey("FiringCoordsId");
+
                     b.HasOne("DSU22_Team4.Models.Poco.Serie", null)
                         .WithMany("Shots")
                         .HasForeignKey("SerieId");
+
+                    b.Navigation("FiringCoords");
                 });
 
             modelBuilder.Entity("DSU22_Team4.Models.Poco.Sleep", b =>

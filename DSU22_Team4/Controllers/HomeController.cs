@@ -61,7 +61,7 @@ namespace DSU22_Team4.Controllers
                 return View(model);
                 throw;
             }
-
+            //return View();
             return View(new HomeViewModel(athlete, trainingSessions, weather));
         }
 
