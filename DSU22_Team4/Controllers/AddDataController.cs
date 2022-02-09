@@ -15,13 +15,15 @@ namespace DSU22_Team4.Controllers
         private readonly IStatsDbRepository _db;
         private readonly IRepository _repository;
         private readonly IOpenWeather _weather;
-        
 
-        public AddDataController(IStatsDbRepository db, IRepository repository, IOpenWeather weather)
+        private readonly Athlete _athlete;
+
+        public AddDataController(IStatsDbRepository db, IRepository repository, IOpenWeather weather, Athlete athlete)
         {
             _db = db;
             _repository = repository;
             _weather = weather;
+            _athlete = athlete;
         }
         public IActionResult Index()
         {
@@ -37,8 +39,8 @@ namespace DSU22_Team4.Controllers
                 AwakeTime = model.AwakeTime,
                 Quality = model.Quality
             };
-
-            var res = await _repository.GetAimTrackerData();
+            
+            var res = await _repository.GetAimTrackerData(_athlete.Id);
             var aimTrackerData = res.FirstOrDefault();
 
             var timeStamp = aimTrackerData.Date;
