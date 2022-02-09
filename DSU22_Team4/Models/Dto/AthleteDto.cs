@@ -11,7 +11,7 @@ namespace DSU22_Team4.Models.Dto
         public string FullName { get; set; }
         public string FamilyName { get; set; }
         public string GivenName { get; set; }
-        public string Contry { get; set; }
+        public string Country { get; set; }
         public string Nat { get; set; }
         public string GenderId{ get; set; }
         public string MaxHeartRate { get; set; }

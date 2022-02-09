@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace DSU22_Team4.Models.Poco
 {
-    public class FiringCoords
+    public class FiringCoordsDto
     {
         public int Id { get; set; }
         public double X { get; set; }

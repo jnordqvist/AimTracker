@@ -8,9 +8,9 @@ namespace DSU22_Team4.Models.ViewModels
 {
     public class SessionDetailViewModel
     {
-        public TrainingSession TrainingSession{ get; set; }
+        public TrainingSessionDto TrainingSession{ get; set; }
 
-        public SessionDetailViewModel(TrainingSession trainingSession)
+        public SessionDetailViewModel(TrainingSessionDto trainingSession)
         {
 
             TrainingSession = trainingSession;
