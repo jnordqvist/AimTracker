@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace DSU22_Team4.Models.Poco
 {
-    public class Serie
+    public class SerieDto
     {
         public int Id { get; set; }
 
@@ -13,7 +13,7 @@ namespace DSU22_Team4.Models.Poco
 
         public DateTime DateTime { get; set; }
 
-        public virtual ICollection <Shot> Shots { get; set; }
+        public virtual ICollection <ShotDto> Shots { get; set; }
         
     }
 }

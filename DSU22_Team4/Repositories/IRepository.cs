@@ -8,8 +8,8 @@ namespace DSU22_Team4.Repositories
 {
     public interface IRepository
     {
-        Task<List<TrainingSession>>GetAimTrackerData();
-        Task<List<TrainingSession>> GetAimTrackerDataByDate(string athleteId, string startDate, string endDate);
+        Task<List<TrainingSessionDto>>GetAimTrackerData();
+        Task<List<TrainingSessionDto>> GetAimTrackerDataByDate(string athleteId, string startDate, string endDate);
         Task<List<Athlete>> GetAthletesAsync();
     }
 }

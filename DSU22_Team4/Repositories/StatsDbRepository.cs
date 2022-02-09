@@ -74,7 +74,7 @@ namespace DSU22_Team4.Repositories
             throw new NotImplementedException();
         }
 
-        public  TrainingSession GetTrainingSession(string id)
+        public  TrainingSessionDto GetTrainingSession(string id)
         {
           
             var session = _db.TrainingSession.Where(x => x.Id == id).FirstOrDefault();
