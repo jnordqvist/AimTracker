@@ -12,13 +12,13 @@ namespace DSU22_Team4.Controllers
 {
     public class AddDataController : Controller
     {
-        private readonly IStatsDbRepository _db;
+        private readonly IDbRepository _db;
         private readonly IRepository _repository;
         private readonly IOpenWeather _weather;
 
         private readonly Athlete _athlete;
 
-        public AddDataController(IStatsDbRepository db, IRepository repository, IOpenWeather weather, Athlete athlete)
+        public AddDataController(IDbRepository db, IRepository repository, IOpenWeather weather, Athlete athlete)
         {
             _db = db;
             _repository = repository;
@@ -58,16 +58,16 @@ namespace DSU22_Team4.Controllers
 
             
             //var athlete = _db.GetAthleteWithSleep("1");
-            var athlete = _db.GetAthleteById("1");
+            var athlete = _db.GetAthleteById(_athlete.Id);
             _db.AddSleepToAthlete(athlete, sleep);
-            athlete = _db.GetSleep("1", new DateTime(2022, 02, 02, 08, 00, 00));
+            //athlete = _db.GetSleep(_athlete.Id, new DateTime(2022, 02, 07, 08, 00, 00));
 
 
 
             //athlete.TrainingSession.Add(res.FirstOrDefault());
 
             //athlete.Name = "Pelle Andersson";
-            var a = new Athlete(){ Id = "1", TrainingSession = res};
+            //var a = new Athlete(){ Id = "1", TrainingSession = res};
             //_db.UpdateAthlete(athlete);
 
             return View(new SuccessViewModel(athlete));

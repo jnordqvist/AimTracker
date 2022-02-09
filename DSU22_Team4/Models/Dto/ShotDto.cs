@@ -13,6 +13,7 @@ namespace DSU22_Team4.Models.Poco
 
         public string Result { get; set; }
         public FiringCoordsDto FiringCoords { get; set; }
-        
+        public int HeartRate { get; set; }
+
     }
 }

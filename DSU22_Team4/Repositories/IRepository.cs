@@ -15,7 +15,7 @@ namespace DSU22_Team4.Repositories
         void SeedAthletes(Athlete athlete);
 
         Task<List<TrainingSessionDto>>GetAimTrackerData();
-        Task<List<TrainingSessionDto>> GetAimTrackerDataByDate(string athleteId, string startDate, string endDate);
+        Task<List<TrainingSessionDto>> GetTrainingSessionsByDate(string athleteId, string startDate, string endDate);
        
 
     }

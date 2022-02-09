@@ -6,19 +6,17 @@ using System.Threading.Tasks;
 
 namespace DSU22_Team4.Repositories
 {
-    public interface IStatsDbRepository
+    public interface IDbRepository
     {
-        void UpdateAthlete(Athlete athlete);
+        //void UpdateAthlete(Athlete athlete);
         Task<Athlete> GetAthleteAsync();
         Athlete GetAthleteById(string id);
         void Seed(Athlete a);
-
-
         TrainingSession GetTrainingSession(string id);
-
         void AddSleepToAthlete(Athlete athlete, Sleep sleep);
         Athlete GetAthleteWithSleep(string id);
-        Athlete GetSleep(string id, DateTime date);
-
+        //Athlete GetSleep(string id, DateTime date);
+        void AddLatestTrainingSession(TrainingSession trainingSession);
+        void SeedTrainingSessions(List<TrainingSessionDto> trainingSession);
     }
 }

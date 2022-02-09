@@ -17,17 +17,17 @@ namespace DSU22_Team4.Models.ViewModels
         //public ICollection<Serie> Series { get; set; }
 
         public WeatherInfoDto Weather { get; set; }
-        public List<TrainingSessionDto> TrainingSessions { get; set; }
+        public List<TrainingSession> TrainingSessions { get; set; }
         
 
 
-        public HomeViewModel(Athlete athlete, List<TrainingSessionDto> trainingSessions, WeatherInfoDto weather)
+        public HomeViewModel(Athlete athlete, List<TrainingSession> trainingSessions, WeatherInfoDto weather)
         {
             Athlete = athlete;
             //CalculateSeriesHitPercentage(Series.FirstOrDefault());
-          
-             GetSessionTotalHitPercentage(athlete.TrainingSession.FirstOrDefault());
-            GetSessionAverageHitPercentage(athlete.TrainingSession.FirstOrDefault());
+
+            GetSessionTotalHitPercentage(trainingSessions.FirstOrDefault());
+            GetSessionAverageHitPercentage(trainingSessions.FirstOrDefault());
 
             Weather = weather;
            TrainingSessions= trainingSessions;
@@ -59,7 +59,7 @@ namespace DSU22_Team4.Models.ViewModels
             return hitPercentage;
         }
 
-        public string GetSessionAverageHitPercentage(TrainingSessionDto session)
+        public string GetSessionAverageHitPercentage(TrainingSession session)
         {
             double hitPercentage = 0;
             foreach (var serie in session.Results)
@@ -72,7 +72,7 @@ namespace DSU22_Team4.Models.ViewModels
         }
 
 
-        public int GetTotalNumOfShots(TrainingSessionDto session)
+        public int GetTotalNumOfShots(TrainingSession session)
 
         {
             int shots = 0;
@@ -87,7 +87,7 @@ namespace DSU22_Team4.Models.ViewModels
         }
 
 
-        public int GetTotalNumOfHits(TrainingSessionDto session)
+        public int GetTotalNumOfHits(TrainingSession session)
 
         {
             int hits = 0;
@@ -104,7 +104,7 @@ namespace DSU22_Team4.Models.ViewModels
             return hits;
         }
 
-        public string GetSessionTotalHitPercentage(TrainingSessionDto session)
+        public string GetSessionTotalHitPercentage(TrainingSession session)
         {
             int shots = GetTotalNumOfShots(session);
             int hits = GetTotalNumOfHits(session);
@@ -113,7 +113,7 @@ namespace DSU22_Team4.Models.ViewModels
             return $"{hitPercentage}%";
         }
 
-        public string GetSessionTotalHitPercentageRounded(TrainingSessionDto session)
+        public string GetSessionTotalHitPercentageRounded(TrainingSession session)
         {
             int shots = GetTotalNumOfShots(session);
             int hits = GetTotalNumOfHits(session);
