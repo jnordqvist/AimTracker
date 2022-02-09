@@ -30,7 +30,7 @@ namespace DSU22_Team4.Repositories
         public async Task<List<TrainingSessionDto>> GetAimTrackerData()
         {
             var athleteId = "BTSWE11008199501";
-            var trainingSessions = await apiClient.GetAsync<TrainingSessionDto>($"{baseEndPoint}{athleteId}");
+            var trainingSessions = await _apiClient.GetAsync<TrainingSessionDto>($"{baseEndPoint}{athleteId}");
 
             //await DoAsync(trainingSessions);
             List<TrainingSessionDto> trainingSessions1 = new List <TrainingSessionDto>
@@ -45,7 +45,7 @@ namespace DSU22_Team4.Repositories
         {
 
 
-            var training = await apiClient.GetAsync <List<TrainingSessionDto>>($"{basePoint}" +
+            var training = await _apiClient.GetAsync <List<TrainingSessionDto>>($"{basePoint}" +
 
                 $"{athleteId}?{startDateEndpoint}{startDate}&{endDateEndpoint}{endDate}");  
             return training;

@@ -76,7 +76,7 @@ namespace DSU22_Team4.Models.ViewModels
 
         {
             int shots = 0;
-            foreach (var serie in trainingsession.Results)
+            foreach (var serie in session.Results)
             {
                 foreach (var shot in serie.Shots)
                 {
@@ -91,7 +91,7 @@ namespace DSU22_Team4.Models.ViewModels
 
         {
             int hits = 0;
-            foreach (var serie in trainingsession.Results)
+            foreach (var serie in session.Results)
             {
                 foreach (var shot in serie.Shots)
                 {

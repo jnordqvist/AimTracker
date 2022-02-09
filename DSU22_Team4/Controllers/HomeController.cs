@@ -48,7 +48,7 @@ namespace DSU22_Team4.Controllers
             var weather = new WeatherInfoDto();
             try
             {
-                trainingSessions = await _repository.GetAimTrackerData(athleteId);
+                trainingSessions = await _repository.GetAimTrackerData();
                 sessions = await _repository.GetAimTrackerDataByDate(athleteId, startDate, endDate);
                 athletes = await _repository.GetAthletesAsync();
                 weather = await _weather.GetWeatherByPointAndTimeAsync(63.190586, 14.658355, new DateTime(2022, 02, 04, 18, 38, 00));

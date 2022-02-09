@@ -74,12 +74,12 @@ namespace DSU22_Team4.Repositories
             throw new NotImplementedException();
         }
 
-        public  TrainingSessionDto GetTrainingSession(string id)
+        public TrainingSession GetTrainingSession(string id)
         {
-          
+
             var session = _db.TrainingSession.Where(x => x.Id == id).FirstOrDefault();
             return session;
         }
-       
+
     }
 }

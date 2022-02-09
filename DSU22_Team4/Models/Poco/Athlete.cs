@@ -10,7 +10,7 @@ namespace DSU22_Team4.Models.Poco
     {
         public string Id { get; set; }
 
-        public virtual ICollection <TrainingSession> TrainingSession { get; set; }
+        //public virtual ICollection <TrainingSession> TrainingSession { get; set; }
 
         public virtual ICollection<TrainingSessionDto> TrainingSession { get; set; }
 

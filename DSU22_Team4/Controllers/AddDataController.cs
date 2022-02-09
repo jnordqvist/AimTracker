@@ -40,7 +40,7 @@ namespace DSU22_Team4.Controllers
                 Quality = model.Quality
             };
             
-            var res = await _repository.GetAimTrackerData(_athlete.Id);
+            var res = await _repository.GetAimTrackerData();
             var aimTrackerData = res.FirstOrDefault();
 
             var timeStamp = aimTrackerData.Date;
