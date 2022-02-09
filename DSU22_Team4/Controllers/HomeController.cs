@@ -37,11 +37,7 @@ namespace DSU22_Team4.Controllers
         public async Task<IActionResult> Index()
         {
             await Task.Delay(0);
-            
-            //await FillDataToAthlete();
-
-
-
+            await FillDataToAthlete();
             var user = await _userManager.GetUserAsync(HttpContext.User);
             string athleteId = user.Id;
             string startDate = "220123";
@@ -87,10 +83,12 @@ namespace DSU22_Team4.Controllers
             
             foreach (var a in data)
             {
-                var athlete = new Athlete();
-                athlete.Id = a.IbuId;
-                _repository.SeedAthletes(athlete);
-
+                if (data.Count == 0)
+                {
+                    var athlete = new Athlete();
+                    athlete.Id = a.IbuId;
+                    _repository.SeedAthletes(athlete);
+                }
             }
            
         }
