@@ -26,12 +26,14 @@ namespace DSU22_Team4.Repositories
             _db = db;
         }
 
-        public async Task<List<TrainingSession>> GetAimTrackerData(string athleteid)
+
+        public async Task<List<TrainingSessionDto>> GetAimTrackerData()
         {
-            
-            var trainingSessions = await _apiClient.GetAsync<TrainingSession>($"{baseEndPoint}{athleteid}");
+            var athleteId = "BTSWE11008199501";
+            var trainingSessions = await apiClient.GetAsync<TrainingSessionDto>($"{baseEndPoint}{athleteId}");
+
             //await DoAsync(trainingSessions);
-            List<TrainingSession> trainingSessions1 = new List <TrainingSession>
+            List<TrainingSessionDto> trainingSessions1 = new List <TrainingSessionDto>
             {
                 trainingSessions
             };
@@ -39,10 +41,12 @@ namespace DSU22_Team4.Repositories
             return trainingSessions1;
         }
 
-        public async Task<List<TrainingSession>> GetAimTrackerDataByDate(string athleteId, string startDate, string endDate)
+        public async Task<List<TrainingSessionDto>> GetAimTrackerDataByDate(string athleteId, string startDate, string endDate)
         {
 
-            var training = await _apiClient.GetAsync <List<TrainingSession>>($"{basePoint}" +
+
+            var training = await apiClient.GetAsync <List<TrainingSessionDto>>($"{basePoint}" +
+
                 $"{athleteId}?{startDateEndpoint}{startDate}&{endDateEndpoint}{endDate}");  
             return training;
         }

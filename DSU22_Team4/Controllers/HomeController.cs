@@ -20,8 +20,8 @@ namespace DSU22_Team4.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly IStatsDbRepository _repo;
         private IRepository _repository;
-        private List<TrainingSession> trainingSessions;
-        private List<TrainingSession> sessions;
+        private List<TrainingSessionDto> trainingSessions;
+        private List<TrainingSessionDto> sessions;
         private readonly UserManager<IdentityUser> _userManager;
         private IOpenWeather _weather;
         private List<AthleteDto> athletes;

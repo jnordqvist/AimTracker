@@ -9,7 +9,7 @@ namespace DSU22_Team4.Models.ViewModels
 {
     public class LoginViewModel
     {
-        
+
         [Required]
         [EmailAddress]
         public string Email { get; set; }

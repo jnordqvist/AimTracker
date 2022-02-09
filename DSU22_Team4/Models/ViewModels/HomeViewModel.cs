@@ -17,11 +17,11 @@ namespace DSU22_Team4.Models.ViewModels
         //public ICollection<Serie> Series { get; set; }
 
         public WeatherInfoDto Weather { get; set; }
-        public List<TrainingSession> TrainingSessions { get; set; }
+        public List<TrainingSessionDto> TrainingSessions { get; set; }
         
 
 
-        public HomeViewModel(Athlete athlete, List<TrainingSession> trainingSessions, WeatherInfoDto weather)
+        public HomeViewModel(Athlete athlete, List<TrainingSessionDto> trainingSessions, WeatherInfoDto weather)
         {
             Athlete = athlete;
             //CalculateSeriesHitPercentage(Series.FirstOrDefault());
@@ -38,13 +38,13 @@ namespace DSU22_Team4.Models.ViewModels
         }
 
 
-        public string GetSeriesHitPercentage(Serie serie)
+        public string GetSeriesHitPercentage(SerieDto serie)
         {
             string result = $"{CalculateHitPercentage(serie) * 100}%";
             return result;
         }
 
-        public double CalculateHitPercentage(Serie serie)
+        public double CalculateHitPercentage(SerieDto serie)
         {
             double counter = 0;
             foreach (var shot in serie.Shots)
@@ -59,7 +59,7 @@ namespace DSU22_Team4.Models.ViewModels
             return hitPercentage;
         }
 
-        public string GetSessionAverageHitPercentage(TrainingSession session)
+        public string GetSessionAverageHitPercentage(TrainingSessionDto session)
         {
             double hitPercentage = 0;
             foreach (var serie in session.Results)
@@ -71,7 +71,9 @@ namespace DSU22_Team4.Models.ViewModels
             return $"{result * 100}%";
         }
 
-        public int GetTotalNumOfShots(TrainingSession trainingsession)
+
+        public int GetTotalNumOfShots(TrainingSessionDto session)
+
         {
             int shots = 0;
             foreach (var serie in trainingsession.Results)
@@ -84,7 +86,9 @@ namespace DSU22_Team4.Models.ViewModels
             return shots;
         }
 
-        public int GetTotalNumOfHits(TrainingSession trainingsession)
+
+        public int GetTotalNumOfHits(TrainingSessionDto session)
+
         {
             int hits = 0;
             foreach (var serie in trainingsession.Results)
@@ -100,7 +104,7 @@ namespace DSU22_Team4.Models.ViewModels
             return hits;
         }
 
-        public string GetSessionTotalHitPercentage(TrainingSession session)
+        public string GetSessionTotalHitPercentage(TrainingSessionDto session)
         {
             int shots = GetTotalNumOfShots(session);
             int hits = GetTotalNumOfHits(session);
@@ -109,7 +113,7 @@ namespace DSU22_Team4.Models.ViewModels
             return $"{hitPercentage}%";
         }
 
-        public string GetSessionTotalHitPercentageRounded(TrainingSession session)
+        public string GetSessionTotalHitPercentageRounded(TrainingSessionDto session)
         {
             int shots = GetTotalNumOfShots(session);
             int hits = GetTotalNumOfHits(session);
@@ -118,7 +122,7 @@ namespace DSU22_Team4.Models.ViewModels
             return $"{hitPercentage}";
         }
 
-        public double CalculateAverageXCoord(Serie serie)
+        public double CalculateAverageXCoord(SerieDto serie)
         {
             List<double> listOfXCoords = new List<double>();
             double averageX;
@@ -130,7 +134,7 @@ namespace DSU22_Team4.Models.ViewModels
             return averageX;
         }
 
-        public double CalculateAverageYCoord(Serie serie)
+        public double CalculateAverageYCoord(SerieDto serie)
         {
             List<double> listOfYCoords = new List<double>();
             double averageY;
