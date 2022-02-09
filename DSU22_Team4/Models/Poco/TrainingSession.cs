@@ -12,5 +12,11 @@ namespace DSU22_Team4.Models.Poco
         {
             Id = trainingSession.Id;
         }
+
+
+        public TrainingSession()
+        {
+
+        }
     }
 }

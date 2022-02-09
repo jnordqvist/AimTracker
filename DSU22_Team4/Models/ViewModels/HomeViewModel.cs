@@ -30,7 +30,7 @@ namespace DSU22_Team4.Models.ViewModels
             GetSessionAverageHitPercentage(athlete.TrainingSession.FirstOrDefault());
 
             Weather = weather;
-           TrainingSessions = trainingSessions;
+           TrainingSessions= trainingSessions;
         }
         public HomeViewModel()
         {

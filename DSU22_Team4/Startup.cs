@@ -46,10 +46,10 @@ namespace DSU22_Team4
             }                                                      
 
             services.AddDbContext<AppDbContext>(o => o.UseNpgsql(connection,
-            options => options.SetPostgresVersion(new Version(14, 1))));
+            options => options.SetPostgresVersion(new Version(9, 5))));
 
             services.AddDbContext<LoginDbContext>(o => o.UseNpgsql(connection,
-            options => options.SetPostgresVersion(new Version(14, 1))));
+            options => options.SetPostgresVersion(new Version(9, 5))));
 
             services.AddIdentity<IdentityUser, IdentityRole>()
             .AddEntityFrameworkStores<LoginDbContext>(); ;

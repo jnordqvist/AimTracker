@@ -18,17 +18,17 @@ namespace DSU22_Team4.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly IStatsDbRepository _repo;
+        private readonly IStatsDbRepository _dbrepo;
         private IRepository _repository;
         private List<TrainingSessionDto> trainingSessions;
         private List<TrainingSessionDto> sessions;
         private readonly UserManager<IdentityUser> _userManager;
         private IOpenWeather _weather;
         private List<AthleteDto> athletes;
-        public HomeController(ILogger<HomeController> logger, IStatsDbRepository repo, IRepository repository, UserManager<IdentityUser> userManager, IOpenWeather weather)
+        public HomeController(ILogger<HomeController> logger, IStatsDbRepository dbrepo, IRepository repository, UserManager<IdentityUser> userManager, IOpenWeather weather)
         {
             _logger = logger;
-            _repo = repo;
+            _dbrepo = dbrepo;
             _repository = repository;
             _userManager = userManager;
             _weather = weather;
@@ -43,7 +43,7 @@ namespace DSU22_Team4.Controllers
             string startDate = "220123";
             string endDate = "220206";
             
-            var athlete = _repo.GetAthleteById(user.Id);
+            var athlete = _dbrepo.GetAthleteById(user.Id);
             //await FillAimTrackerDatabase();
             var weather = new WeatherInfoDto();
             try
