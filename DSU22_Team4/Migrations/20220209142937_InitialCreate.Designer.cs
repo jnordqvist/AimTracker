@@ -11,8 +11,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace DSU22_Team4.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220208125751_initialcreate")]
-    partial class initialcreate
+    [Migration("20220209142937_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,17 +20,11 @@ namespace DSU22_Team4.Migrations
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 63)
                 .HasAnnotation("ProductVersion", "5.0.13")
-                .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+                .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn);
 
             modelBuilder.Entity("DSU22_Team4.Models.Poco.Athlete", b =>
                 {
                     b.Property<string>("Id")
-                        .HasColumnType("text");
-
-                    b.Property<string>("IbuId")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Name")
                         .HasColumnType("text");
 
                     b.HasKey("Id");
@@ -38,12 +32,12 @@ namespace DSU22_Team4.Migrations
                     b.ToTable("Athlete");
                 });
 
-            modelBuilder.Entity("DSU22_Team4.Models.Poco.FiringCoords", b =>
+            modelBuilder.Entity("DSU22_Team4.Models.Poco.FiringCoordsDto", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn);
 
                     b.Property<double>("X")
                         .HasColumnType("double precision");
@@ -53,7 +47,7 @@ namespace DSU22_Team4.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("FiringCoords");
+                    b.ToTable("FiringCoordsDto");
                 });
 
             modelBuilder.Entity("DSU22_Team4.Models.Poco.Geometry", b =>
@@ -61,7 +55,7 @@ namespace DSU22_Team4.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn);
 
                     b.Property<List<double>>("Coordinates")
                         .HasColumnType("double precision[]");
@@ -76,7 +70,31 @@ namespace DSU22_Team4.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn);
+
+                    b.Property<double>("AverageXCoord")
+                        .HasColumnType("double precision");
+
+                    b.Property<double>("AverageYCoord")
+                        .HasColumnType("double precision");
+
+                    b.Property<DateTime>("DateTime")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("Stance")
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Serie");
+                });
+
+            modelBuilder.Entity("DSU22_Team4.Models.Poco.SerieDto", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn);
 
                     b.Property<DateTime>("DateTime")
                         .HasColumnType("timestamp without time zone");
@@ -91,7 +109,7 @@ namespace DSU22_Team4.Migrations
 
                     b.HasIndex("TrainingSessionId");
 
-                    b.ToTable("Serie");
+                    b.ToTable("SerieDto");
                 });
 
             modelBuilder.Entity("DSU22_Team4.Models.Poco.Shot", b =>
@@ -99,13 +117,40 @@ namespace DSU22_Team4.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn);
+
+                    b.Property<int>("HeartRate")
+                        .HasColumnType("integer");
+
+                    b.Property<double>("X")
+                        .HasColumnType("double precision");
+
+                    b.Property<double>("Y")
+                        .HasColumnType("double precision");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Shot");
+                });
+
+            modelBuilder.Entity("DSU22_Team4.Models.Poco.ShotDto", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn);
 
                     b.Property<int?>("FiringCoordsId")
                         .HasColumnType("integer");
 
+                    b.Property<int>("HeartRate")
+                        .HasColumnType("integer");
+
                     b.Property<string>("Result")
                         .HasColumnType("text");
+
+                    b.Property<int?>("SerieDtoId")
+                        .HasColumnType("integer");
 
                     b.Property<int?>("SerieId")
                         .HasColumnType("integer");
@@ -120,9 +165,11 @@ namespace DSU22_Team4.Migrations
 
                     b.HasIndex("FiringCoordsId");
 
+                    b.HasIndex("SerieDtoId");
+
                     b.HasIndex("SerieId");
 
-                    b.ToTable("Shot");
+                    b.ToTable("ShotDto");
                 });
 
             modelBuilder.Entity("DSU22_Team4.Models.Poco.Sleep", b =>
@@ -130,7 +177,7 @@ namespace DSU22_Team4.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn);
 
                     b.Property<string>("AthleteId")
                         .HasColumnType("text");
@@ -156,9 +203,6 @@ namespace DSU22_Team4.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("text");
 
-                    b.Property<string>("AthleteId")
-                        .HasColumnType("text");
-
                     b.Property<DateTime>("Date")
                         .HasColumnType("timestamp without time zone");
 
@@ -173,25 +217,27 @@ namespace DSU22_Team4.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AthleteId");
-
                     b.HasIndex("GeometryId");
 
                     b.ToTable("TrainingSession");
                 });
 
-            modelBuilder.Entity("DSU22_Team4.Models.Poco.Serie", b =>
+            modelBuilder.Entity("DSU22_Team4.Models.Poco.SerieDto", b =>
                 {
                     b.HasOne("DSU22_Team4.Models.Poco.TrainingSession", null)
                         .WithMany("Results")
                         .HasForeignKey("TrainingSessionId");
                 });
 
-            modelBuilder.Entity("DSU22_Team4.Models.Poco.Shot", b =>
+            modelBuilder.Entity("DSU22_Team4.Models.Poco.ShotDto", b =>
                 {
-                    b.HasOne("DSU22_Team4.Models.Poco.FiringCoords", "FiringCoords")
+                    b.HasOne("DSU22_Team4.Models.Poco.FiringCoordsDto", "FiringCoords")
                         .WithMany()
                         .HasForeignKey("FiringCoordsId");
+
+                    b.HasOne("DSU22_Team4.Models.Poco.SerieDto", null)
+                        .WithMany("Shots")
+                        .HasForeignKey("SerieDtoId");
 
                     b.HasOne("DSU22_Team4.Models.Poco.Serie", null)
                         .WithMany("Shots")
@@ -209,10 +255,6 @@ namespace DSU22_Team4.Migrations
 
             modelBuilder.Entity("DSU22_Team4.Models.Poco.TrainingSession", b =>
                 {
-                    b.HasOne("DSU22_Team4.Models.Poco.Athlete", null)
-                        .WithMany("TrainingSession")
-                        .HasForeignKey("AthleteId");
-
                     b.HasOne("DSU22_Team4.Models.Poco.Geometry", "Geometry")
                         .WithMany()
                         .HasForeignKey("GeometryId");
@@ -223,11 +265,14 @@ namespace DSU22_Team4.Migrations
             modelBuilder.Entity("DSU22_Team4.Models.Poco.Athlete", b =>
                 {
                     b.Navigation("Sleep");
-
-                    b.Navigation("TrainingSession");
                 });
 
             modelBuilder.Entity("DSU22_Team4.Models.Poco.Serie", b =>
+                {
+                    b.Navigation("Shots");
+                });
+
+            modelBuilder.Entity("DSU22_Team4.Models.Poco.SerieDto", b =>
                 {
                     b.Navigation("Shots");
                 });

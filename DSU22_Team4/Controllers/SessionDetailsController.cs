@@ -11,9 +11,9 @@ namespace DSU22_Team4.Controllers
 {
     public class SessionDetailsController : Controller
     {
-        private readonly IStatsDbRepository _statsdb;
+        private readonly IDbRepository _statsdb;
 
-        public SessionDetailsController(IStatsDbRepository statsdb)
+        public SessionDetailsController(IDbRepository statsdb)
         {
             _statsdb = statsdb;
         }
