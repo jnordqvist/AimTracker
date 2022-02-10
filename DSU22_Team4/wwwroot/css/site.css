@@ -484,7 +484,7 @@ div.login-form-icon {
             background-color: #DE0000;
         }
 
-    /*STATISTICS PAGE*/
+    /*STATS PAGE*/
     #container-filter-search, container-line-graph {
         display: flex;
         flex-direction: column;
@@ -520,7 +520,7 @@ div.login-form-icon {
     }
 
     #filter-text {
-        font-size: 10px;
+        font-size: 11px;
     }
 
 }
