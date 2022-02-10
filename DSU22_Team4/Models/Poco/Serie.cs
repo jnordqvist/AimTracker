@@ -10,7 +10,7 @@ namespace DSU22_Team4.Models.Poco
         public int Id { get; set; }
         public string Stance { get; set; }
         public DateTime DateTime { get; set; }
-        public virtual ICollection<ShotDto> Shots { get; set; }
+        public virtual ICollection<Shot> Shots { get; set; }
         public double AverageYCoord { get; set; }
         public double AverageXCoord { get; set; }
 

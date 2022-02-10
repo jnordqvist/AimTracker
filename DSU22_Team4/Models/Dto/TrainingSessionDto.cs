@@ -12,7 +12,7 @@ namespace DSU22_Team4.Models.Poco
         public DateTime Date { get; set; }
         public  string Location { get; set; }
         public string IbuId { get; set;  }
-        public virtual Geometry Geometry { get; set; }
+        public virtual GeometryDto Geometry { get; set; }
         public virtual ICollection<SerieDto> Results { get; set; }
         
     }

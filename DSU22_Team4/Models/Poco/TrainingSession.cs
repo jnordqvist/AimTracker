@@ -12,7 +12,7 @@ namespace DSU22_Team4.Models.Poco
         public DateTime Date { get; set; }
         public string Location { get; set; }
         public virtual Geometry Geometry { get; set; }
-        public virtual ICollection<SerieDto> Results { get; set; }
+        public virtual ICollection<Serie> Results { get; set; } = new List<Serie>();
 
 
         public TrainingSession(TrainingSessionDto trainingSession)
@@ -20,14 +20,22 @@ namespace DSU22_Team4.Models.Poco
             Id = trainingSession.Id;
             IbuId = trainingSession.IbuId;
             Date = trainingSession.Date;
+            Geometry = new Geometry(trainingSession.Geometry);
             Location = trainingSession.Location;
-            Geometry = trainingSession.Geometry;
-            Results = trainingSession.Results;
+            GetOneResult(trainingSession.Results); 
         }
 
         public TrainingSession()
         {
 
+        }
+
+        public void GetOneResult(ICollection<SerieDto> s)
+        {
+            foreach (var result in  s)
+            {
+                Results.Add(new Serie(result));
+            }
         }
     }
 }

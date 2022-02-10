@@ -37,7 +37,6 @@ namespace DSU22_Team4.Controllers
         {
             await Task.Delay(0);
             await FillDataToAthlete();
-           
             var user = await _userManager.GetUserAsync(HttpContext.User);
             string athleteId = user.Id;
             string startDate = "220123";
@@ -45,10 +44,11 @@ namespace DSU22_Team4.Controllers
             
             var athlete = _dbrepo.GetAthleteById(user.Id);
             await FillDatabaseWithSessions(athlete, startDate, endDate);
+            var trainingSessions = _dbrepo.GetTrainingSessions(athlete.Id);
             var weather = new WeatherInfoDto();
             try
             {
-                weather = await _weather.GetWeatherByPointAndTimeAsync(63.190586, 14.658355, new DateTime(2022, 02, 04, 18, 38, 00));
+                weather = await _weather.GetWeatherByPointAndTimeAsync(63.190586, 14.658355, new DateTime(2022, 02, 08, 18, 38, 00));
             }
 
             catch (System.Exception)
@@ -78,7 +78,8 @@ namespace DSU22_Team4.Controllers
             var data = await _repository.GetAthletesAsync();
             
             foreach (var a in data)
-            {     if (data.Count == 0)
+            {
+                if (data.Count == 0)
                 {
                     var athlete = new Athlete();
                     athlete.Id = a.IbuId;
@@ -97,3 +98,4 @@ namespace DSU22_Team4.Controllers
     }
     }
 
+              
