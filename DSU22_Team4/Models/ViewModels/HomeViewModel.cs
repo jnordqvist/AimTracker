@@ -19,7 +19,7 @@ namespace DSU22_Team4.Models.ViewModels
         public WeatherInfoDto Weather { get; set; }
         public List<TrainingSession> TrainingSessions { get; set; }
         
-
+        
 
         public HomeViewModel(Athlete athlete, List<TrainingSession> trainingSessions, WeatherInfoDto weather)
         {
@@ -36,6 +36,9 @@ namespace DSU22_Team4.Models.ViewModels
         {
 
         }
+
+
+ 
 
 
         public string GetSeriesHitPercentage(Serie serie)

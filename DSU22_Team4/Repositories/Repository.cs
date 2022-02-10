@@ -42,10 +42,11 @@ namespace DSU22_Team4.Repositories
         }
 
         public async Task<List<TrainingSessionDto>> GetTrainingSessionsByDate(string athleteId, string startDate, string endDate)
-        {
+        {    
+            
             var trainingSessions = await _apiClient.GetAsync <List<TrainingSessionDto>>($"{basePoint}" +
             $"{athleteId}?{startDateEndpoint}{startDate}&{endDateEndpoint}{endDate}");
-            
+           
             return trainingSessions;
         }
 
@@ -55,11 +56,6 @@ namespace DSU22_Team4.Repositories
             return athletes;
         }
 
-        public void SeedAthletes(Athlete athlete)
-        {
-            _db.Add(athlete);
-            _db.SaveChanges();
-        }
-
+     
     }
 }
