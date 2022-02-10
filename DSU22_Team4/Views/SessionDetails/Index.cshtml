@@ -1,4 +1,34 @@
 ﻿@model SessionDetailViewModel
 
- @*<h1>@Model.TrainingSession.Location</h1>
-<h1>@Model.TrainingSession.Results</h1>*@
+
+
+
+    <p id="serie-1">Skott-Serie 1</p>
+
+    <div class="container-series">
+        <div class="container-left-arrow">
+          
+            <button class="arrow left">
+                <i class='fas fa-caret-left' style='font-size:36px'></i>
+            </button>
+
+
+        </div>
+
+        <div class="container-shotts">
+            <button id="shot-1" type="submit"></button>
+            <button id="shot-2" type="submit"></button>
+            <button id="shot-3" type="submit"></button>
+            <button id="shot-4" type="submit"></button>
+            <button id="shot-5" type="submit"></button>
+        </div>
+
+        <div class="container-right-arrow">
+            <button class="arrow right">
+                <i  class='fas fa-caret-right' style='font-size:36px; color:royalblue;' ></i>
+            </button>
+        </div>
+    </div>
+
+    @*<h1>@Model.TrainingSession.Location</h1>
+        <h1>@Model.TrainingSession.Results</h1>*@

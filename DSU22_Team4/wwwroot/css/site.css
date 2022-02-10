@@ -184,8 +184,38 @@ p {
     text-align:center;
     font-size:12px;
 }
+/*SessionDetail*/
 
- NAV
+.container-series {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex: 33%;
+}
+
+#shot-1, #shot-2, #shot-3, #shot-4, #shot-5 {
+    border-radius: 50%;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    width: 50px;
+    height: 50px;
+    margin-right:22px;
+  
+}
+#serie-1 {
+    text-align: center;
+   font-size:20px;
+   padding-top:5%;
+   padding-bottom:15%;
+}
+
+.container-shotts {
+    display: flex;
+   
+}
+
+/* NAV*/
+
     .topnav {
     overflow: hidden;
     background-color: #212977;
@@ -225,7 +255,7 @@ p {
 }
 
 
-LOGIN
+/* LOGIN*/
 .imgcontainer 
 {
     align-items: center;
@@ -556,6 +586,7 @@ ul li text {
         }
 
     
+
 
 }
 
