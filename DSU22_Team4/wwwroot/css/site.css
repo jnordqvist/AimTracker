@@ -483,6 +483,46 @@ div.login-form-icon {
         .btn-scale-asc-10:hover {
             background-color: #DE0000;
         }
+
+    /*STATISTICS PAGE*/
+    #container-filter-search, container-line-graph {
+        display: flex;
+        flex-direction: column;
+        background-color: ghostwhite;
+        border-radius: 50px;
+    }
+
+    #filter {
+        background-color: #212977;
+        width: 20%;
+        margin: 5px;
+        border-radius: 50px;
+        justify-content: center;
+        text-align: center;
+        align-self: center;
+        box-shadow: 6px 5px 5px #00000094;
+        color: white;
+    }
+
+    #close-filter-button {
+        background-color: red;
+        border-radius: 50%;
+        color: white;
+        width: 3vh;
+        box-shadow: 2px 2px 5px #00000094
+    }
+
+    #all-filters {
+        flex-flow: wrap;
+        padding: 2vh;
+        display: flex;
+        flex-direction: row;
+    }
+
+    #filter-text {
+        font-size: 10px;
+    }
+
 }
 
 
