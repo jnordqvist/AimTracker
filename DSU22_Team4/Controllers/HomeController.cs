@@ -83,7 +83,7 @@ namespace DSU22_Team4.Controllers
                 {
                     var athlete = new Athlete();
                     athlete.Id = a.IbuId;
-                    _repository.SeedAthletes(athlete);
+                    _dbrepo.SeedAthletes(athlete);
                 }
             }
            

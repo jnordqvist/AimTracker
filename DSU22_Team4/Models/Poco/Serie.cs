@@ -10,7 +10,7 @@ namespace DSU22_Team4.Models.Poco
         public int Id { get; set; }
         public string Stance { get; set; }
         public DateTime DateTime { get; set; }
-        public virtual ICollection<Shot> Shots { get; set; }
+        public virtual ICollection<Shot> Shots { get; set; } = new List<Shot>();
         public double AverageYCoord { get; set; }
         public double AverageXCoord { get; set; }
 
@@ -19,7 +19,11 @@ namespace DSU22_Team4.Models.Poco
             Id = serie.Id;
             Stance = serie.Stance;
             DateTime = serie.DateTime;
-            //Shots = serie.Shots;
+            foreach (var shot in serie.Shots)
+            {
+                Shots.Add(new Shot(shot));
+            }
+            
             AverageYCoord = CalculateAverageYCoord(serie);
             AverageXCoord = CalculateAverageXCoord(serie);
         }
@@ -27,6 +31,8 @@ namespace DSU22_Team4.Models.Poco
         {
             
         }
+
+
 
         public double CalculateAverageXCoord(SerieDto serie)
         {

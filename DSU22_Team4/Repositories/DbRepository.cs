@@ -102,12 +102,14 @@ namespace DSU22_Team4.Repositories
 
         public void SeedTrainingSessions(List<TrainingSessionDto> trainingSessions)
         {  
-            foreach (var s in trainingSessions)
+            foreach (var trainingsession in trainingSessions)
             {
-                var trainingsession = new TrainingSession(s);
-             
-                _db.Add(trainingsession);
-                
+                if (!_db.TrainingSession.Any(x => x.Id == trainingsession.Id))
+                {
+                    var session = new TrainingSession(trainingsession);
+                    
+                    _db.Add(session);
+                }
             }
             _db.SaveChanges();
         }
@@ -117,6 +119,8 @@ namespace DSU22_Team4.Repositories
             _db.Add(athlete);
             _db.SaveChanges();
         }
+
+   
 
         //public void SeedTrainingSessions( List <TrainingSession> trainingSessions)
         //{
