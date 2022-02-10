@@ -29,7 +29,7 @@ namespace DSU22_Team4.Models.ViewModels
             GetSessionTotalHitPercentage(trainingSessions.FirstOrDefault());
             GetSessionAverageHitPercentage(trainingSessions.FirstOrDefault());
 
-            Weather = weather;
+           Weather = weather;
            TrainingSessions= trainingSessions;
         }
         public HomeViewModel()
@@ -38,13 +38,13 @@ namespace DSU22_Team4.Models.ViewModels
         }
 
 
-        public string GetSeriesHitPercentage(SerieDto serie)
+        public string GetSeriesHitPercentage(Serie serie)
         {
             string result = $"{CalculateHitPercentage(serie) * 100}%";
             return result;
         }
 
-        public double CalculateHitPercentage(SerieDto serie)
+        public double CalculateHitPercentage(Serie serie)
         {
             double counter = 0;
             foreach (var shot in serie.Shots)
@@ -122,25 +122,25 @@ namespace DSU22_Team4.Models.ViewModels
             return $"{hitPercentage}";
         }
 
-        public double CalculateAverageXCoord(SerieDto serie)
+        public double CalculateAverageXCoord(Serie serie)
         {
             List<double> listOfXCoords = new List<double>();
             double averageX;
             foreach (var shot in serie.Shots)
             {
-                listOfXCoords.Add(shot.FiringCoords.X);
+                listOfXCoords.Add(shot.X);
             }
             averageX = listOfXCoords.Average();
             return averageX;
         }
 
-        public double CalculateAverageYCoord(SerieDto serie)
+        public double CalculateAverageYCoord(Serie serie)
         {
             List<double> listOfYCoords = new List<double>();
             double averageY;
             foreach (var shot in serie.Shots)
             {
-                listOfYCoords.Add(shot.FiringCoords.Y);
+                listOfYCoords.Add(shot.Y);
             }
             averageY = listOfYCoords.Average();
             return averageY;

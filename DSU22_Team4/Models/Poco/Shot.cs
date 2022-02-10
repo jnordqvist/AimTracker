@@ -9,6 +9,7 @@ namespace DSU22_Team4.Models.Poco
     {
         public int Id { get; set; }
         public int HeartRate { get; set; }
+        public string Result { get; set; }
         public double X { get; set; }
         public double Y { get; set; }
 
@@ -16,6 +17,7 @@ namespace DSU22_Team4.Models.Poco
         {
             Id = shot.Id;
             HeartRate = shot.HeartRate;
+            Result = shot.Result;
             X = shot.FiringCoords.X;
             Y = shot.FiringCoords.Y;
         }

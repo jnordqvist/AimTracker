@@ -75,6 +75,13 @@ namespace DSU22_Team4.Repositories
             var trainingSession= _db.TrainingSession.Where(x => x.IbuId == ibuId).FirstOrDefault();
             return trainingSession;
         }
+        
+        public List<TrainingSession> GetTrainingSessions(string ibuId)
+        {
+            var trainingSessions = _db.TrainingSession.Where(x => x.IbuId == ibuId).OrderByDescending(y => y.Date).Take(5).Include(x => x.Results)
+                .ThenInclude(y => y.Shots);
+            return trainingSessions.ToList();
+        }
 
         public List<TrainingSession> GetPreviousTrainingSessions(string ibuId, string startDate, string endDate)
         {
@@ -97,20 +104,8 @@ namespace DSU22_Team4.Repositories
         {  
             foreach (var s in trainingSessions)
             {
-                var trainingsession = new TrainingSession
-                {
-                    Id = s.Id,
-                    IbuId = s.IbuId,
-                    Date = s.Date,
-                    Geometry = s.Geometry,
-                    Location = s.Location,
-                    Results = s.Results
-
-                   
-                
-
-            };
-          
+                var trainingsession = new TrainingSession(s);
+             
                 _db.Add(trainingsession);
                 
             }
