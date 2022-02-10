@@ -97,11 +97,23 @@ namespace DSU22_Team4.Repositories
         {  
             foreach (var s in trainingSessions)
             {
+                var trainingsession = new TrainingSession
+                {
+                    Id = s.Id,
+                    IbuId = s.IbuId,
+                    Date = s.Date,
+                    Geometry = s.Geometry,
+                    Location = s.Location,
+                    Results = s.Results
+
+                   
                 
-                    trainingSessions.Add(s);
+
+            };
+          
+                _db.Add(trainingsession);
                 
             }
-            _db.Add(trainingSessions);
             _db.SaveChanges();
         }
 
