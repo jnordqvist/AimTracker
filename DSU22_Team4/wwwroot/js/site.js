@@ -1,8 +1,4 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
-
-// Write your JavaScript code.
-
+﻿
 // Declaration of necessary variables 
 let topnav = document.getElementById("myLinks");
 let mediaquery = window.matchMedia("(min-width: 1000px)")
@@ -32,4 +28,42 @@ function displayLinks(mediaquery) {
         topnav.style.display = "none";
     }
 }
+
+/* Get all elements with class="close" */
+var closebtns = document.getElementsByClassName("close");
+var i;
+
+/* Loop through the elements, and hide the parent, when clicked on */
+for (i = 0; i < closebtns.length; i++) {
+    closebtns[i].addEventListener("click", function () {
+        this.parentElement.style.display = 'none';
+    });
+}
+
+var xValues = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000];
+
+new Chart("lineGraph", {
+    type: "line",
+    data: {
+        labels: xValues,
+        datasets: [{
+            data: [860, 1140, 1060, 1060, 1070, 1110, 1330, 2210, 7830, 2478],
+            borderColor: "red",
+            fill: false
+        }, {
+            data: [1600, 1700, 1700, 1900, 2000, 2700, 4000, 5000, 6000, 7000],
+            borderColor: "green",
+            fill: false
+        }, {
+            data: [300, 700, 2000, 5000, 6000, 4000, 2000, 1000, 200, 100],
+            borderColor: "blue",
+            fill: false
+        }]
+    },
+    options: {
+        legend: { display: false }
+    }
+});
+
+
 
