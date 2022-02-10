@@ -1,0 +1,28 @@
+﻿@model StatisticsViewModel
+<div>
+    <p id="filter-search-header">Filter Statistics</p>
+    <div id="container-filter-search">
+        <div id="all-filters">
+            <ul>
+                <li>Time Interval<span class="close">x</span></li>
+                <li>Injuries<span class="close">x</span></li>
+                <partial name="InjuriesPartial" />
+                <li>Weather<span class="close">x</span></li>
+                <li>Intensity<span class="close">x</span></li>
+                <li>Shot Image<span class="close">x</span></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <canvas id="lineGraph" style="width:100%;max-width:700px"></canvas>
+
+
+    @*<div id="container-line-graph">
+        <img id="line-graph" src="~/img/line-graph.png" alt="line graph" />
+    </div>*@
+
+</div>
+
+
+

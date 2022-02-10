@@ -10,9 +10,9 @@ namespace DSU22_Team4.Controllers
 {
     public class StatisticsController : Controller
     {
-        private readonly IStatsDbRepository _statsdb;
+        private readonly IDbRepository _statsdb;
 
-        public StatisticsController(IStatsDbRepository statsdb)
+        public StatisticsController(IDbRepository statsdb)
         {
             _statsdb = statsdb;
         }
