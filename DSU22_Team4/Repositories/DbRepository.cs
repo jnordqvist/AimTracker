@@ -116,7 +116,7 @@ namespace DSU22_Team4.Repositories
         }
 
         public void SeedAthletes(List <AthleteDto> athletedto)
-        {
+        {  //fyller på alla på en gång oavsett vem som loggar in. Fixa sen?
             foreach (var a in athletedto)
             {
                 if (!_db.Athlete.Any(x => x.Id == a.IbuId))
