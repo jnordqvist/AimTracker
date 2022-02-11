@@ -480,10 +480,12 @@ ul li text {
 
     #myLinks a:hover {
         transform: scale(1.2);
+        
     }
 
     #myLinks a {
         transition: all .2s ease-in-out;
+        font-family: Arial, Helvetica, sans-serif;
     }
 
     .grow {

@@ -1,4 +1,5 @@
 ﻿using DSU22_Team4.Data;
+using DSU22_Team4.Models.Dto;
 using DSU22_Team4.Models.Poco;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -114,9 +115,19 @@ namespace DSU22_Team4.Repositories
             _db.SaveChanges();
         }
 
-        public void SeedAthletes(Athlete athlete)
+        public void SeedAthletes(List <AthleteDto> athletedto)
         {
-            _db.Add(athlete);
+            foreach (var a in athletedto)
+            {
+                if (!_db.Athlete.Any(x => x.Id == a.IbuId))
+                {
+                    var athlete = new Athlete(a);
+                    _db.Add(athlete);
+                }
+
+            }
+  
+           
             _db.SaveChanges();
         }
 

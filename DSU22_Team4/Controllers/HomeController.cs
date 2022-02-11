@@ -76,16 +76,8 @@ namespace DSU22_Team4.Controllers
         public async Task FillDataToAthlete()
         {
             var data = await _repository.GetAthletesAsync();
-            
-            foreach (var a in data)
-            {
-                if (data.Count == 0)
-                {
-                    var athlete = new Athlete();
-                    athlete.Id = a.IbuId;
-                    _dbrepo.SeedAthletes(athlete);
-                }
-            }
+
+            _dbrepo.SeedAthletes(data);
            
         }
 
