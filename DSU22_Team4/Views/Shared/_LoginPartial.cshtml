@@ -4,7 +4,15 @@
 {
     var claims = (ClaimsIdentity)User.Identity;
     var fullName = claims.FindFirst(x => x.Type == "FullName").Value;
+<div id="myLinks">
+    <a asp-action="Index" asp-controller="Home">Hem</a>
+    <a href="#Min profil">Min profil</a>
+    <a href="#Inställningar">Inställningar</a>
+    <a id="user" asp-action="Index" asp-controller="Home">@fullName</a>
+    <a id="user" asp-action="Logout" asp-controller="Account">Log out</a>
+</div>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars fa-2x"></i>
+    </a>
 
-        <a id="user" asp-action="Index" asp-controller="Home">@fullName</a>
-        <a id="user" asp-action="Logout" asp-controller="Account">Log out</a>
 } 
