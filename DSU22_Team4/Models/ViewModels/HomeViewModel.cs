@@ -2,6 +2,7 @@
 using DSU22_Team4.Models.Poco;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -19,8 +20,9 @@ namespace DSU22_Team4.Models.ViewModels
         public WeatherInfoDto Weather { get; set; }
         public List<TrainingSession> TrainingSessions { get; set; }
         
-        
-
+         [DisplayFormat (DataFormatString= "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
+         [DataType (DataType.Date)]
+        public DateTime Date { get; set; }
         public HomeViewModel(Athlete athlete, List<TrainingSession> trainingSessions, WeatherInfoDto weather)
         {
             Athlete = athlete;
@@ -31,12 +33,15 @@ namespace DSU22_Team4.Models.ViewModels
 
            Weather = weather;
            TrainingSessions= trainingSessions;
+           Date = trainingSessions.FirstOrDefault().Date;
+            
         }
         public HomeViewModel()
         {
 
         }
 
+        
 
  
 
