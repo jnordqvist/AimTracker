@@ -79,7 +79,7 @@ namespace DSU22_Team4.Repositories
         
         public List<TrainingSession> GetTrainingSessions(string ibuId)
         {
-            var trainingSessions = _db.TrainingSession.Where(x => x.IbuId == ibuId).OrderByDescending(y => y.Date).Take(5).Include(x => x.Results)
+            var trainingSessions = _db.TrainingSession.Where(x => x.IbuId == ibuId).OrderByDescending(y => y.Date).Take(4).Include(x => x.Results)
                 .ThenInclude(y => y.Shots);
             return trainingSessions.ToList();
         }

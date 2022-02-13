@@ -48,10 +48,10 @@
             </div>
             <div class="last-session-bottom">
                 <div class="last-session-stance">
-                    <p id="stance"></p>
+                    <p id="Location"> @Model.TrainingSessions.FirstOrDefault().Location</p>
                 </div>
                 <div class="last-session-pulse">
-                    <p id="pulse">189 <i class="fa fa-heartbeat"></i></p>
+                    <p id="pulse"> @Model.TrainingSessions.FirstOrDefault().Results.Count <i class="fa fa-heartbeat"></i></p>
                 </div>
                 <button class="btn" id="edit-btn"><i class="fa fa-home"></i> Edit</button>
             </div>
@@ -62,7 +62,8 @@
             @foreach (var trainingsession in Model.TrainingSessions)
             {
               <div class="items-other-session">
-                <p class="date-time">@trainingsession.Date</p>
+                <p class="date-time">@trainingsession.Date.DayOfWeek @trainingsession.Date.ToShortDateString()</p>
+                  <p class="number-of-series"> Antalet serier: @trainingsession.Results.Count</p>
                 <p class="hit-rate ">Hits: @Model.GetTotalNumOfHits(trainingsession) / @Model.GetTotalNumOfShots(trainingsession)</p>
              </div>
             }
