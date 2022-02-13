@@ -1,4 +1,4 @@
-﻿ HOME
+﻿/* HOME*/
 body {
     background-color: white;
     margin: 0;
@@ -28,8 +28,8 @@ body {
     min-height: 100vh;
 }
 
-HOME PAGE
-
+/*HOME PAGE
+*/
 #img-profile {
     border-radius: 100%;
     height: 50px;
@@ -109,10 +109,20 @@ p {
 
 .last-session-middle {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         flex: 33%;
         padding: 20px;
+        
 }
+svg {
+    width: 200px;
+    height: 200px;
+    flex: 33%;
+    
+    margin-top: 10px;
+    
+}
+
 @keyframes progress {
     0% {
         stroke-dasharray: 0 100;
@@ -121,6 +131,7 @@ p {
 
 #hits, #average-pulse, #stance, #welcome {
     color: #000;
+    font-size:20px;
 }
 
 #average-pulse {
@@ -380,7 +391,7 @@ div.login-form-icon {
     text-align: center;
 }
 
-STATS PAGE
+/*STATS PAGE*/
 #container-filter-search, container-line-graph {
     display: flex;
     flex-direction: column;
@@ -496,8 +507,12 @@ ul li text {
             transform: scale(1.04);
         }
 
-
-    ADD DATA
+        .last-session-middle 
+        {
+            padding: 60px;
+        }
+  
+   /* ADD DATA*/
     .btn-scale {
         min-width: 44px;
         width: 6%;
@@ -599,13 +614,31 @@ ul li text {
         flex-direction: column;
         margin-left: auto;
     }
+
+    svg {
+        width: 50px;
+        height: 50px;
+        margin: unset;
+    }
+    .last-session-middle
+    {
+        flex-direction: column;
+    }
+
+    #hits {
+        font-size: 12px;
+    }
 }
 
 @media screen and (max-width:768px) {
     .container-flex {
         flex-direction: column;
     }
-
+    svg {
+        width: 50px;
+        height: 50px;
+        margin: unset;
+    }
     .container-other-sessions {
         flex-direction: column;
     }
