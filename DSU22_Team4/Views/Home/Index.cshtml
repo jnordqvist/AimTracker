@@ -63,8 +63,9 @@
             {
               <div class="items-other-session">
                 <p class="date-time">@trainingsession.Date.DayOfWeek @trainingsession.Date.ToShortDateString()</p>
-                  <p class="number-of-series"> Antalet serier: @trainingsession.Results.Count</p>
-                <p class="hit-rate ">Hits: @Model.GetTotalNumOfHits(trainingsession) / @Model.GetTotalNumOfShots(trainingsession)</p>
+                  
+                  <p class="number-of-series"> Shooting-series: @trainingsession.Results.Count st</p>
+                <p class="hit-rate "><i class="fa fa-regular fa-fire" style="color:peru"></i> Hits: @Model.GetTotalNumOfHits(trainingsession) / @Model.GetTotalNumOfShots(trainingsession) st</p>
              </div>
             }
             

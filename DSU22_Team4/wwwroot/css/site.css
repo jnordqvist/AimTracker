@@ -52,6 +52,8 @@ p {
     margin-bottom:0;
 }
 
+
+
 #parameter-btns {
     display:flex;
     flex-direction:row;
@@ -195,12 +197,17 @@ svg {
     margin: 5%;
     align-content: space-evenly;
     background-color: white;
- 
     box-shadow: 0 3px 10px #a3a3a3;
     border-radius: 25px;
     text-align: center;
     font-size: 16px;
+    color: #212977;
 }
+
+/*.date-time, .number-of-series, .hit-rate {
+    font-size: 14px;
+    color: #212977;
+}*/
 /*SessionDetail*/
 
 .container-series {
