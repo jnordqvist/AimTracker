@@ -131,7 +131,13 @@ namespace DSU22_Team4.Repositories
             _db.SaveChanges();
         }
 
-   
+        public int[] GetStatisticsValues(string ibuId, ValuesDto values)
+        {
+            values.Data = _db.TrainingSession.Where(x => x.IbuId == ibuId).FirstOrDefault().Results.FirstOrDefault().
+                Shots.OrderByDescending(y => y.ShotNr).Select(z => z.HeartRate).ToArray();
+
+            return values.Data;
+        }
 
         //public void SeedTrainingSessions( List <TrainingSession> trainingSessions)
         //{

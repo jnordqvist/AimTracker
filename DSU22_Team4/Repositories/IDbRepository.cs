@@ -21,5 +21,6 @@ namespace DSU22_Team4.Repositories
         void SeedAthletes(List <AthleteDto> athlete);
         void SeedTrainingSessions( List <TrainingSessionDto> trainingSession);
         List<TrainingSession> GetTrainingSessions(string ibuId);
+        int[] GetStatisticsValues(string ibuId, ValuesDto values);
     }
 }
