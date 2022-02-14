@@ -48,7 +48,7 @@ namespace DSU22_Team4.Controllers
             var weather = new WeatherInfoDto();
             try
             {
-                weather = await _weather.GetWeatherByPointAndTimeAsync(63.190586, 14.658355, new DateTime(2022, 02, 08, 18, 38, 00));
+                weather = await _weather.GetWeatherByPointAndTimeAsync(63.190586, 14.658355, new DateTime(2022, 02, 13, 18, 38, 00));
             }
 
             catch (System.Exception)
