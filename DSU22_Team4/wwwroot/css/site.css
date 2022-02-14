@@ -3,6 +3,8 @@ body {
     background-color: white;
     margin: 0;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  
+    
 }
 
 #content-wrap {
@@ -30,6 +32,14 @@ body {
 
 /*HOME PAGE
 */
+
+
+.chart {
+    align-self: center;
+    padding-top: 10px;
+    padding-left: 200px;
+    
+}
 #img-profile {
     border-radius: 100%;
     height: 50px;
@@ -59,6 +69,8 @@ p {
     flex-direction:row;
     justify-content:space-between;
     align-items:center;
+    margin-left: 150px;
+    margin-right:150px;
 }
 
 #parameter-btns .btn {
@@ -88,44 +100,46 @@ p {
     flex-direction: column;
     background-color: #fff;
     border-radius: 50px;
-    border: 2px solid black;
+  
 }
     .container-last-session a {
         text-decoration: none;
     }
 
 
-    .last-session-top, #previous-sessions {
-        padding: 5px;
-        color: #fff;
-        display: flex;
-        flex-direction: row;
-        text-align: center;
-        justify-content: center;
-        background-color: #212977;
-    }
+.last-session-top, #previous-sessions {
+    padding: 5px;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    background-color: #212977;
+    margin-left: 150px;
+    margin-right: 150px;
+}
 
-.last-session-top {
-    border-top-right-radius: 48px;
-    border-top-left-radius: 48px;
-    padding-bottom: 10px;
+#previous-sessions {
+      margin-bottom: 10px;
 }
 
 
 
 .last-session-middle {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         flex: 33%;
         padding: 20px;
+        font-size: 20px;
+
         
 }
 svg {
     width: 200px;
     height: 200px;
-    flex: 33%;
+   /* flex: 33%;
     
-    margin-top: 10px;
+    margin-top: 10px;*/
     
 }
 
@@ -136,7 +150,7 @@ svg {
 }
 
 #hits, #average-pulse, #stance, #welcome {
-    color: #000;
+    color: #212977;
     font-size:20px;
 }
 
@@ -145,16 +159,24 @@ svg {
 }
 
 .pie-chart-percentage {
-    fill: #212977;
+    
     font-family: sans-serif;
-    font-size: .5em;
+    font-size: .3em;
     text-anchor: middle;
 }
 
 #flex-container-last-session {
     display: flex;
     flex-direction: row;
-    font-size:12px;
+    font-size: 16px;
+    color: #212977;
+    background: white;
+    box-shadow: 0 3px 10px #a3a3a3;
+    border-radius: 25px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 150px;
+    margin-right: 150px;
 }
 
 .last-session-percentage {
@@ -162,7 +184,7 @@ svg {
     text-align: center;
 }
 
-.last-session-percentage p {
+.onon-percentage p {
         font-size: 24px;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-weight: bold;
@@ -187,13 +209,13 @@ svg {
 
 .container-other-sessions {
     display: flex;
-    margin: 5%;
+   
     flex-flow: wrap;
     justify-content: center;
 }
 
 .items-other-session {
-    padding: 8vh;
+    padding: 10vh;
     margin: 5%;
     align-content: space-evenly;
     background-color: white;
@@ -279,13 +301,21 @@ svg {
 }
 
 
+ .topnav #myLinks :nth-last-child(-n+2) {
+    right: 0;
+    position: absolute;
+    
+}
+ #name{
+     margin-right: 100px;
+ }
+
 /* LOGIN*/
-.imgcontainer 
-{
+.imgcontainer {
     align-items: center;
     display: flex;
     flex-direction: column;
-    margin-top:10px;
+    margin-top: 10px;
 }
 
 
@@ -520,10 +550,7 @@ ul .stat text {
             transform: scale(1.04);
         }
 
-        .last-session-middle 
-        {
-            padding: 60px;
-        }
+       
   
    /* ADD DATA*/
     .btn-scale {
@@ -636,6 +663,10 @@ ul .stat text {
     .last-session-middle
     {
         flex-direction: column;
+        font-size: 12px;
+    }
+    .last-session-bottom {
+        font-size: 12px;
     }
 
     #hits {
@@ -646,6 +677,11 @@ ul .stat text {
         padding: 2vh;
         font-size: 12px;
     }
+    .topnav #myLinks :nth-last-child(-n+2) {
+        right: unset;
+        position: unset;
+    }
+   
 }
 
 @media screen and (max-width:768px) {
@@ -660,10 +696,56 @@ ul .stat text {
     .container-other-sessions {
         flex-direction: column;
     }
+   
+
+    .last-session-middle {
+        flex-direction: column;
+        font-size: 12px;
+    }
+
+    .last-session-bottom {
+        font-size: 12px;
+    }
+
+    #hits {
+        font-size: 12px;
+    }
+
+    .items-other-session {
+        padding: 2vh;
+        font-size: 12px;
+    }
     .register-login-button {
         flex-direction: column;
         margin-left:auto;
     }
+    .last-session-top, #previous-sessions {
+        margin: unset;
+    }
+    #flex-container-last-session
+    {
+        margin-left: unset;
+        margin-right: unset;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        
+    }
+    .date{
+        padding:unset;
+
+    }
+    .chart{
+        padding: unset;
+        align-self: unset;
+    }
+    #parameter-btns{
+        margin: unset;
+    }
+    .topnav #myLinks :nth-last-child(-n+2) {
+        right: unset;
+        position: unset;
+    }
+   
 }
 
 @media screen and (max-width:375px) {

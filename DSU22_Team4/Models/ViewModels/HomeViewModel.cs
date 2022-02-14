@@ -20,6 +20,7 @@ namespace DSU22_Team4.Models.ViewModels
         public WeatherInfoDto Weather { get; set; }
         public List<TrainingSession> TrainingSessions { get; set; }
         public List <Serie> Series { get; set; }
+        public TrainingSessionDto TrainingSessionDto{ get; set; }
         
          [DisplayFormat (DataFormatString= "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
          [DataType (DataType.Date)]
@@ -34,23 +35,10 @@ namespace DSU22_Team4.Models.ViewModels
 
            Weather = weather;
            TrainingSessions= trainingSessions;
-           
 
-            //for (int i = 0; i < trainingSessions.Count; i++)
-            //{
-            //    for (int y = 0; y < trainingSessions[i].Results.Count; y++)
-            //    {
-            //        var dateOfSerie = trainingSessions[i].Results.ToList()[y].DateTime;
-            //        Date = dateOfSerie;
-               
-            //    }
-                
-                
-                
-            //}
-            
-           
-            
+
+
+
         }
         public HomeViewModel()
         {

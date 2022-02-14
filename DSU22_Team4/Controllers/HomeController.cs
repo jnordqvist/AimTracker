@@ -17,13 +17,17 @@ namespace DSU22_Team4.Controllers
 {
     public class HomeController : Controller
     {
+        #region privatefields
+
         private readonly ILogger<HomeController> _logger;
+
         private readonly IDbRepository _dbrepo;
-        private IRepository _repository;
-        private List<TrainingSession> trainingSessions;
+        private readonly IRepository _repository;
+       
         private readonly UserManager<IdentityUser> _userManager;
-        private IOpenWeather _weather;
-        private List<AthleteDto> athletes;
+        private readonly IOpenWeather _weather;
+        #endregion
+
         public HomeController(ILogger<HomeController> logger, IDbRepository dbrepo, IRepository repository, UserManager<IdentityUser> userManager, IOpenWeather weather)
         {
             _logger = logger;
@@ -39,11 +43,18 @@ namespace DSU22_Team4.Controllers
             await FillDataToAthlete();
             var user = await _userManager.GetUserAsync(HttpContext.User);
             string athleteId = user.Id;
-            string startDate = "220123";
-            string endDate = "220206";
+            DateTime date = DateTime.Now;
+            DateTime dateEndDate = date.AddDays(-1);
+            DateTime dateStartDate = dateEndDate.AddDays(-4);
+            string endDate = dateEndDate.ToString("yyMMdd");
+            string startDate = dateStartDate.ToString("yyMMdd");
+
             
-            var athlete = _dbrepo.GetAthleteById(user.Id);
+            
+            var athlete = _dbrepo.GetAthleteById(athleteId);
             await FillDatabaseWithSessions(athlete, startDate, endDate);
+            await GetAndFillDatabaseWithLatestTrainingSession(athlete);
+           
             var trainingSessions = _dbrepo.GetTrainingSessions(athlete.Id);
             var weather = new WeatherInfoDto();
             try
@@ -61,17 +72,7 @@ namespace DSU22_Team4.Controllers
             return View(new HomeViewModel(athlete, trainingSessions, weather));
         }
 
-        //public async Task FillAimTrackerDatabase()
-        //{
-        //    //var data = await _repository.GetAimTrackerData();
-        //    var athlete = new Athlete()
-        //    {
-                
-        //        TrainingSession = data
-
-        //    };
-        //    _repo.Seed(athlete);
-        //}
+      
 
         public async Task FillDataToAthlete()
         {
@@ -87,6 +88,18 @@ namespace DSU22_Team4.Controllers
 
             _dbrepo.SeedTrainingSessions(data);    
         }
+
+        public async Task GetAndFillDatabaseWithLatestTrainingSession(Athlete athlete)
+        {
+             
+            var data= await _repository.GetLatestTrainingSession(athlete.Id);
+           
+                _dbrepo.AddLatestTrainingSession(data);
+            
+            
+        }
+
+      
     }
     }
 
