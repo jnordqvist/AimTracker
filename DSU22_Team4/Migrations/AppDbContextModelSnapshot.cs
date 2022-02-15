@@ -92,6 +92,9 @@ namespace DSU22_Team4.Migrations
                     b.Property<int?>("SerieId")
                         .HasColumnType("integer");
 
+                    b.Property<int>("ShotNr")
+                        .HasColumnType("integer");
+
                     b.Property<double>("X")
                         .HasColumnType("double precision");
 

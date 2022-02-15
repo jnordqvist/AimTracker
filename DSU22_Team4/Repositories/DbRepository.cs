@@ -76,6 +76,12 @@ namespace DSU22_Team4.Repositories
             var trainingSession= _db.TrainingSession.Where(x => x.IbuId == ibuId).FirstOrDefault();
             return trainingSession;
         }
+
+        public Serie GetSerie (int id)
+        {
+            var serie = _db.Serie.Where(x => x.Id == id).FirstOrDefault();
+            return serie;
+        }
         
         public List<TrainingSession> GetTrainingSessions(string ibuId)
         {
@@ -132,7 +138,12 @@ namespace DSU22_Team4.Repositories
             _db.SaveChanges();
         }
 
-   
+        public int[] GetStatisticsValues(string ibuId, ValuesDto values)
+        {
+            var data = _db.TrainingSession.Where(x => x.IbuId == ibuId).Include(y => y.Results).ThenInclude(z => z.Shots);
+            data.Select(a => a.Results.Select(b => b.Shots.Select(c => c.HeartRate))).ToList();
+            return values.Data;
+        }
 
         //public void SeedTrainingSessions( List <TrainingSession> trainingSessions)
         //{

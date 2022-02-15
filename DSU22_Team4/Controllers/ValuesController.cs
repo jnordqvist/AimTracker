@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+
+﻿using DSU22_Team4.Models.Dto;
+using DSU22_Team4.Models.Poco;
+using DSU22_Team4.Repositories;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,22 +16,36 @@ namespace DSU22_Team4.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+
+        DatasetsDto datasets = new DatasetsDto();
+        private readonly IDbRepository _dbrepo;
+
+        public ValuesController(IDbRepository dbrepo)
+        {
+            _dbrepo = dbrepo;
+        }
+
         // GET: api/<ValuesController>
         [HttpGet]
-        public IEnumerable<int> Get()
+        public ActionResult Get(int id)
         {
-            return new int[] { 860, 1140, 1060, 1060, 1070, 1110, 1330, 2210, 7830, 2478 };
+            Serie serie = _dbrepo.GetSerie(id);
+
+            int[] heartRates = new int[4];
+            int counter = 0;
+
+            foreach (var shot in serie.Shots)
+            {
+                heartRates[counter] = shot.HeartRate;
+                counter++;
+            }
+            return Ok(heartRates);
         }
 
-        // GET api/<ValuesController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        private ActionResult Json(int[] data)
         {
-            return "value";
+            throw new NotImplementedException();
         }
 
-      
-
-      
     }
 }
