@@ -67,6 +67,16 @@ function getDataValues() {
 }
 
 
+document.querySelectorAll('#shot').forEach(button => {
+    if (button.textContent === "hit") {
+        button.style.background = "white";
+        button.style.color = "white";
+    }
+
+
+});
+    
+
 
 
 //, {

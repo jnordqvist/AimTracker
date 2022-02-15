@@ -7,21 +7,30 @@
                 <i class='fas fa-caret-left' style='font-size:36px'></i>
             </button>
         </div>
-
         <div class="container-shotts">
-            <button id="shot-1" type="submit">@Model.Series.FirstOrDefault().Shots.FirstOrDefault().Result</button>
-            <button id="shot-2" type="submit"></button>
-            <button id="shot-3" type="submit"></button>
-            <button id="shot-4" type="submit"></button>
-            <button id="shot-5" type="submit"></button>
-        </div>
+            @foreach (var serie in Model.Series)
+            {
+            <div class="shots">
+                <div class="shot-5">
+                    @foreach (var shot in serie.Shots)
+                    {
+                        <button id="shot" type="submit">@shot.Result</button>
+                    }
 
-        <div class="container-right-arrow">
-            <button class="arrow right">
-                <i  class='fas fa-caret-right' style='font-size:36px; color:royalblue;' ></i>
-            </button>
+                </div>
+                
+               
+            </div>
+                
+        }
+
+            </div>
+            <div class="container-right-arrow">
+                <button class="arrow right">
+                    <i class='fas fa-caret-right' style='font-size:36px; color:royalblue;'></i>
+                </button>
+            </div>
         </div>
-    </div>
 
     @*<h1>@Model.TrainingSession.Location</h1>
         <h1>@Model.TrainingSession.Results</h1>*@

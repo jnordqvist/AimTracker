@@ -243,26 +243,36 @@ svg {
     flex: 33%;
 }
 
-#shot-1, #shot-2, #shot-3, #shot-4, #shot-5 {
+#shot {
     border-radius: 50%;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     width: 50px;
     height: 50px;
     margin-right:22px;
+    background: black;
+    color: black;
   
 }
 #serie-1 {
     text-align: center;
    font-size:20px;
-   padding-top:5%;
-   padding-bottom:15%;
+   padding-top:10px;
+   padding-bottom:10px;
 }
 
+.shot-5{
+    border: 1px solid #212977;
+}
 .container-shotts {
-    display: flex;
+   /* display: flex;*/
+    
    
 }
 
+.shots{
+    flex-direction: column;
+    margin: 10px;
+}
 /* NAV*/
 
     .topnav {
