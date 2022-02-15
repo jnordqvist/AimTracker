@@ -80,7 +80,6 @@ namespace DSU22_Team4.Models.ViewModels
         }
 
         public int GetTotalNumOfHits(TrainingSession session)
-
         {
             int hits = 0;
             foreach (var serie in session.Results)

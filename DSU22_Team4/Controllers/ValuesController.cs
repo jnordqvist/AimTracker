@@ -28,7 +28,6 @@ namespace DSU22_Team4.Controllers
         [HttpGet]
         public ActionResult Get(int id)
         {
-       
             List<Shot> shots = _dbrepo.GetShotsBySerieId(id);
             int[] heartRates = new int[5];
             int counter = 0;

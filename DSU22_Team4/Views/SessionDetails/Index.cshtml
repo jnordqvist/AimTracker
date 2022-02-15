@@ -1,22 +1,15 @@
 ﻿@model SessionDetailViewModel
 
-
-
-
     <p id="serie-1">Skott-Serie 1</p>
-
     <div class="container-series">
         <div class="container-left-arrow">
-          
             <button class="arrow left">
                 <i class='fas fa-caret-left' style='font-size:36px'></i>
             </button>
-
-
         </div>
 
         <div class="container-shotts">
-            <button id="shot-1" type="submit"></button>
+            <button id="shot-1" type="submit">@Model.Series.FirstOrDefault().Shots.FirstOrDefault().Result</button>
             <button id="shot-2" type="submit"></button>
             <button id="shot-3" type="submit"></button>
             <button id="shot-4" type="submit"></button>
