@@ -76,6 +76,12 @@ namespace DSU22_Team4.Repositories
             var trainingSession= _db.TrainingSession.Where(x => x.IbuId == ibuId).FirstOrDefault();
             return trainingSession;
         }
+
+        public Serie GetSerie (int id)
+        {
+            var serie = _db.Serie.Where(x => x.Id == id).FirstOrDefault();
+            return serie;
+        }
         
         public List<TrainingSession> GetTrainingSessions(string ibuId)
         {

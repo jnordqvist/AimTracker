@@ -1,4 +1,5 @@
 ﻿using DSU22_Team4.Models.Dto;
+using DSU22_Team4.Models.Poco;
 using DSU22_Team4.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -24,31 +25,31 @@ namespace DSU22_Team4.Controllers
 
         // GET: api/<ValuesController>
         [HttpGet]
-        public async Task<DatasetsDto> Get()
+        public ActionResult Get(int id)
         {
-            await Task.Delay(0);
+            Serie serie = _dbrepo.GetSerie(id);
 
-            string id = "BTSWE22803199001";
+            int[] heartRates = new int[4];
+            int counter = 0;
 
-
-            ValuesDto values = new ValuesDto();
-
-            values.Data = _dbrepo.GetStatisticsValues(id, values);
-            values.BorderColor = "red";
-            values.Fill = false;
-
-
-            datasets.Values.Add(values);
-            
-            return datasets;
+            foreach (var shot in serie.Shots)
+            {
+                heartRates[counter] = shot.HeartRate;
+                counter++;
+            }
+            return Ok(heartRates);
         }
 
-        // GET api/<ValuesController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        private ActionResult Json(int[] data)
         {
-            return "value";
+            throw new NotImplementedException();
         }
 
+        //// GET api/<ValuesController>/5
+        //[HttpGet("{id}")]
+        //public string Get(int id)
+        //{
+        //    return "value";
+        //}
     }
 }

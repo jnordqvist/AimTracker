@@ -11,12 +11,6 @@ namespace DSU22_Team4.Models.ViewModels
     public class HomeViewModel
     {
         public Athlete Athlete { get; set; }
-
- 
-        //public TrainingSession Session { get; set; }
-        //public DateTime Date { get; set; }
-        //public ICollection<Serie> Series { get; set; }
-
         public WeatherInfoDto Weather { get; set; }
         public List<TrainingSession> TrainingSessions { get; set; }
         public List <Serie> Series { get; set; }
@@ -26,41 +20,16 @@ namespace DSU22_Team4.Models.ViewModels
         public DateTime Date { get; set; }
         public HomeViewModel(Athlete athlete, List<TrainingSession> trainingSessions, WeatherInfoDto weather)
         {
-            Athlete = athlete;
-            //CalculateSeriesHitPercentage(Series.FirstOrDefault());
-
-            GetSessionTotalHitPercentage(trainingSessions.FirstOrDefault());
-            GetSessionAverageHitPercentage(trainingSessions.FirstOrDefault());
-
+           Athlete = athlete;
+           GetSessionTotalHitPercentage(trainingSessions.FirstOrDefault());
+           GetSessionAverageHitPercentage(trainingSessions.FirstOrDefault());
            Weather = weather;
            TrainingSessions= trainingSessions;
-           
-
-            //for (int i = 0; i < trainingSessions.Count; i++)
-            //{
-            //    for (int y = 0; y < trainingSessions[i].Results.Count; y++)
-            //    {
-            //        var dateOfSerie = trainingSessions[i].Results.ToList()[y].DateTime;
-            //        Date = dateOfSerie;
-               
-            //    }
-                
-                
-                
-            //}
-            
-           
-            
         }
         public HomeViewModel()
         {
 
         }
-
-        
-
- 
-
 
         public string GetSeriesHitPercentage(Serie serie)
         {
@@ -95,9 +64,7 @@ namespace DSU22_Team4.Models.ViewModels
             return $"{result * 100}%";
         }
 
-
         public int GetTotalNumOfShots(TrainingSession session)
-
         {
             int shots = 0;
             foreach (var serie in session.Results)
@@ -110,6 +77,17 @@ namespace DSU22_Team4.Models.ViewModels
             return shots;
         }
 
+        //GetHeartRateForShots(TrainingSession trainingSession)
+        //{
+        //    foreach (var serie in trainingSession.Results)
+        //    {
+        //        foreach (var shot in serie.Shots)
+        //        {
+        //            shot.HeartRate = 
+        //        }
+        //    }
+            
+        //}
 
         public int GetTotalNumOfHits(TrainingSession session)
 

@@ -16,8 +16,6 @@ function myFunction() {
     } else {
         topnav.style.display = "block";
     }
-
-
 }
 
 // Displays links when media query is equal to 1000px or > 
@@ -40,24 +38,36 @@ for (i = 0; i < closebtns.length; i++) {
     });
 }
 
-var xValues = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000];
+var xValues = [1, 2, 3, 4, 5];
+var uri = '/api/values/';
 
-let dataValues = [860, 1140, 1060, 1060, 1070, 1110, 1330, 2210, 7830, 2478]
+getDataValues();
 
-new Chart("lineGraph", {
-    type: "line",
-    data: {
-        labels: xValues,
-        datasets: [{
-            data: dataValues,
-            borderColor: "red",
-            fill: false
-        }]
-    },
-    options: {
-        legend: { display: false }
-    }
-});
+function getDataValues() {
+
+    $.getJSON(uri + 32)
+        .done(function (data) {
+            new Chart("lineGraph", {
+                type: "line",
+                label:'Pulse at time of shot',
+                data: {
+                    labels: xValues,
+                    datasets: [{
+                        data: data,
+                        borderColor: "red",
+                        fill: false
+                    }]
+                },
+                options: {
+                    legend: { display: false }
+                }
+            })
+        });
+
+}
+
+
+
 
 //, {
 //    data: [1600, 1700, 1700, 1900, 2000, 2700, 4000, 5000, 6000, 7000],

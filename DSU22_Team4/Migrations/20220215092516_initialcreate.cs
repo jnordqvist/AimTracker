@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace DSU22_Team4.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class initialcreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -21,61 +20,17 @@ namespace DSU22_Team4.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "FiringCoordsDto",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
-                    X = table.Column<double>(type: "double precision", nullable: false),
-                    Y = table.Column<double>(type: "double precision", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_FiringCoordsDto", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Geometry",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
-                    Coordinates = table.Column<List<double>>(type: "double precision[]", nullable: true)
+                    Lat = table.Column<double>(type: "double precision", nullable: false),
+                    Lon = table.Column<double>(type: "double precision", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Geometry", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Serie",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
-                    Stance = table.Column<string>(type: "text", nullable: true),
-                    DateTime = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
-                    AverageYCoord = table.Column<double>(type: "double precision", nullable: false),
-                    AverageXCoord = table.Column<double>(type: "double precision", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Serie", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Shot",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
-                    HeartRate = table.Column<int>(type: "integer", nullable: false),
-                    X = table.Column<double>(type: "double precision", nullable: false),
-                    Y = table.Column<double>(type: "double precision", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Shot", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -122,20 +77,22 @@ namespace DSU22_Team4.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "SerieDto",
+                name: "Serie",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Stance = table.Column<string>(type: "text", nullable: true),
                     DateTime = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
+                    AverageYCoord = table.Column<double>(type: "double precision", nullable: false),
+                    AverageXCoord = table.Column<double>(type: "double precision", nullable: false),
                     TrainingSessionId = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_SerieDto", x => x.Id);
+                    table.PrimaryKey("PK_Serie", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_SerieDto_TrainingSession_TrainingSessionId",
+                        name: "FK_Serie_TrainingSession_TrainingSessionId",
                         column: x => x.TrainingSessionId,
                         principalTable: "TrainingSession",
                         principalColumn: "Id",
@@ -143,60 +100,37 @@ namespace DSU22_Team4.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ShotDto",
+                name: "Shot",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     ShotNr = table.Column<int>(type: "integer", nullable: false),
-                    TimeToFire = table.Column<string>(type: "text", nullable: true),
-                    Result = table.Column<string>(type: "text", nullable: true),
-                    FiringCoordsId = table.Column<int>(type: "integer", nullable: true),
                     HeartRate = table.Column<int>(type: "integer", nullable: false),
-                    SerieDtoId = table.Column<int>(type: "integer", nullable: true),
+                    Result = table.Column<string>(type: "text", nullable: true),
+                    X = table.Column<double>(type: "double precision", nullable: false),
+                    Y = table.Column<double>(type: "double precision", nullable: false),
                     SerieId = table.Column<int>(type: "integer", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ShotDto", x => x.Id);
+                    table.PrimaryKey("PK_Shot", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ShotDto_FiringCoordsDto_FiringCoordsId",
-                        column: x => x.FiringCoordsId,
-                        principalTable: "FiringCoordsDto",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_ShotDto_Serie_SerieId",
+                        name: "FK_Shot_Serie_SerieId",
                         column: x => x.SerieId,
                         principalTable: "Serie",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_ShotDto_SerieDto_SerieDtoId",
-                        column: x => x.SerieDtoId,
-                        principalTable: "SerieDto",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_SerieDto_TrainingSessionId",
-                table: "SerieDto",
+                name: "IX_Serie_TrainingSessionId",
+                table: "Serie",
                 column: "TrainingSessionId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ShotDto_FiringCoordsId",
-                table: "ShotDto",
-                column: "FiringCoordsId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ShotDto_SerieDtoId",
-                table: "ShotDto",
-                column: "SerieDtoId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_ShotDto_SerieId",
-                table: "ShotDto",
+                name: "IX_Shot_SerieId",
+                table: "Shot",
                 column: "SerieId");
 
             migrationBuilder.CreateIndex(
@@ -216,19 +150,10 @@ namespace DSU22_Team4.Migrations
                 name: "Shot");
 
             migrationBuilder.DropTable(
-                name: "ShotDto");
-
-            migrationBuilder.DropTable(
                 name: "Sleep");
 
             migrationBuilder.DropTable(
-                name: "FiringCoordsDto");
-
-            migrationBuilder.DropTable(
                 name: "Serie");
-
-            migrationBuilder.DropTable(
-                name: "SerieDto");
 
             migrationBuilder.DropTable(
                 name: "Athlete");
