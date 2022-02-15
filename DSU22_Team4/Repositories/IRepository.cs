@@ -14,9 +14,11 @@ namespace DSU22_Team4.Repositories
         Task<List<AthleteDto>> GetAthletesAsync();
       
 
-        Task<List<TrainingSessionDto>>GetAimTrackerData();
         Task<List<TrainingSessionDto>> GetTrainingSessionsByDate(string athleteId, string startDate, string endDate);
        
-
+        
+       
+      
+        Task <TrainingSessionDto> GetLatestTrainingSession(string athleteId);
     }
 }
