@@ -39,13 +39,13 @@ for (i = 0; i < closebtns.length; i++) {
 }
 
 var xValues = [1, 2, 3, 4, 5];
-var uri = '/api/values/';
+var uri = '/api/values';
 
 getDataValues();
 
 function getDataValues() {
 
-    $.getJSON(uri + 32)
+    $.getJSON(uri + "?id=" +32)
         .done(function (data) {
             new Chart("lineGraph", {
                 type: "line",

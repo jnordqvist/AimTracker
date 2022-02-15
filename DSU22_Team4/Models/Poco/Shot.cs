@@ -13,6 +13,7 @@ namespace DSU22_Team4.Models.Poco
         public string Result { get; set; }
         public double X { get; set; }
         public double Y { get; set; }
+        public virtual int SerieId {get; set;}
 
         public Shot(ShotDto shot)
         {

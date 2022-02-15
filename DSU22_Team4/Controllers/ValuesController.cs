@@ -25,16 +25,15 @@ namespace DSU22_Team4.Controllers
             _dbrepo = dbrepo;
         }
 
-        // GET: api/<ValuesController>
         [HttpGet]
         public ActionResult Get(int id)
         {
-            Serie serie = _dbrepo.GetSerie(id);
-
-            int[] heartRates = new int[4];
+       
+            List<Shot> shots = _dbrepo.GetShotsBySerieId(id);
+            int[] heartRates = new int[5];
             int counter = 0;
 
-            foreach (var shot in serie.Shots)
+            foreach (var shot in shots)
             {
                 heartRates[counter] = shot.HeartRate;
                 counter++;
@@ -45,7 +44,6 @@ namespace DSU22_Team4.Controllers
         private ActionResult Json(int[] data)
         {
             throw new NotImplementedException();
-        }
-
+        } 
     }
 }
