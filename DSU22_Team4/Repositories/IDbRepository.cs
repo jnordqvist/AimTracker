@@ -17,7 +17,7 @@ namespace DSU22_Team4.Repositories
         void AddSleepToAthlete(Athlete athlete, Sleep sleep);
         Athlete GetAthleteWithSleep(string id);
         //Athlete GetSleep(string id, DateTime date);
-        void AddLatestTrainingSession(TrainingSession trainingSession);
+        void AddLatestTrainingSession(TrainingSessionDto trainingSession);
         void SeedAthletes(List <AthleteDto> athlete);
         void SeedTrainingSessions( List <TrainingSessionDto> trainingSession);
         List<TrainingSession> GetTrainingSessions(string ibuId);

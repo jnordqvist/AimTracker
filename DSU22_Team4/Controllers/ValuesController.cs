@@ -1,3 +1,4 @@
+
 ﻿using DSU22_Team4.Models.Dto;
 using DSU22_Team4.Models.Poco;
 using DSU22_Team4.Repositories;
@@ -15,6 +16,7 @@ namespace DSU22_Team4.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+
         DatasetsDto datasets = new DatasetsDto();
         private readonly IDbRepository _dbrepo;
 
@@ -45,11 +47,5 @@ namespace DSU22_Team4.Controllers
             throw new NotImplementedException();
         }
 
-        //// GET api/<ValuesController>/5
-        //[HttpGet("{id}")]
-        //public string Get(int id)
-        //{
-        //    return "value";
-        //}
     }
 }

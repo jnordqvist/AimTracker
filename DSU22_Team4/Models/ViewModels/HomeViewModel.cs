@@ -14,6 +14,7 @@ namespace DSU22_Team4.Models.ViewModels
         public WeatherInfoDto Weather { get; set; }
         public List<TrainingSession> TrainingSessions { get; set; }
         public List <Serie> Series { get; set; }
+        public TrainingSessionDto TrainingSessionDto{ get; set; }
         
          [DisplayFormat (DataFormatString= "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
          [DataType (DataType.Date)]
@@ -25,6 +26,7 @@ namespace DSU22_Team4.Models.ViewModels
            GetSessionAverageHitPercentage(trainingSessions.FirstOrDefault());
            Weather = weather;
            TrainingSessions= trainingSessions;
+
         }
         public HomeViewModel()
         {
@@ -76,18 +78,6 @@ namespace DSU22_Team4.Models.ViewModels
             }
             return shots;
         }
-
-        //GetHeartRateForShots(TrainingSession trainingSession)
-        //{
-        //    foreach (var serie in trainingSession.Results)
-        //    {
-        //        foreach (var shot in serie.Shots)
-        //        {
-        //            shot.HeartRate = 
-        //        }
-        //    }
-            
-        //}
 
         public int GetTotalNumOfHits(TrainingSession session)
 
