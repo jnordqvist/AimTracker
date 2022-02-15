@@ -67,7 +67,7 @@ p {
 #parameter-btns {
     display:flex;
     flex-direction:row;
-    justify-content:space-between;
+    justify-content: center;
     align-items:center;
     margin-left: 150px;
     margin-right:150px;
@@ -94,10 +94,13 @@ p {
    background-color: RoyalBlue;
 
 }
+#edit-btn:hover{
+    background-color: royalblue;
+}
 
 .container-last-session {
     display: flex;
-    flex-direction: column;
+    justify-content:center;
     background-color: #fff;
     border-radius: 50px;
   
@@ -161,7 +164,7 @@ svg {
 .pie-chart-percentage {
     
     font-family: sans-serif;
-    font-size: .3em;
+    font-size: .4em;
     text-anchor: middle;
 }
 
@@ -700,7 +703,7 @@ ul .stat text {
 
     .last-session-middle {
         flex-direction: column;
-        font-size: 12px;
+        font-size: 16px;
     }
 
     .last-session-bottom {
