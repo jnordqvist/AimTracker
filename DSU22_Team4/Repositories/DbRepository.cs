@@ -82,7 +82,14 @@ namespace DSU22_Team4.Repositories
             var serie = _db.Serie.Where(x => x.Id == id).FirstOrDefault();
             return serie;
         }
-        
+
+        public List<Shot> GetShotsBySerieId(int id)
+        {
+            List<Shot> shots = _db.Shot.Where(x => x.SerieId == id).ToList();
+            return shots;
+        }
+
+
         public List<TrainingSession> GetTrainingSessions(string ibuId)
         {
             var trainingSessions = _db.TrainingSession.Where(x => x.IbuId == ibuId).OrderByDescending(y => y.Date).Take(4).Include(x => x.Results)
