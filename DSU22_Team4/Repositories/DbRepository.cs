@@ -89,6 +89,11 @@ namespace DSU22_Team4.Repositories
             return shots;
         }
 
+        public List<Serie> GetResultsByTrainingSessionsId(string id)
+        {
+            List<Serie> series = _db.Serie.Where(x => x.TrainingSessionId == id).Include(z => z.Shots).ToList();
+            return series;
+        }
 
         public List<TrainingSession> GetTrainingSessions(string ibuId)
         {

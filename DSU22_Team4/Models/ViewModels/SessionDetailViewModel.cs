@@ -8,12 +8,11 @@ namespace DSU22_Team4.Models.ViewModels
 {
     public class SessionDetailViewModel
     {
-        public TrainingSession TrainingSession{ get; set; }
+        public List<Serie> Series{ get; set; }
 
-        public SessionDetailViewModel(TrainingSession trainingSession)
+        public SessionDetailViewModel(List<Serie> series)
         {
-
-            TrainingSession = trainingSession;
+            Series = series;
         }
 
     }

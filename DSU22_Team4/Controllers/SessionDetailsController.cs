@@ -21,8 +21,8 @@ namespace DSU22_Team4.Controllers
         public async Task <IActionResult> Index(string id)
         {
             await Task.Delay(0);
-            var trainingsession =  _statsdb.GetTrainingSession(id);
-            var sessionDetailViewModel = new SessionDetailViewModel(trainingsession);
+            var series = _statsdb.GetResultsByTrainingSessionsId(id);
+            var sessionDetailViewModel = new SessionDetailViewModel(series);
 
             return View(sessionDetailViewModel);
         }
