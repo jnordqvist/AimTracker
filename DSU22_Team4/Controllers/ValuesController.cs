@@ -24,8 +24,10 @@ namespace DSU22_Team4.Controllers
 
         // GET: api/<ValuesController>
         [HttpGet]
-        public DatasetsDto Get()
+        public async Task<DatasetsDto> Get()
         {
+            await Task.Delay(0);
+
             string id = "BTSWE22803199001";
 
 

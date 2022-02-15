@@ -133,9 +133,8 @@ namespace DSU22_Team4.Repositories
 
         public int[] GetStatisticsValues(string ibuId, ValuesDto values)
         {
-            values.Data = _db.TrainingSession.Where(x => x.IbuId == ibuId).FirstOrDefault().Results.FirstOrDefault().
-                Shots.OrderByDescending(y => y.ShotNr).Select(z => z.HeartRate).ToArray();
-
+            var data = _db.TrainingSession.Where(x => x.IbuId == ibuId).Include(y => y.Results).ThenInclude(z => z.Shots);
+            data.Select(a => a.Results.Select(b => b.Shots.Select(c => c.HeartRate))).ToList();
             return values.Data;
         }
 
