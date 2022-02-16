@@ -152,6 +152,11 @@ namespace DSU22_Team4.Repositories
             return values.Data;
         }
 
+        public int TrainingSessionIntensity()
+        {
+            return 70;
+        }
+
         //public void SeedTrainingSessions( List <TrainingSession> trainingSessions)
         //{
         //    f

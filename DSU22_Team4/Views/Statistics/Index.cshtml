@@ -1,36 +1,58 @@
 ﻿@model StatisticsViewModel
 <div>
-    <p id="filter-search-header">Filter Statistics</p>
-    <div id="container-filter-search">
-        <div id="all-filters">
-            <ul>
-                @*<li class="stat">Time Interval<span class="close">x</span></li>
-                    <li class="stat">Injuries<span class="close">x</span></li>
-                    <partial name="InjuriesPartial" />*@
-                <li class="stat">Wind<span class="close">x</span></li>
-                <li class="stat">Pulse<span class="close">x</span></li>
-                <li class="stat">Shot Image<span class="close">x</span></li>
-            </ul>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <div id="select-container">
+        <div id="select-dates-container">
+            <div id="choose-date">
+                <p>Choose Date</p>
+                <select id="year"></select>
+                <select id="month"></select>
+                <select id="day"></select>
+                <button id="btnOkDate">OK</button>
+            </div>
         </div>
+        <div id="select-trainingsession-container" name="sessions">
+            <label for="sessions">Choose a training session:</label>
+            @Html.DropDownListFor(m => m.SelectedTrainingSession.Date, Model.DropDownTrainingSessions)
+            @*<label for="stance">Stance:</label>
+                <select name="stance" id="stance">
+                    <option value="standing">Standing</option>
+                    <option value="prone">Prone</option>
+                </select>*@
+        </div>
+        <button id="btn-get-ts">Get Training Session</button>
     </div>
+    <p id="intensity" value="@Model.Intensity">Passintensitet @Model.Intensity %</p>
+
+    @*@using (Html.BeginForm("YourActionName", "Statistics"))
+    {
+        @Html.TextBoxFor(m => m.FirstName)
+        @Html.TextBoxFor(m => m.LastName)
+        <input type="submit" value="Submit Data" id="btnSubmit" />
+    }*@
 
 
-    <canvas id="lineGraph" style="width:100%;max-width:700px"></canvas>
+    @*<p id="filter-search-header">Filter Statistics</p>
+        <div id="container-filter-search">
+            <div id="all-filters">
+                <ul>
 
-
-    @*<div id="container-line-graph">
-            <img id="line-graph" src="~/img/line-graph.png" alt="line graph" />
+                    <li class="stat">Wind<span class="close">x</span></li>
+                    <li class="stat">Pulse<span class="close">x</span></li>
+                    <li class="stat">Shot Image<span class="close">x</span></li>
+                </ul>
+            </div>
         </div>*@
+
+    @*<canvas id="lineGraph" style="width:100%;max-width:700px"></canvas>*@
 
     <!-- Numeric.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.min.js"></script>
     <!-- Plotly.js -->
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    @*<h1>@Model.TrainingSession.Location</h1>
-    <h1>@Model.TrainingSession.Results</h1>*@
     <div id="myDiv" style="width: 480px; height: 300px;">
     </div>
-
 </div>
 
 
