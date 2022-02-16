@@ -5,8 +5,8 @@
         <div id="all-filters">
             <ul>
                 @*<li class="stat">Time Interval<span class="close">x</span></li>
-                <li class="stat">Injuries<span class="close">x</span></li>
-                <partial name="InjuriesPartial" />*@
+                    <li class="stat">Injuries<span class="close">x</span></li>
+                    <partial name="InjuriesPartial" />*@
                 <li class="stat">Wind<span class="close">x</span></li>
                 <li class="stat">Pulse<span class="close">x</span></li>
                 <li class="stat">Shot Image<span class="close">x</span></li>
@@ -19,8 +19,17 @@
 
 
     @*<div id="container-line-graph">
-        <img id="line-graph" src="~/img/line-graph.png" alt="line graph" />
-    </div>*@
+            <img id="line-graph" src="~/img/line-graph.png" alt="line graph" />
+        </div>*@
+
+    <!-- Numeric.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.min.js"></script>
+    <!-- Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    @*<h1>@Model.TrainingSession.Location</h1>
+    <h1>@Model.TrainingSession.Results</h1>*@
+    <div id="myDiv" style="width: 480px; height: 300px;">
+    </div>
 
 </div>
 
