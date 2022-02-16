@@ -24,5 +24,7 @@ namespace DSU22_Team4.Repositories
         int[] GetStatisticsValues(string ibuId, ValuesDto values);
         Serie GetSerie(int id);
         List<Shot> GetShotsBySerieId(int id);
+        List<TrainingSession> GetTrainingHistory(string ibuId);
+        List<TrainingSession> GetStandingShootingHistory(string ibuId);
     }
 }
