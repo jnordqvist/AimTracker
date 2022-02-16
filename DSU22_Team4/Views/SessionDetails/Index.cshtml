@@ -1,36 +1,36 @@
 ﻿@model SessionDetailViewModel
 
-    <p id="serie-1">Skott-Serie 1</p>
+    <h2 id="serie">This session contains @Model.Series.Count Series </h2>
     <div class="container-series">
-        <div class="container-left-arrow">
-            <button class="arrow left">
-                <i class='fas fa-caret-left' style='font-size:36px'></i>
-            </button>
-        </div>
-        <div class="container-shotts">
-            @foreach (var serie in Model.Series)
-            {
-            <div class="shots">
-                <div class="shot-5">
-                    @foreach (var shot in serie.Shots)
-                    {
-                        <button id="shot" type="submit">@shot.Result</button>
-                    }
+        
+            @*<h1>@Model.GetTotalNumOfHits(Model.Series)</h1>*@
+        
+            <div class="container-shotts">
+                @foreach (var serie in Model.Series)
+                {
+                    <div class="shots">
+                        <h3 id="stance">@serie.Stance </h3>
+                        <div class="shot-5">
+                            @foreach (var shot in serie.Shots)
+                            {<div class="info-shot">
+                                    <button id="shot" type="submit">@shot.Result</button>
+                                    <p> <i class="fa fa-heartbeat" style="color:crimson"></i>@shot.HeartRate </p>
+                           
+                                    
+                                </div>
+                            }
 
-                </div>
-                
-               
-            </div>
-                
-        }
+                        
+                        </div>
+
+
+                    </div>
+
+                }
 
             </div>
-            <div class="container-right-arrow">
-                <button class="arrow right">
-                    <i class='fas fa-caret-right' style='font-size:36px; color:royalblue;'></i>
-                </button>
             </div>
-        </div>
+          
+        
 
-    @*<h1>@Model.TrainingSession.Location</h1>
-        <h1>@Model.TrainingSession.Results</h1>*@
+    
