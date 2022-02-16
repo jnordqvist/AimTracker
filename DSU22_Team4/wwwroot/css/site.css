@@ -510,7 +510,6 @@ ul .stat text {
 
 @media screen and (min-width: 1000px)
 {
- 
   .topnav #myLinks {
       display: flex;
       flex-direction: row;
