@@ -17,18 +17,21 @@ namespace DSU22_Team4.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-        private readonly IStatsDbRepository _repo;
-        private IRepository _repository;
-        private List<TrainingSession> trainingSessions;
-        private List<TrainingSession> sessions;
-        private readonly UserManager<IdentityUser> _userManager;
-        private IOpenWeather _weather;
+        #region privatefields
 
-        public HomeController(ILogger<HomeController> logger, IStatsDbRepository repo, IRepository repository, UserManager<IdentityUser> userManager, IOpenWeather weather)
+        private readonly ILogger<HomeController> _logger;
+
+        private readonly IDbRepository _dbrepo;
+        private readonly IRepository _repository;
+       
+        private readonly UserManager<IdentityUser> _userManager;
+        private readonly IOpenWeather _weather;
+        #endregion
+
+        public HomeController(ILogger<HomeController> logger, IDbRepository dbrepo, IRepository repository, UserManager<IdentityUser> userManager, IOpenWeather weather)
         {
             _logger = logger;
-            _repo = repo;
+            _dbrepo = dbrepo;
             _repository = repository;
             _userManager = userManager;
             _weather = weather;
@@ -37,21 +40,26 @@ namespace DSU22_Team4.Controllers
         public async Task<IActionResult> Index()
         {
             await Task.Delay(0);
-            //await FillAimTrackerDatabase();
-            var athlete = _repo.GetAthleteById("1");
-
+            await FillDataToAthlete();
             var user = await _userManager.GetUserAsync(HttpContext.User);
             string athleteId = user.Id;
-            string startDate = "220123";
-            string endDate = "220206";
+            DateTime date = DateTime.Now;
+            DateTime dateEndDate = date.AddDays(-1);
+            DateTime dateStartDate = dateEndDate.AddDays(-4);
+            string endDate = dateEndDate.ToString("yyMMdd");
+            string startDate = dateStartDate.ToString("yyMMdd");
 
+            
+            
+            var athlete = _dbrepo.GetAthleteById(athleteId);
+            await FillDatabaseWithSessions(athlete, startDate, endDate);
+            await GetAndFillDatabaseWithLatestTrainingSession(athlete);
+           
+            var trainingSessions = _dbrepo.GetTrainingSessions(athlete.Id);
             var weather = new WeatherInfoDto();
             try
             {
-                trainingSessions = await _repository.GetAimTrackerData();
-                sessions = await _repository.GetAimTrackerDataByDate(athleteId, startDate, endDate);
-                 
-                weather = await _weather.GetWeatherByPointAndTimeAsync(63.190586, 14.658355, new DateTime(2022, 02, 04, 18, 38, 00));
+                weather = await _weather.GetWeatherByPointAndTimeAsync(63.190586, 14.658355, new DateTime(2022, 02, 13, 18, 38, 00));
             }
 
             catch (System.Exception)
@@ -61,56 +69,38 @@ namespace DSU22_Team4.Controllers
                 return View(model);
                 throw;
             }
-
             return View(new HomeViewModel(athlete, trainingSessions, weather));
         }
 
-        public async Task  FillAimTrackerDatabase()
-        {
-            var data =  await _repository.GetAimTrackerData();
-            var athlete = new Athlete()
-            {
-                Id = "1",
-                TrainingSession = data
+      
 
-            };
-            _repo.Seed(athlete);
+        public async Task FillDataToAthlete()
+        {
+            var data = await _repository.GetAthletesAsync();
+
+            _dbrepo.SeedAthletes(data);
+           
         }
 
-        //public HomeController(IRepository repository)
-        //{
-        //    this.repository = repository;
-        //}
+        public async Task FillDatabaseWithSessions(Athlete athlete, string startDate, string endDate)
+        {
+            var data = await _repository.GetTrainingSessionsByDate(athlete.Id, startDate, endDate);
 
-        //public async Task<IActionResult> Index()
-        //{
-        //    try
-        //    {
-        //        trainingSessions = await repository.GetTrainingSessions();
-        //        var model = new HomeViewModel(trainingSessions);
-        //        return View(model);
-        //    }
-        //    catch (System.Exception)
-        //    {
-        //        var model = new HomeViewModel();
-        //        ModelState.AddModelError(string.Empty, "Failed to connect to api");
-        //        return View(model);
-        //        throw;
-        //    }
-        //}
+            _dbrepo.SeedTrainingSessions(data);    
+        }
 
+        public async Task GetAndFillDatabaseWithLatestTrainingSession(Athlete athlete)
+        {
+             
+            var data= await _repository.GetLatestTrainingSession(athlete.Id);
+           
+                _dbrepo.AddLatestTrainingSession(data);
+            
+            
+        }
 
-        //public IActionResult Privacy()
-        //{
-        //    return View();
-        //}
-
-        //[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        //public IActionResult Error()
-        //{
-        //    return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        //}
-
-
+      
     }
-}
+    }
+
+              

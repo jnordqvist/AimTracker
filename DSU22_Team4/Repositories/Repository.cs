@@ -1,4 +1,6 @@
-﻿using DSU22_Team4.Infrastructure;
+﻿using DSU22_Team4.Data;
+using DSU22_Team4.Infrastructure;
+using DSU22_Team4.Models.Dto;
 using DSU22_Team4.Models.Poco;
 using System;
 using System.Collections.Generic;
@@ -9,50 +11,47 @@ namespace DSU22_Team4.Repositories
 {
     public class Repository : IRepository
     {
-        private readonly IApiClient apiClient;
+        private readonly IApiClient _apiClient;
         private readonly string baseEndPoint = "https://grupp8.dsvkurs.miun.se/api/Training/";
         private readonly string basePoint = "https://grupp8.dsvkurs.miun.se/api/history/Date/";
+        private readonly string baseEndPointAthlete = "https://grupp8.dsvkurs.miun.se/api/athletes";
         private readonly string startDateEndpoint = "startDate=";
         private readonly string endDateEndpoint = "endDate=";
 
-        public Repository(IApiClient apiClient)
+        private readonly AppDbContext _db;
+
+        public Repository(IApiClient apiClient, AppDbContext db)
         {
-            this.apiClient = apiClient;
+            _apiClient = apiClient;
+            _db = db;
         }
 
-        public async Task<List<TrainingSession>> GetAimTrackerData()
-        {
-            var athleteId = "BTSWE11008199501";
-            var trainingSessions = await apiClient.GetAsync<TrainingSession>($"{baseEndPoint}{athleteId}");
-            //await DoAsync(trainingSessions);
-            List<TrainingSession> trainingSessions1 = new List <TrainingSession>
-            {
-                trainingSessions
-            };
 
-            return trainingSessions1;
+        public async Task <TrainingSessionDto> GetLatestTrainingSession(string athleteId)
+        {
+            
+            var trainingSession = await _apiClient.GetAsync<TrainingSessionDto>($"{baseEndPoint}{athleteId}");
+
+
+
+            return trainingSession;
         }
 
-        public async Task<List<TrainingSession>> GetAimTrackerDataByDate(string athleteId, string startDate, string endDate)
-        {
-
-            var training = await apiClient.GetAsync <List<TrainingSession>>($"{basePoint}" +
-                $"{athleteId}?{startDateEndpoint}{startDate}&{endDateEndpoint}{endDate}");  
-            return training;
+        public async Task<List<TrainingSessionDto>> GetTrainingSessionsByDate(string athleteId, string startDate, string endDate)
+        {    
+            
+            var trainingSessions = await _apiClient.GetAsync <List<TrainingSessionDto>>($"{basePoint}" +
+            $"{athleteId}?{startDateEndpoint}{startDate}&{endDateEndpoint}{endDate}");
+           
+            return trainingSessions;
         }
 
-        //private async Task<TrainingSession> DoAsync(TrainingSession trainingSession)
-        //{
-        //    var athleteId = 1;
-        //    var result = await apiClient.GetAsync<TrainingSession>($"{baseEndPoint}{athleteId}");
-        //    trainingSession.Date = result.Date;
-        //    trainingSession.IbuId = result.IbuId;
-        //    trainingSession.Id = result.Id;
-        //    trainingSession.Location = result.Location;
-        //    trainingSession.Results = result.Results;
+        public async Task<List<AthleteDto>> GetAthletesAsync()
+        {
+            var athletes = await _apiClient.GetAsync<List<AthleteDto>>($"{baseEndPointAthlete}");
+            return athletes;
+        }
 
-        //    return trainingSession;
-        //}
-
+     
     }
 }
