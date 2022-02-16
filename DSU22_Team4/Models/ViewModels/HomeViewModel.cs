@@ -113,28 +113,6 @@ namespace DSU22_Team4.Models.ViewModels
             return $"{hitPercentage}";
         }
 
-        public double CalculateAverageXCoord(Serie serie)
-        {
-            List<double> listOfXCoords = new List<double>();
-            double averageX;
-            foreach (var shot in serie.Shots)
-            {
-                listOfXCoords.Add(shot.X);
-            }
-            averageX = listOfXCoords.Average();
-            return averageX;
-        }
 
-        public double CalculateAverageYCoord(Serie serie)
-        {
-            List<double> listOfYCoords = new List<double>();
-            double averageY;
-            foreach (var shot in serie.Shots)
-            {
-                listOfYCoords.Add(shot.Y);
-            }
-            averageY = listOfYCoords.Average();
-            return averageY;
-        }
     }  
 }
