@@ -48,13 +48,11 @@ namespace DSU22_Team4.Controllers
             DateTime dateStartDate = dateEndDate.AddDays(-4);
             string endDate = dateEndDate.ToString("yyMMdd");
             string startDate = dateStartDate.ToString("yyMMdd");
-
-            
-            
+           
             var athlete = _dbrepo.GetAthleteById(athleteId);
             await FillDatabaseWithSessions(athlete, startDate, endDate);
             await GetAndFillDatabaseWithLatestTrainingSession(athlete);
-           
+
             var trainingSessions = _dbrepo.GetTrainingSessions(athlete.Id);
             var weather = new WeatherInfoDto();
             try
@@ -72,14 +70,11 @@ namespace DSU22_Team4.Controllers
             return View(new HomeViewModel(athlete, trainingSessions, weather));
         }
 
-      
-
         public async Task FillDataToAthlete()
         {
             var data = await _repository.GetAthletesAsync();
 
-            _dbrepo.SeedAthletes(data);
-           
+            _dbrepo.SeedAthletes(data);          
         }
 
         public async Task FillDatabaseWithSessions(Athlete athlete, string startDate, string endDate)
@@ -94,13 +89,9 @@ namespace DSU22_Team4.Controllers
              
             var data= await _repository.GetLatestTrainingSession(athlete.Id);
            
-                _dbrepo.AddLatestTrainingSession(data);
-            
-            
-        }
-
-      
+                _dbrepo.AddLatestTrainingSession(data);                    
+        }     
     }
-    }
+}
 
               

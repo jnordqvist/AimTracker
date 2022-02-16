@@ -97,16 +97,26 @@ namespace DSU22_Team4.Repositories
             return trainingSessions.ToList();
         }
 
-        public List<TrainingSession> GetPreviousTrainingSessions(string ibuId, string startDate, string endDate)
+        public List<TrainingSession> GetTrainingHistory(string ibuId)
         {
-            List<TrainingSession> trainingSessions = new List<TrainingSession>();
-            foreach (var ts in trainingSessions)
-            {
-                var trainingSession = _db.TrainingSession.Where(x => x.IbuId == ibuId);
-                trainingSessions.Add(ts);
-            }
-            return trainingSessions;
+            var trainingSession = _db.TrainingSession.Where(x => x.IbuId == ibuId).Include(x => x.Results).ToList();
+
+            return trainingSession;
         }
+
+        public List<TrainingSession> GetStandingShootingHistory(string ibuId)
+        {
+            var shootings = _db.TrainingSession.Where(x => x.IbuId == ibuId).Include(x => x.Results.Where(y => y.Stance == "Standing")).ToList();
+
+            return shootings;
+        }
+
+        //public List<Serie> GetProneShootingHistory(string ibuId)
+        //{
+        //    var shootings = _db.TrainingSession.Where(x => x.IbuId == ibuId).Select(x => x.Results).ToList();
+
+        //    return shootings;
+        //}
 
         public void AddLatestTrainingSession(TrainingSessionDto trainingSessionDto)
         {
