@@ -26,5 +26,6 @@ namespace DSU22_Team4.Repositories
         List<Shot> GetShotsBySerieId(int id);
         List<TrainingSession> GetTrainingHistory(string ibuId);
         List<TrainingSession> GetStandingShootingHistory(string ibuId);
+        int TrainingSessionIntensity();
     }
 }
