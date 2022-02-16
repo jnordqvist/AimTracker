@@ -1,11 +1,30 @@
 ﻿
-// Declaration of necessary variables 
+// Declaration of necessary variables
 let topnav = document.getElementById("myLinks");
 let mediaquery = window.matchMedia("(min-width: 1000px)")
+let intensity = document.getElementById("intensity");
+let btnOkDate = document.getElementById("btnOkDate");
+btnOkDate.addEventListener("click", getTrainingSessionFromDate);
+
+function getTrainingSessionFromDate() {
+
+}
 
 displayLinks(mediaquery) // Calls function on runtime
 
 mediaquery.addListener(displayLinks) // Attach listener function on state changes
+
+function intensityColor() {
+    if (intensity.value < 50) {
+        intensity.style.backgroundColor = "#00FF00";
+    }
+    else if (intensity.value > 50 && intensity.value < 80) {
+        intensity.style.backgroundColor = "#FFFF00";
+    }
+    else if (intensity.value > 80) {
+        intensity.style.backgroundColor = "#FF0000";
+    }
+}
 
 // Show and hide links depending on topnav style 
 function myFunction() {
@@ -117,8 +136,61 @@ function getDataValues() {
 
 }
 
+$(document).ready(function () {
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+    ];
+    let qntYears = 4; /*Lägg in kod för att läsa in hur många år atleten har varit aktiv?*/
+    let selectYear = $("#year");
+    let selectMonth = $("#month");
+    let selectDay = $("#day");
+    let currentYear = new Date().getFullYear();
 
+    for (var y = 0; y < qntYears; y++) {
+        let date = new Date(currentYear);
+        let yearElem = document.createElement("option");
+        yearElem.value = currentYear
+        yearElem.textContent = currentYear;
+        selectYear.append(yearElem);
+        currentYear--;
+    }
 
+    for (var m = 0; m < 12; m++) {
+        let month = monthNames[m];
+        let monthElem = document.createElement("option");
+        monthElem.value = m;
+        monthElem.textContent = month;
+        selectMonth.append(monthElem);
+    }
+
+    var d = new Date();
+    var month = d.getMonth();
+    var year = d.getFullYear();
+    var day = d.getDate();
+
+    selectYear.val(year);
+    selectYear.on("change", AdjustDays);
+    selectMonth.val(month);
+    selectMonth.on("change", AdjustDays);
+
+    AdjustDays();
+    selectDay.val(day)
+
+    function AdjustDays() {
+        var year = selectYear.val();
+        var month = parseInt(selectMonth.val()) + 1;
+        selectDay.empty();
+
+        var days = new Date(year, month, 0).getDate();
+
+        for (var d = 1; d <= days; d++) {
+            var dayElem = document.createElement("option");
+            dayElem.value = d;
+            dayElem.textContent = d;
+            selectDay.append(dayElem);
+        }
+    }
+});
 
 //, {
 //    data: [1600, 1700, 1700, 1900, 2000, 2700, 4000, 5000, 6000, 7000],
