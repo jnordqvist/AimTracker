@@ -20,10 +20,8 @@ namespace DSU22_Team4.Controllers
         #region privatefields
 
         private readonly ILogger<HomeController> _logger;
-
         private readonly IDbRepository _dbrepo;
         private readonly IRepository _repository;
-       
         private readonly UserManager<IdentityUser> _userManager;
         private readonly IOpenWeather _weather;
         #endregion
@@ -48,11 +46,9 @@ namespace DSU22_Team4.Controllers
             DateTime dateStartDate = dateEndDate.AddDays(-4);
             string endDate = dateEndDate.ToString("yyMMdd");
             string startDate = dateStartDate.ToString("yyMMdd");
-           
             var athlete = _dbrepo.GetAthleteById(athleteId);
             await FillDatabaseWithSessions(athlete, startDate, endDate);
             await GetAndFillDatabaseWithLatestTrainingSession(athlete);
-
             var trainingSessions = _dbrepo.GetTrainingSessions(athlete.Id);
             var weather = new WeatherInfoDto();
             try
@@ -73,24 +69,23 @@ namespace DSU22_Team4.Controllers
         public async Task FillDataToAthlete()
         {
             var data = await _repository.GetAthletesAsync();
-
             _dbrepo.SeedAthletes(data);          
+
         }
 
         public async Task FillDatabaseWithSessions(Athlete athlete, string startDate, string endDate)
         {
             var data = await _repository.GetTrainingSessionsByDate(athlete.Id, startDate, endDate);
-
             _dbrepo.SeedTrainingSessions(data);    
         }
 
         public async Task GetAndFillDatabaseWithLatestTrainingSession(Athlete athlete)
-        {
-             
+        {  
             var data= await _repository.GetLatestTrainingSession(athlete.Id);
            
                 _dbrepo.AddLatestTrainingSession(data);                    
         }     
+
     }
 }
 

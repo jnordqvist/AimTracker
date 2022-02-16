@@ -13,6 +13,7 @@ namespace DSU22_Team4.Models.Poco
         public virtual ICollection<Shot> Shots { get; set; } = new List<Shot>();
         public double AverageYCoord { get; set; }
         public double AverageXCoord { get; set; }
+        public virtual string TrainingSessionId { get; set; }
 
         public Serie(SerieDto serie)
         {
