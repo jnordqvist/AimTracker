@@ -1,29 +1,62 @@
 ﻿@model StatisticsViewModel
-<div>
-
+<div id="container-stats-page">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <div id="left-container-stats">
+        <div id="select-container">
+            <div id="select-dates-container">
+                <div id="choose-date">
+                    <p class="header-statistics">Choose Date</p>
+                    <select id="year"></select>
+                    <select id="month"></select>
+                    <select id="day"></select>
+                    <button id="btnOkDate">OK</button>
+                </div>
+            </div>
+            <div id="select-trainingsession-container" name="sessions">
+                <label for="sessions" class="header-statistics">Choose a training session</label>
+                @Html.DropDownListFor(m => m.SelectedTrainingSession.Date, Model.DropDownTrainingSessions)
 
-    <div class="date">
-        <p>@Model.TrainingSession.Date.DayOfWeek, @Model.TrainingSession.Date.ToShortDateString()</p>
-
+            </div>
+            <button id="btn-get-ts" class="btn">Get Training Session</button>
+        </div>
+        <div id="outer-container-intensity">
+            <div id="container-intensity">
+                <p class="header-statistics">Workout Intensity</p>
+                <p id="intensity" class="intensity">@Model.Intensity</p>
+                <p>%</p>
+            </div>
+            <div id="container-intensity-colors">
+                <div id="container-dots">
+                    <span class="dot" id="dot-red"></span>
+                    <span class="dot" id="dot-yellow"></span>
+                    <span class="dot" id="dot-green"></span>
+                </div>
+                <div id="container-dot-texts">
+                    <p id="easy">Easy</p>
+                    <p id="medium">Medium</p>
+                    <p id="hard">Hard</p>
+                </div>
+            </div>
+        </div>
     </div>
-    <div id="container-intensity">
-        <p>Workout Intensity</p><p id="intensity" class="intensity">@Model.Intensity</p><p>%</p>
-    </div>
-    
-
-    <input type="radio" id="prone" value="prone">
-    <label for="prone">Prone</label><br>
-    <input type="radio" id="standing" value="standing">
-    <label for="standing">Standing</label><br>
-
-    <!-- Numeric.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.min.js"></script>
-    <!-- Plotly.js -->
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <div id="myDiv" style="width: 480px; height: 300px;">
+    <div id="hit-image-container">
+        <img id="hit-image" src="~/img/traff.png" />
+        <div id="container-radio-btns">
+            <div class="radio-btn">
+                <input type="radio" id="prone" value="prone">
+                <label for="prone">Prone</label><br>
+            </div>
+            <div class="radio-btn">
+                <input type="radio" id="standing" value="standing">
+                <label for="standing">Standing</label><br>
+            </div>
+        </div>
     </div>
 </div>
+<!-- Numeric.js -->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.min.js"></script>-->
+<!-- Plotly.js -->
+<!--<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>-->
 
 
 
