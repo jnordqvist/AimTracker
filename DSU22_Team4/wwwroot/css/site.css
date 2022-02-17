@@ -1,4 +1,4 @@
-﻿/ /* HOME*/
+﻿/* HOME*/
 body {
     background-color: white;
     margin: 0;
@@ -72,7 +72,7 @@ p {
     margin-right: 150px;
 }
 
-    #parameter-btns .btn {
+    #parameter-btns .btn, #btnOkDate, #btn-get-ts {
         background-color: #212977;
         border: none;
         color: white;
@@ -319,13 +319,92 @@ svg {
 
 #intensity {
     background: white;
+    border-radius: 50%;
+    margin-left: 0.5vh;
+    margin-right: 0.5vh;
+    padding-left: 0.5vh;
+    padding-right: 0.5vh;
 }
 
-#container-intensity {
+#container-intensity, #container-stats-page {
     display: flex;
     flex-direction: row;
 }
 
+#left-container-stats {
+    display: flex;
+    flex-direction: column;
+}
+
+#select-container, #outer-container-intensity {
+    display: flex;
+    flex-direction: column;
+    color: #212977;
+    background: white;
+    box-shadow: 0 3px 10px #a3a3a3;
+    border-radius: 25px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 5vh;
+    align-items: center;
+}
+
+#select-trainingsession-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-statistics {
+    color: #212977;
+    font-family: fantasy;
+    font-size: 16px;
+}
+
+#hit-image-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5vh;
+}
+
+.radio-btn {
+    padding: 1vh;
+}
+
+#container-radio-btns {
+    display: flex;
+    flex-direction: column;
+}
+
+.dot {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+#container-dots, #container-dot-texts {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2vh;
+    margin-top: 2vh;
+}
+
+
+#container-intensity-colors {
+    display: flex;
+    flex-direction: row;
+}
+
+#dot-red {
+    background-color: red;
+}
+#dot-yellow {
+    background-color: yellow;
+}
+#dot-green {
+    background-color: green;
+}
 /* NAV*/
 .topnav {
     overflow: hidden;
@@ -525,8 +604,35 @@ div.login-form-icon {
 }
 
 /*STATS PAGE*/
+#easy {
+    color:black;
 
-#container-filter-search{
+}
+#medium {
+    color: black;
+
+}
+#hard {
+    color: black;
+   
+}
+
+#container-intensity {
+    display: flex;
+    flex-direction: row;
+}
+
+#outer-container-intensity, container-intensity-colors {
+    display: flex;
+    flex-direction: column;
+}
+
+#container-intensity-colors {
+    justify-content:center;
+    align-content:space-between;
+}
+
+#container-filter-search {
     display: flex;
     flex-direction: column;
     background-color: ghostwhite;
@@ -541,9 +647,6 @@ div.login-form-icon {
     padding: 12px 16px;
     transform: translate(0%, -50%);
 }
-
-
-
 
 
 #all-filters {
@@ -594,7 +697,16 @@ ul .stat text {
    background: #bbb;
 }
 
+
+@media screen and (max-width: 1120px) {
+    #container-stats-page {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
 @media screen and (min-width: 1000px) {
+
     .topnav #myLinks {
         display: flex;
         flex-direction: row;
@@ -640,7 +752,7 @@ ul .stat text {
 
 
 
-    /* ADD DATA*/
+    ADD DATA
     .btn-scale {
         min-width: 44px;
         width: 6%;
@@ -733,6 +845,18 @@ ul .stat text {
 
 
 @media screen and (max-width: 600px) {
+    #select-container, #outer-container-intensity {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    #hit-image {
+        width: 80%;
+    }
+
+    #container-stats-page {
+        flex-direction: column;
+    }
+
     .register-login-button {
         flex-direction: column;
         margin-left: auto;
@@ -779,6 +903,19 @@ ul .stat text {
 }
 
 @media screen and (max-width:768px) {
+
+    #select-container, #outer-container-intensity {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    
+    #hit-image {
+        width: 80%;
+    }
+    #container-stats-page {
+        flex-direction: column;
+    }
+    
     .container-flex {
         flex-direction: column;
     }
@@ -849,6 +986,18 @@ ul .stat text {
 
 @media screen and (max-width:375px) {
 
+    #select-container, #outer-container-intensity {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    
+    #hit-image {
+        width: 80%;
+    }
+
+    #container-stats-page {
+        flex-direction: column;
+    }
     .container-flex {
         flex-direction: column;
         justify-content: center;

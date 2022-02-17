@@ -12,14 +12,14 @@ namespace DSU22_Team4.Models.ViewModels
     {
         public Athlete Athlete { get; set; }
         [Display(Name = "Training Session")]
-        public TrainingSession TrainingSession { get; set; }
-        //public IEnumerable<SelectListItem> DropDownTrainingSessions { get; set; }
+        public TrainingSession SelectedTrainingSession { get; set; }
+        public IEnumerable<SelectListItem> DropDownTrainingSessions { get; set; }
         public int Intensity { get; set; }
-        public StatisticsViewModel(Athlete athlete, TrainingSession session , int intensity)
+        public StatisticsViewModel(Athlete athlete, TrainingSession session, IEnumerable<SelectListItem> selectListItems)
         {
             Athlete = athlete;
-           // DropDownTrainingSessions = selectListItems;
-            TrainingSession = session;
+            DropDownTrainingSessions = selectListItems;
+            SelectedTrainingSession = session;
             Intensity = AverageHeartRateForSession(session, athlete);
         }
 
