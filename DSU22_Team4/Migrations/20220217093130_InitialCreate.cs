@@ -4,7 +4,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace DSU22_Team4.Migrations
 {
-    public partial class initialcreate : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -12,7 +12,10 @@ namespace DSU22_Team4.Migrations
                 name: "Athlete",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "text", nullable: false)
+                    Id = table.Column<string>(type: "text", nullable: false),
+                    FullName = table.Column<string>(type: "text", nullable: true),
+                    Image = table.Column<string>(type: "text", nullable: true),
+                    MaxHeartRate = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -110,7 +113,8 @@ namespace DSU22_Team4.Migrations
                     Result = table.Column<string>(type: "text", nullable: true),
                     X = table.Column<double>(type: "double precision", nullable: false),
                     Y = table.Column<double>(type: "double precision", nullable: false),
-                    SerieId = table.Column<int>(type: "integer", nullable: true)
+                    TimeToFire = table.Column<string>(type: "text", nullable: true),
+                    SerieId = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -120,7 +124,7 @@ namespace DSU22_Team4.Migrations
                         column: x => x.SerieId,
                         principalTable: "Serie",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
