@@ -24,7 +24,11 @@ namespace DSU22_Team4.Repositories
         #endregion
 
         #region athletemethods
-        // Gets the atheltebyId from db.
+        /// <summary>
+        /// Gets the athlete from database
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>A athlete by id</returns>
         public Athlete GetAthleteById(string id)
         {
             var athlete = _db.Athlete
@@ -34,14 +38,10 @@ namespace DSU22_Team4.Repositories
         }
 
      
-        //Seed athlete 
-        public void Seed(Athlete a)
-        {
-            _db.Add(a);
-            _db.SaveChanges();
-        }
-
-
+        /// <summary>
+        /// Add athletes to the database
+        /// </summary>
+        /// <param name="athletedto"></param>
         public void SeedAthletes(List<AthleteDto> athletedto)
         {  //fyller på alla på en gång oavsett vem som loggar in. Fixa sen?
             foreach (var a in athletedto)
@@ -62,24 +62,33 @@ namespace DSU22_Team4.Repositories
         #endregion
 
         #region trainingsessionmethods
-        public TrainingSession GetTrainingSession(string ibuId)
-        {
-            var trainingSession= _db.TrainingSession.Where(x => x.IbuId == ibuId).FirstOrDefault();
-            return trainingSession;
-        }
+       
+        /// <summary>
+        /// Get one athletes all sessions including series and shots
+        /// </summary>
+        /// <param name="ibuId"></param>
+        /// <returns> A list of trainingsessions </returns>
         public List<TrainingSession> GetTrainingSessions(string ibuId)
         {
             var trainingSessions = _db.TrainingSession.Where(x => x.IbuId == ibuId).OrderByDescending(y => y.Date).Take(5).Include(x => x.Results)
                 .ThenInclude(y => y.Shots);
             return trainingSessions.ToList();
         }
+        /// <summary>
+        /// Gets the history by stance from one athlete
+        /// </summary>
+        /// <param name="ibuId"></param>
+        /// <returns>a list of sessions by stance</returns>
         public List<TrainingSession> GetStandingShootingHistory(string ibuId)
         {
             var shootings = _db.TrainingSession.Where(x => x.IbuId == ibuId).Include(x => x.Results.Where(y => y.Stance == "Standing")).ToList();
 
             return shootings;
         }
-
+        /// <summary>
+        /// Adds trainingsession to database
+        /// </summary>
+        /// <param name="trainingSessionDto"></param>
         public void AddLatestTrainingSession(TrainingSessionDto trainingSessionDto)
         {
             var trainingsession = new TrainingSession(trainingSessionDto);
@@ -87,6 +96,10 @@ namespace DSU22_Team4.Repositories
             _db.SaveChanges();
         }
 
+        /// <summary>
+        /// Add all trainingsessions to database
+        /// </summary>
+        /// <param name="trainingSessions"></param>
         public void SeedTrainingSessions(List<TrainingSessionDto> trainingSessions)
         {
             foreach (var trainingsession in trainingSessions)
@@ -102,11 +115,12 @@ namespace DSU22_Team4.Repositories
         }
         #endregion
         #region seriemethods
-        public Serie GetSerie (int id)
-        {
-            var serie = _db.Serie.Where(x => x.Id == id).FirstOrDefault();
-            return serie;
-        }
+      
+        /// <summary>
+        ///  Get the list of series by trainingsession id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns> A list of series</returns>
         public List<Serie> GetResultsByTrainingSessionsId(string id)
         {
             List<Serie> series = _db.Serie.Where(x => x.TrainingSessionId == id).Include(z => z.Shots).ToList();
@@ -116,6 +130,11 @@ namespace DSU22_Team4.Repositories
         #endregion
 
         #region shotmethods
+        /// <summary>
+        /// get at list of shots by serieId
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>a list of shots</returns>
         public List<Shot> GetShotsBySerieId(int id)
         {
             List<Shot> shots = _db.Shot.Where(x => x.SerieId == id).ToList();
@@ -129,27 +148,19 @@ namespace DSU22_Team4.Repositories
 
 
 
+        #region statistics 
 
-      
-        
 
-        public int[] GetStatisticsValues(string ibuId, ValuesDto values)
-        {
-            var data = _db.TrainingSession.Where(x => x.IbuId == ibuId).Include(y => y.Results).ThenInclude(z => z.Shots);
-            data.Select(a => a.Results.Select(b => b.Shots.Select(c => c.HeartRate))).ToList();
-            return values.Data;
-        }
-
+       
+        /// <summary>
+        /// Test 
+        /// </summary>
+        /// <returns></returns>
         public int TrainingSessionIntensity()
         {
             return 70;
         }
 
-        //public void SeedTrainingSessions( List <TrainingSession> trainingSessions)
-        //{
-        //    f
-        //    _db.Add(trainingSessions);
-        //    _db.SaveChanges();
-        //}
+        #endregion
     }
 }

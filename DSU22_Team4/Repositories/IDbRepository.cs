@@ -9,22 +9,20 @@ namespace DSU22_Team4.Repositories
 {
     public interface IDbRepository
     {
-        //void UpdateAthlete(Athlete athlete);
-        Task<Athlete> GetAthleteAsync();
+        
+       
         Athlete GetAthleteById(string id);
-        void Seed(Athlete a);
-        TrainingSession GetTrainingSession(string id);
-        void AddSleepToAthlete(Athlete athlete, Sleep sleep);
-        Athlete GetAthleteWithSleep(string id);
-        //Athlete GetSleep(string id, DateTime date);
+        
+        
+        
         void AddLatestTrainingSession(TrainingSessionDto trainingSession);
         void SeedAthletes(List <AthleteDto> athlete);
         void SeedTrainingSessions( List <TrainingSessionDto> trainingSession);
         List<TrainingSession> GetTrainingSessions(string ibuId);
-        int[] GetStatisticsValues(string ibuId, ValuesDto values);
-        Serie GetSerie(int id);
+        
+        
         List<Shot> GetShotsBySerieId(int id);
-        List<TrainingSession> GetTrainingHistory(string ibuId);
+       
         List<TrainingSession> GetStandingShootingHistory(string ibuId);
         int TrainingSessionIntensity();
         List<Serie> GetResultsByTrainingSessionsId(string id);

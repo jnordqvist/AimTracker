@@ -13,12 +13,9 @@ namespace DSU22_Team4.Models.ViewModels
         public Athlete Athlete { get; set; }
         public WeatherInfoDto Weather { get; set; }
         public List<TrainingSession> TrainingSessions { get; set; }
-        public List <Serie> Series { get; set; }
-        public TrainingSessionDto TrainingSessionDto{ get; set; }
-        
-         [DisplayFormat (DataFormatString= "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
-         [DataType (DataType.Date)]
-        public DateTime Date { get; set; }
+       
+
+        #region ctor
         public HomeViewModel(Athlete athlete, List<TrainingSession> trainingSessions, WeatherInfoDto weather)
         {
            Athlete = athlete;
@@ -32,17 +29,19 @@ namespace DSU22_Team4.Models.ViewModels
         {
 
         }
+        #endregion
 
-        public string GetSeriesHitPercentage(Serie serie)
-        {
-            string result = $"{CalculateHitPercentage(serie) * 100}%";
-            return result;
-        }
-
+        #region calculatemethods
+        /// <summary>
+        /// Calculates hit percentage for all shots in a session
+        /// </summary>
+        /// <param name="serie"></param>
+        /// <returns> hitpercentage</returns>
         public double CalculateHitPercentage(Serie serie)
         {
             double counter = 0;
             foreach (var shot in serie.Shots)
+
             {
                 if (shot.Result == "hit")
                 {
@@ -53,23 +52,31 @@ namespace DSU22_Team4.Models.ViewModels
             double hitPercentage = counter / temp;
             return hitPercentage;
         }
-
-        public string GetSessionAverageHitPercentage(TrainingSession session)
+        /// <summary>
+        /// Calculates average hit percentage
+        /// </summary>
+        /// <param name="trainingsession"></param>
+        /// <returns>average hit percentage as a string</returns>
+        public string GetSessionAverageHitPercentage(TrainingSession trainingsession)
         {
             double hitPercentage = 0;
-            foreach (var serie in session.Results)
+            foreach (var serie in trainingsession.Results)
             {
                 hitPercentage += CalculateHitPercentage(serie);
             }
-            double series = (double)session.Results.Count();
+            double series = (double)trainingsession.Results.Count();
             double result = hitPercentage / series;
             return $"{result * 100}%";
         }
-
-        public int GetTotalNumOfShots(TrainingSession session)
+        /// <summary>
+        /// Gets the total number of shots
+        /// </summary>
+        /// <param name="session"></param>
+        /// <returns>Total number of shots</returns>
+        public int GetTotalNumOfShots(TrainingSession trainingsession)
         {
             int shots = 0;
-            foreach (var serie in session.Results)
+            foreach (var serie in trainingsession.Results)
             {
                 foreach (var shot in serie.Shots)
                 {
@@ -78,11 +85,15 @@ namespace DSU22_Team4.Models.ViewModels
             }
             return shots;
         }
-
-        public int GetTotalNumOfHits(TrainingSession session)
+        /// <summary>
+        /// Get total number of hits
+        /// </summary>
+        /// <param name="session"></param>
+        /// <returns> the total number of hits</returns>
+        public int GetTotalNumOfHits(TrainingSession trainingsession)
         {
             int hits = 0;
-            foreach (var serie in session.Results)
+            foreach (var serie in trainingsession.Results)
             {
                 foreach (var shot in serie.Shots)
                 {
@@ -94,25 +105,33 @@ namespace DSU22_Team4.Models.ViewModels
             }
             return hits;
         }
-
-        public string GetSessionTotalHitPercentage(TrainingSession session)
+        /// <summary>
+        /// get a sessions total hit percentage
+        /// </summary>
+        /// <param name="trainingsession"></param>
+        /// <returns>Hit percentage</returns>
+        public string GetSessionTotalHitPercentage(TrainingSession trainingsession)
         {
-            int shots = GetTotalNumOfShots(session);
-            int hits = GetTotalNumOfHits(session);
+            int shots = GetTotalNumOfShots(trainingsession);
+            int hits = GetTotalNumOfHits(trainingsession);
 
             double hitPercentage = Math.Round((((double)hits / (double)shots) * 100), 2);
             return $"{hitPercentage}%";
         }
-
-        public string GetSessionTotalHitPercentageRounded(TrainingSession session)
+        /// <summary>
+        /// Round the sessions total hitpercentage
+        /// </summary>
+        /// <param name="trainingsession"></param>
+        /// <returns></returns>
+        public string GetSessionTotalHitPercentageRounded(TrainingSession trainingsession)
         {
-            int shots = GetTotalNumOfShots(session);
-            int hits = GetTotalNumOfHits(session);
+            int shots = GetTotalNumOfShots(trainingsession);
+            int hits = GetTotalNumOfHits(trainingsession);
 
             double hitPercentage = Math.Round((((double)hits / (double)shots) * 100),0);
             return $"{hitPercentage}";
         }
 
-
-    }  
+        #endregion
+    }
 }
