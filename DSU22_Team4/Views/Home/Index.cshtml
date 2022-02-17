@@ -21,15 +21,15 @@
             </div>
         </div>
         <div id="flex-container-last-session">
-            
+
             <div class="last-session-middle">
                 <div class="date">
                     <p>@Model.TrainingSessions[0].Date.DayOfWeek, @Model.TrainingSessions[0].Date.ToShortDateString()</p>
-                    
+
                 </div>
-            
+
                 <div class="chart">
-                   
+
                     <p id="amount">Shooting-series: @Model.TrainingSessions.FirstOrDefault().Results.Count st </p>
                     <p id="hits">Hits: <br /> @Model.GetTotalNumOfHits(Model.TrainingSessions[0]) / @Model.GetTotalNumOfShots(Model.TrainingSessions[0]) st</p>
 
@@ -52,7 +52,7 @@
                     </svg>
 
                 </div>
-         
+
 
             </div>
             <div class="last-session-bottom">
@@ -61,38 +61,39 @@
                     <p>Temperature: @Model.Weather.Current.Temp °C</p>
                 </div>
                 <div class="last-session-pulse">
-                  
+
                 </div>
                 <button class="btn" id="edit-btn"><i class="fa fa-home"></i> Edit</button>
             </div>
         </div>
-
+    </div>
         <p id="previous-sessions">Previous Sessions</p>
         <div class="container-other-sessions">
+            
             @for (int i = 1; i < Model.TrainingSessions.Count; i++)
             {
-                    <div class="items-other-session">
+           <div class="items-other-session">
+
+                <a asp-action="Index" asp-controller="SessionDetails" asp-route-id="@Model.TrainingSessions[i].Id" />
+
+                <p class="date-time">@Model.TrainingSessions[i].Date.DayOfWeek @Model.TrainingSessions[i].Date.ToShortDateString()</p>
+
+                <p class="number-of-series"> Shooting-series: @Model.TrainingSessions[i].Results.Count st</p>
+
+                <p class="hit-rate "><i class="fa fa-regular fa-fire" style="color:peru"></i> Hits: @Model.GetTotalNumOfHits(Model.TrainingSessions[i]) / @Model.GetTotalNumOfShots(Model.TrainingSessions[i]) st</p>
+
+           </div>
 
 
 
-                        <p class="date-time">@Model.TrainingSessions[i].Date.DayOfWeek @Model.TrainingSessions[i].Date.ToShortDateString()</p>
-
-                        <p class="number-of-series"> Shooting-series: @Model.TrainingSessions[i].Results.Count st</p>
-
-                        <p class="hit-rate "><i class="fa fa-regular fa-fire" style="color:peru"></i> Hits: @Model.GetTotalNumOfHits(Model.TrainingSessions[i]) / @Model.GetTotalNumOfShots(Model.TrainingSessions[i]) st</p>
-                
-            </div>
-                       
-          
-              
             }
-            
 
-            
+
+
 
 
         </div>
-    </div>
+   
 </div>
 
  

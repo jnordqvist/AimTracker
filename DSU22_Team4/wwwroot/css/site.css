@@ -8,7 +8,8 @@ body {
 }
 
 #content-wrap {
-    padding-bottom: 4rem;  Footer height 
+    padding-bottom: 4rem; 
+   
 }
 
 .container-footer {
@@ -109,9 +110,17 @@ p {
         text-decoration: none;
     }
 
-    .container-other-sessions a {
-        text-decoration: none;
-    }
+.container-home-content {
+    display: flex;
+    flex-direction:column;
+}
+.items-other-session p{
+    color:black;
+}
+
+.container-other-sessions a {
+    text-decoration: none;
+}
 
 .last-session-top, #previous-sessions {
     padding: 5px;
