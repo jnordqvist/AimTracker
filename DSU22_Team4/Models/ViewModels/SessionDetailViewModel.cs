@@ -17,7 +17,7 @@ namespace DSU22_Team4.Models.ViewModels
         public Athlete Athlete { get; set; }
 
         
-
+        
         public SessionDetailViewModel(List<Serie> series, List <TrainingSession> trainingSessions, Athlete athlete)
         {
             Series = series;
@@ -30,6 +30,8 @@ namespace DSU22_Team4.Models.ViewModels
            
         }
 
+       
+
         public TrainingSession GetOneTrainingSession(List <TrainingSession> trainingsessions)
         {
             foreach (var session in trainingsessions)
@@ -39,6 +41,7 @@ namespace DSU22_Team4.Models.ViewModels
             return null;
         }
 
+     
         public List <Serie> DisplaySeriesInOrder(List <Serie> series) {
 
            
