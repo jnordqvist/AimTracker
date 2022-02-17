@@ -8,7 +8,7 @@ let intensity = document.getElementById("intensity");
 
 displayLinks(mediaquery) // Calls function on runtime
 mediaquery.addListener(displayLinks) // Attach listener function on state changes
-intensityColor();
+
 // Show and hide links depending on topnav style 
 function myFunction() {
  
@@ -28,41 +28,6 @@ function displayLinks(mediaquery) {
         topnav.style.display = "none";
     }
 }
-
-
-function intensityColor() {
-    if (intensity.value < 50) {
-        intensity.style.background = "#00FF00";
-    }
-    else if (intensity.value > 50 && intensity.value < 80) {
-        intensity.style.background = "#FFFF00";
-    }
-    else if (intensity.value > 80) {
-        intensity.style.background = "#FF0000";
-    }
-}
-
-//$("p.intensity").colorize();
-
-//$.fn.colorize = function () {
-//    return this.each(function () {
-//        var $this = $(this), number = $this.value();
-//        $this.css({
-//            color: number < 50 ? "green"
-//                : number > 50 && number < 80 ? "yellow"
-//                    : "red"
-//        });
-//    });
-//};
-
-$("p.intensity").each(function () {
-    $(this).html() < 50 ? $(this).css('background', 'green') : null;
-
-    ($(this).html() >= 50 && $(this).html() < 80) ? $(this).css('background', 'yellow') : null;
-
-    $(this).html() >= 80 ? $(this).css('background', 'red') : null;
-});
-
 // change color on button depending on hit.
 document.querySelectorAll('#shot').forEach(button => {
     if (button.textContent === "hit") {
@@ -85,6 +50,19 @@ document.querySelectorAll('#shot').forEach(button => {
         if (button.textContent === "hit") { button.style.color = "white"; }
     })
 });
+
+
+
+
+$("p.intensity").each(function () {
+    $(this).html() < 50 ? $(this).css('background', 'green') : null;
+
+    ($(this).html() >= 50 && $(this).html() < 80) ? $(this).css('background', 'yellow') : null;
+
+    $(this).html() >= 80 ? $(this).css('background', 'red') : null;
+});
+
+
 
 
 /*Start polar scatter chart*/
