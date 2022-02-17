@@ -4,7 +4,6 @@ using DSU22_Team4.Models.Poco;
 using DSU22_Team4.Models.ViewModels;
 using DSU22_Team4.Repositories;
 using DSU22_Team4.Repositories.OpenWeather;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -36,7 +35,6 @@ namespace DSU22_Team4.Controllers
             _weather = weather;
         }
 
-        [Authorize]
         public async Task<IActionResult> Index()
         {
             await Task.Delay(0);

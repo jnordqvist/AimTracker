@@ -5,7 +5,7 @@
     var claims = (ClaimsIdentity)User.Identity;
     var fullName = claims.FindFirst(x => x.Type == "FullName").Value;
     <div id="myLinks">
-        <a asp-action="Index" asp-controller="Home">Start</a>
+        <a asp-action="Index" asp-controller="Home">Hem</a>
         
         <a asp-action="Index" asp-controller="Statistics" asp-route-id="@Model.Athlete.Id">Statistics</a>
         @*<a id=name asp-action="Index" asp-controller="Home"></a>*@
