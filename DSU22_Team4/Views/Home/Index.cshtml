@@ -11,9 +11,9 @@
         <p id="welcome"></p>
     </div>
     <div id="parameter-btns">
-        <button class="btn"><i class="fa fa-home"></i> Sleep</button>
-        <button class="btn"><i class="fa fa-home"></i> Food</button>
-        <button class="btn"><i class="fa fa-home"></i> Injuries</button>
+        <button class="btn"><i class="fa fa-bed"></i> Sleep</button>
+        <button class="btn"><i class="fa fa-coffee"></i> Food</button>
+        <button class="btn"><i class="fa fa-plus-square"></i> Injuries</button>
     </div>
     <div class="container-last-session">
         <a asp-action="Index" asp-controller="SessionDetails" asp-route-id="@Model.TrainingSessions[0].Id" />
@@ -65,23 +65,28 @@
                 <div class="last-session-pulse">
 
                 </div>
-                <button class="btn" id="edit-btn"><i class="fa fa-home"></i> Edit</button>
+                <button class="btn" id="edit-btn"><i class="fa fa-edit"></i> Edit</button>
             </div>
         </div>
-
+    </div>
         <p id="previous-sessions">Previous Sessions</p>
         <div class="container-other-sessions">
+            
             @for (int i = 1; i < Model.TrainingSessions.Count; i++)
             {
-                <div class="items-other-session">
 
-                    <p class="date-time">@Model.TrainingSessions[i].Date.DayOfWeek @Model.TrainingSessions[i].Date.ToShortDateString()</p>
+               <div class="items-other-session">
 
-                    <p class="number-of-series"> Shooting-series: @Model.TrainingSessions[i].Results.Count st</p>
+                <a asp-action="Index" asp-controller="SessionDetails" asp-route-id="@Model.TrainingSessions[i].Id" />
 
-                    <p class="hit-rate "><i class="fa fa-regular fa-fire" style="color:peru"></i> Hits: @Model.GetTotalNumOfHits(Model.TrainingSessions[i]) / @Model.GetTotalNumOfShots(Model.TrainingSessions[i]) st</p>
+                <p class="date-time">@Model.TrainingSessions[i].Date.DayOfWeek @Model.TrainingSessions[i].Date.ToShortDateString()</p>
 
-                </div>
+                <p class="number-of-series"> Shooting-series: @Model.TrainingSessions[i].Results.Count st</p>
+
+                <p class="hit-rate "><i class="fa fa-regular fa-fire" style="color:peru"></i> Hits: @Model.GetTotalNumOfHits(Model.TrainingSessions[i]) / @Model.GetTotalNumOfShots(Model.TrainingSessions[i]) st</p>
+
+               </div>
+
 
 
 
@@ -92,7 +97,7 @@
 
 
         </div>
-    </div>
+   
 </div>
 
 

@@ -1,6 +1,6 @@
 ﻿@model RegisterViewModel
 
-@{ 
+@{
     Layout = "~/Views/Account/_AccountLayout.cshtml";
 }
 
@@ -31,14 +31,15 @@
                 <label asp-for="ConfirmPassword">Confirm Password</label>
                 <input asp-for="ConfirmPassword" id="phone" placeholder="Enter your password here">
             </li>
+            
             <li id="register-form">
-                <label for="role"> I am:</label>
+                <label  for="role"> I am:</label>
                 <ul class="flex-inner">
-                    <li>
-                        <input type="checkbox" id="coach" asp-for="IsCoach" >
+                    <li id="li-coach">
+                        <input type="checkbox" id="coach" asp-for="IsCoach">
                         <label for="coach">Coach</label>
                     </li>
-                    <li>
+                    <li id="li-athlete">
                         <input type="checkbox" id="athlete" asp-for="IsAthlete">
                         <label for="athlete">Athlete</label>
                     </li>
@@ -49,6 +50,7 @@
                     <button id="register-submit" type="submit">Register</button>
                 </div>
             </li>
+
         </ul>
     </form>
 </div>
