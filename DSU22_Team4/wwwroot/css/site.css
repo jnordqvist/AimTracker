@@ -42,8 +42,8 @@ body {
 }
 #img-profile {
     border-radius: 100%;
-    height: 50px;
-    width: 50px;
+    max-width: 200px;
+    height: auto;
 }
 #container-welcome {
     display: flex;
@@ -183,6 +183,7 @@ svg {
     margin-bottom: 20px;
     margin-left: 150px;
     margin-right: 150px;
+    font-family:fantasy;
 }
 
 .last-session-percentage {
@@ -230,6 +231,7 @@ svg {
     text-align: center;
     font-size: 16px;
     color: #212977;
+    font-family: fantasy;
 }
 
 /*.date-time, .number-of-series, .hit-rate {
@@ -357,7 +359,7 @@ svg {
 }
 
 
- .topnav #myLinks :nth-last-child(-n+2) {
+ .topnav #myLinks :last-child {
     right: 0;
     position: absolute;
     
@@ -735,6 +737,16 @@ ul .stat text {
     .topnav #myLinks :nth-last-child(-n+2) {
         right: unset;
         position: unset;
+    }
+
+    .container-shotts{
+        
+    }
+    .container-series {
+        
+    }
+    .shot-5{
+        flex-direction: column;
     }
    
 }
