@@ -40,7 +40,10 @@
                 @foreach (var serie in Model.DisplaySeriesInOrder(Model.Series))
                 {   
                     <div class="shots">
+                        <div class="date-stance">
+                        <h3 id="stance">Tidpunkt: @serie.DateTime.ToLongTimeString()</h3>
                         <h3 id="stance">@serie.Stance </h3>
+                            </div>
                         <div class="shot-5">
                             @foreach (var shot in serie.Shots.OrderBy(x=> x.ShotNr))
                             {<div class="info-shot">
