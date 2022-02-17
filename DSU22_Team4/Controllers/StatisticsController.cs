@@ -45,7 +45,7 @@ namespace DSU22_Team4.Controllers
             var sessions = GetTrainingSessions(athlete);
             var defaultSession = getDefaultSession(id);
             int intensity = _statsdb.TrainingSessionIntensity();
-            var statisticsViewModel = new StatisticsViewModel(athlete, defaultSession, sessions, intensity);
+            var statisticsViewModel = new StatisticsViewModel(athlete, defaultSession, intensity);
            // statisticsViewModel.DropDownTrainingSessions = _statsdb.GetTrainingSessions(athlete.Id);
 
             return View(statisticsViewModel);
