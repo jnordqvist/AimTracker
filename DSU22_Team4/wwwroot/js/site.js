@@ -41,13 +41,13 @@ function displayLinks(mediaquery) {
 
 function intensityColor() {
     if (intensity.value < 50) {
-        intensity.style.backgroundColor = "#00FF00";
+        intensity.style.background = "#00FF00";
     }
     else if (intensity.value > 50 && intensity.value < 80) {
-        intensity.style.backgroundColor = "#FFFF00";
+        intensity.style.background = "#FFFF00";
     }
     else if (intensity.value > 80) {
-        intensity.style.backgroundColor = "#FF0000";
+        intensity.style.background = "#FF0000";
     }
 }
 
