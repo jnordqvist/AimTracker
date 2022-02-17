@@ -173,6 +173,30 @@ $(document).ready(function () {
     selectMonth.val(month);
     selectMonth.on("change", AdjustDays);
 
+
+document.querySelectorAll('#shot').forEach(button => {
+    if (button.textContent === "hit") {
+        button.style.background = "white";
+        button.style.color = "white";
+        
+    }
+});
+
+    
+document.querySelectorAll('#shot').forEach(button => {
+    button.addEventListener("mouseover", function () {
+        if (button.textContent === "hit") { button.style.color = "black"; }
+    })
+        })
+          
+       
+document.querySelectorAll('#shot').forEach(button => {
+    button.addEventListener("mouseout", function () {
+        if (button.textContent === "hit") { button.style.color = "white"; }
+    })
+})
+    
+
     AdjustDays();
     selectDay.val(day)
 

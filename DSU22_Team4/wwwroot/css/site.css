@@ -109,6 +109,9 @@ p {
         text-decoration: none;
     }
 
+    .container-other-sessions a {
+        text-decoration: none;
+    }
 
 .last-session-top, #previous-sessions {
     padding: 5px;
@@ -241,28 +244,78 @@ svg {
     justify-content: space-between;
     align-items: center;
     flex: 33%;
+    justify-content: center;
 }
 
-#shot-1, #shot-2, #shot-3, #shot-4, #shot-5 {
+#stance {
+    font-family: fantasy;
+}
+#shot {
     border-radius: 50%;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     width: 50px;
     height: 50px;
-    margin-right:22px;
-  
+   
+    background: black;
+    color: black;
+    margin-bottom: 20px;
+    font-size: 0px;
+    line-height: 0px;
 }
-#serie-1 {
+#shot:hover{
+    color: white;
+    text-transform: uppercase;
+    font-size:12px;
+}
+#serie {
     text-align: center;
-   font-size:20px;
-   padding-top:5%;
-   padding-bottom:15%;
+   font-family: fantasy;
+   padding-top:10px;
+   padding-bottom:10px;
 }
-
-.container-shotts {
+ 
+.shot-5{
+    border: 1px solid #212977;
     display: flex;
+}
+.info-shot{
+    margin: 20px;
+}
+.container-shotts {
+   max-height: 400px;
+   overflow: scroll;
+    
    
 }
 
+.shots{
+    flex-direction: column;
+    margin: 10px;
+}
+.detail-container{
+    font-family: fantasy;
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+}
+.info-detail {
+    background-color: white;
+    box-shadow: 0 3px 10px #a3a3a3;
+    border-radius: 15px;
+    padding: 50px;
+    display: flex;
+    color: #212977;
+}
+.detail-procent {
+    display: flex;
+    flex: 20%;
+    margin-left: 50px;
+}
+#detail-svg
+{
+    width: 100px;
+    height: 100px;
+}
 /* NAV*/
 
     .topnav {
