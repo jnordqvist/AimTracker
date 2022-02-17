@@ -1,6 +1,7 @@
 ﻿using DSU22_Team4.Models.Poco;
 using DSU22_Team4.Models.ViewModels;
 using DSU22_Team4.Repositories;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -11,19 +12,24 @@ namespace DSU22_Team4.Controllers
 {
     public class SessionDetailsController : Controller
     {
-        private readonly IDbRepository _statsdb;
-        int count = 1;
+        private readonly IDbRepository _db;
+        private readonly UserManager<IdentityUser> _userManager;
+       
 
-        public SessionDetailsController(IDbRepository statsdb)
+        public SessionDetailsController(IDbRepository db, UserManager<IdentityUser> userManager)
         {
-            _statsdb = statsdb;
+            _db = db;
+            _userManager = userManager;
         }
 
         public async Task<IActionResult> Index(string id)
         {
             await Task.Delay(0);
-            var series = _statsdb.GetResultsByTrainingSessionsId(id);
-            var sessionDetailViewModel = new SessionDetailViewModel(series);
+            var user = await _userManager.GetUserAsync(HttpContext.User);
+            string athleteId = user.Id;
+            var series = _db.GetResultsByTrainingSessionsId(id);
+            var trainingsessions = _db.GetTrainingSessions(athleteId);
+            var sessionDetailViewModel = new SessionDetailViewModel(series,trainingsessions);
 
             return View(sessionDetailViewModel);
         }

@@ -10,19 +10,32 @@ namespace DSU22_Team4.Models.ViewModels
     {
         public List<Serie> Series { get; set; }
 
+        public List <TrainingSession> TrainingSessions { get; set; }
         
+        public TrainingSession TrainingSession { get; set; }
 
         public int NextPage { get; set; } 
         public int PreviousPage { get; set; }
 
         public int CurrentPage { get; set; } = 1;
 
-        public SessionDetailViewModel(List<Serie> series)
+        public SessionDetailViewModel(List<Serie> series, List <TrainingSession> trainingSessions)
         {
             Series = series;
             SplitList(series, CurrentPage);
             NextPage = CurrentPage + 1;
+            TrainingSessions = trainingSessions;
+            TrainingSession = GetOneTrainingSession(trainingSessions);
            
+        }
+
+        public TrainingSession GetOneTrainingSession(List <TrainingSession> trainingsessions)
+        {
+            foreach (var session in trainingsessions)
+            {
+                return trainingsessions.Where(x => x.Id == session.Id).FirstOrDefault();
+            }
+            return null;
         }
 
 
@@ -65,6 +78,24 @@ namespace DSU22_Team4.Models.ViewModels
                 }
             }
             return hits;
+        }
+
+        public string GetSessionTotalHitPercentage(List <Serie> series)
+        {
+            int shots = GetTotalNumOfShots(series);
+            int hits = GetTotalNumOfHits(series);
+
+            double hitPercentage = Math.Round((((double)hits / (double)shots) * 100), 2);
+            return $"{hitPercentage}%";
+        }
+
+        public string GetSessionTotalHitPercentageRounded(List <Serie> series)
+        {
+            int shots = GetTotalNumOfShots(series);
+            int hits = GetTotalNumOfHits(series);
+
+            double hitPercentage = Math.Round((((double)hits / (double)shots) * 100), 0);
+            return $"{hitPercentage}";
         }
 
         //public List <Serie> SkipListItems(List <Serie> series)

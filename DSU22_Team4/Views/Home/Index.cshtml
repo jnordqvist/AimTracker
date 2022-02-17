@@ -71,12 +71,20 @@
         <div class="container-other-sessions">
             @for (int i = 1; i < Model.TrainingSessions.Count; i++)
             {
-                <div class="items-other-session">
-                    <p class="date-time">@Model.TrainingSessions[i].Date.DayOfWeek @Model.TrainingSessions[i].Date.ToShortDateString()</p>
+                    <div class="items-other-session">
 
-                    <p class="number-of-series"> Shooting-series: @Model.TrainingSessions[i].Results.Count st</p>
-                    <p class="hit-rate "><i class="fa fa-regular fa-fire" style="color:peru"></i> Hits: @Model.GetTotalNumOfHits(Model.TrainingSessions[i]) / @Model.GetTotalNumOfShots(Model.TrainingSessions[i]) st</p>
-                </div>
+
+
+                        <p class="date-time">@Model.TrainingSessions[i].Date.DayOfWeek @Model.TrainingSessions[i].Date.ToShortDateString()</p>
+
+                        <p class="number-of-series"> Shooting-series: @Model.TrainingSessions[i].Results.Count st</p>
+
+                        <p class="hit-rate "><i class="fa fa-regular fa-fire" style="color:peru"></i> Hits: @Model.GetTotalNumOfHits(Model.TrainingSessions[i]) / @Model.GetTotalNumOfShots(Model.TrainingSessions[i]) st</p>
+                
+            </div>
+                       
+          
+              
             }
             
 

@@ -109,6 +109,9 @@ p {
         text-decoration: none;
     }
 
+    .container-other-sessions a {
+        text-decoration: none;
+    }
 
 .last-session-top, #previous-sessions {
     padding: 5px;
@@ -288,6 +291,30 @@ svg {
 .shots{
     flex-direction: column;
     margin: 10px;
+}
+.detail-container{
+    font-family: fantasy;
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+}
+.info-detail {
+    background-color: white;
+    box-shadow: 0 3px 10px #a3a3a3;
+    border-radius: 15px;
+    padding: 50px;
+    display: flex;
+    color: #212977;
+}
+.detail-procent {
+    display: flex;
+    flex: 20%;
+    margin-left: 50px;
+}
+#detail-svg
+{
+    width: 100px;
+    height: 100px;
 }
 /* NAV*/
 
