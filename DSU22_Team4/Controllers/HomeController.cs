@@ -69,7 +69,8 @@ namespace DSU22_Team4.Controllers
         public async Task FillDataToAthlete()
         {
             var data = await _repository.GetAthletesAsync();
-            _dbrepo.SeedAthletes(data);    
+            _dbrepo.SeedAthletes(data);          
+
         }
 
         public async Task FillDatabaseWithSessions(Athlete athlete, string startDate, string endDate)
@@ -81,9 +82,11 @@ namespace DSU22_Team4.Controllers
         public async Task GetAndFillDatabaseWithLatestTrainingSession(Athlete athlete)
         {  
             var data= await _repository.GetLatestTrainingSession(athlete.Id);
-            _dbrepo.AddLatestTrainingSession(data);           
-        }   
+           
+                _dbrepo.AddLatestTrainingSession(data);                    
+        }     
+
     }
-    }
+}
 
               
