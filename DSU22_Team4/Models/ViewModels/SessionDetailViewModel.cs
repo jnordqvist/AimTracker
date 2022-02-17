@@ -17,7 +17,7 @@ namespace DSU22_Team4.Models.ViewModels
         public Athlete Athlete { get; set; }
 
         
-
+        
         public SessionDetailViewModel(List<Serie> series, List <TrainingSession> trainingSessions, Athlete athlete)
         {
             Series = series;
@@ -30,6 +30,12 @@ namespace DSU22_Team4.Models.ViewModels
            
         }
 
+       /// <summary>
+       /// Gets one trainingsession
+       /// </summary>
+       /// <param name="trainingsessions"></param>
+       /// <returns>one trainingsession from list</returns>
+
         public TrainingSession GetOneTrainingSession(List <TrainingSession> trainingsessions)
         {
             foreach (var session in trainingsessions)
@@ -39,15 +45,20 @@ namespace DSU22_Team4.Models.ViewModels
             return null;
         }
 
+     /// <summary>
+     /// displays series by date
+     /// </summary>
+     /// <param name="series"></param>
+     /// <returns>a list of series ordered by date</returns>
         public List <Serie> DisplaySeriesInOrder(List <Serie> series) {
 
            
             return series.OrderByDescending(x => x.DateTime).ToList();
         }
 
-    
 
-      
+        #region Calculatemethods
+
         public int GetTotalNumOfShots(List <Serie> series)
         {
             int shots = 0;
@@ -95,7 +106,7 @@ namespace DSU22_Team4.Models.ViewModels
             return $"{hitPercentage}";
         }
 
- 
+        #endregion
 
 
     }

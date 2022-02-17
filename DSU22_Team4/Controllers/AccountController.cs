@@ -12,11 +12,12 @@ namespace DSU22_Team4.Controllers
 {
     public class AccountController : Controller
     {
+        #region privatefields
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly UserManager<IdentityUser> _userManager;
-        
-
+        #endregion
+        #region ctor
         public AccountController(RoleManager<IdentityRole> roleManager, 
                                  SignInManager<IdentityUser> signInManager, 
                                  UserManager<IdentityUser> userManager)
@@ -25,7 +26,7 @@ namespace DSU22_Team4.Controllers
             _roleManager = roleManager;
             _signInManager = signInManager;
         }
-
+        #endregion
         public IActionResult Index()
         {
             return View();
@@ -46,10 +47,7 @@ namespace DSU22_Team4.Controllers
                 var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, false, false);
                 if (result.Succeeded)
                 {
-                    //if (returnUrl !="" )
-                    //{
-                    //    return LocalRedirect(returnUrl);
-                    //}
+                   
                     return RedirectToAction("Index", "Home");
                 }
                 ModelState.AddModelError(string.Empty, "Login failed");

@@ -11,6 +11,7 @@ namespace DSU22_Team4.Repositories
 {
     public class Repository : IRepository
     {
+        #region privatefields
         private readonly IApiClient _apiClient;
         private readonly string baseEndPoint = "https://grupp8.dsvkurs.miun.se/api/Training/";
         private readonly string basePoint = "https://grupp8.dsvkurs.miun.se/api/history/Date/";
@@ -19,14 +20,19 @@ namespace DSU22_Team4.Repositories
         private readonly string endDateEndpoint = "endDate=";
 
         private readonly AppDbContext _db;
-
+        #endregion
         public Repository(IApiClient apiClient, AppDbContext db)
         {
             _apiClient = apiClient;
             _db = db;
         }
 
-
+        #region apicalls
+        /// <summary>
+        ///  gets the latest trainingsession from api
+        /// </summary>
+        /// <param name="athleteId"></param>
+        /// <returns> the latest trainingsession</returns>
         public async Task <TrainingSessionDto> GetLatestTrainingSession(string athleteId)
         {
             
@@ -36,7 +42,13 @@ namespace DSU22_Team4.Repositories
 
             return trainingSession;
         }
-
+        /// <summary>
+        ///  Gets trainingsession by date
+        /// </summary>
+        /// <param name="athleteId"></param>
+        /// <param name="startDate"></param>
+        /// <param name="endDate"></param>
+        /// <returns>trainingsessions by date</returns>
         public async Task<List<TrainingSessionDto>> GetTrainingSessionsByDate(string athleteId, string startDate, string endDate)
         {    
             
@@ -45,13 +57,16 @@ namespace DSU22_Team4.Repositories
            
             return trainingSessions;
         }
-
+        /// <summary>
+        /// Gets a list of athletes
+        /// </summary>
+        /// <returns>A list of athletes</returns>
         public async Task<List<AthleteDto>> GetAthletesAsync()
         {
             var athletes = await _apiClient.GetAsync<List<AthleteDto>>($"{baseEndPointAthlete}");
             return athletes;
         }
 
-     
+        #endregion
     }
 }
