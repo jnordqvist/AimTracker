@@ -35,16 +35,6 @@ namespace DSU22_Team4.Controllers
             return View(sessionDetailViewModel);
         }
 
-        //public ActionResult Get()
-        //{
-
-        //}
-        [HttpPost]
-        public ActionResult Next(SessionDetailViewModel sessionViewModel)
-        {
-
-
-            return Ok (sessionViewModel.SplitList(sessionViewModel.Series, sessionViewModel.NextPage));
-        }
+     
     }
 }

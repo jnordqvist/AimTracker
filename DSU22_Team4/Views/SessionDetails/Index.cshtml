@@ -35,18 +35,22 @@
 
     <div class="container-series">
          
-            @*<h1>@Model.GetTotalNumOfHits(Model.Series)</h1>*@
         
             <div class="container-shotts">
-                @foreach (var serie in Model.Series)
-                {
+                @foreach (var serie in Model.DisplaySeriesInOrder(Model.Series))
+                {   
                     <div class="shots">
+                        <div class="date-stance">
+                        <h3 id="stance">Tidpunkt: @serie.DateTime.ToLongTimeString()</h3>
                         <h3 id="stance">@serie.Stance </h3>
+                            </div>
                         <div class="shot-5">
-                            @foreach (var shot in serie.Shots)
+                            @foreach (var shot in serie.Shots.OrderBy(x=> x.ShotNr))
                             {<div class="info-shot">
+                                    <p>@shot.ShotNr</p>
                                     <button id="shot" type="submit">@shot.Result</button>
                                     <p> <i class="fa fa-heartbeat" style="color:crimson"></i>@shot.HeartRate </p>
+                                    <p id="timetofire">Time to fire: <br/> @shot.TimeToFire sec</p>
                            
                                     
                                 </div>

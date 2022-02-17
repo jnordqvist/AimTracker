@@ -15,6 +15,7 @@ namespace DSU22_Team4.Models.Dto
         public string Nat { get; set; }
         public string GenderId{ get; set; }
         public string MaxHeartRate { get; set; }
+        public string Image { get; set; }
         public List <string> StatSeasons { get; set; }
         public List<string> StatShootingProne { get; set; }
         public List<string> StatShootinStanding { get; set; }

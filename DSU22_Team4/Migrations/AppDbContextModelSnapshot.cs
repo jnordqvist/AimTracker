@@ -24,6 +24,15 @@ namespace DSU22_Team4.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("text");
 
+                    b.Property<string>("FullName")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("text");
+
+                    b.Property<string>("MaxHeartRate")
+                        .HasColumnType("text");
+
                     b.HasKey("Id");
 
                     b.ToTable("Athlete");
@@ -89,11 +98,14 @@ namespace DSU22_Team4.Migrations
                     b.Property<string>("Result")
                         .HasColumnType("text");
 
-                    b.Property<int?>("SerieId")
+                    b.Property<int>("SerieId")
                         .HasColumnType("integer");
 
                     b.Property<int>("ShotNr")
                         .HasColumnType("integer");
+
+                    b.Property<string>("TimeToFire")
+                        .HasColumnType("text");
 
                     b.Property<double>("X")
                         .HasColumnType("double precision");
@@ -169,7 +181,9 @@ namespace DSU22_Team4.Migrations
                 {
                     b.HasOne("DSU22_Team4.Models.Poco.Serie", null)
                         .WithMany("Shots")
-                        .HasForeignKey("SerieId");
+                        .HasForeignKey("SerieId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("DSU22_Team4.Models.Poco.Sleep", b =>

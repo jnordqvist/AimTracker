@@ -50,6 +50,35 @@ function intensityColor() {
         intensity.style.backgroundColor = "#FF0000";
     }
 }
+
+// change color on button depending on hit.
+document.querySelectorAll('#shot').forEach(button => {
+    if (button.textContent === "hit") {
+        button.style.background = "white";
+        button.style.color = "white";
+
+    }
+});
+
+//hover on hitbutton
+document.querySelectorAll('#shot').forEach(button => {
+    button.addEventListener("mouseover", function () {
+        if (button.textContent === "hit") { button.style.color = "black"; }
+    })
+});
+
+//hover out on hit button
+document.querySelectorAll('#shot').forEach(button => {
+    button.addEventListener("mouseout", function () {
+        if (button.textContent === "hit") { button.style.color = "white"; }
+    })
+});
+
+
+//Time to fire string gets shorter
+
+let stringTime = document.querySelector('#timetofire');
+stringTime = str.slice(0, str.length - 4);
 /*Start polar scatter chart*/
 
 function getrandom(num, mul) {
@@ -199,27 +228,7 @@ $(document).ready(function () {
     }
 });
 
-document.querySelectorAll('#shot').forEach(button => {
-    if (button.textContent === "hit") {
-        button.style.background = "white";
-        button.style.color = "white";
 
-    }
-});
-
-
-document.querySelectorAll('#shot').forEach(button => {
-    button.addEventListener("mouseover", function () {
-        if (button.textContent === "hit") { button.style.color = "black"; }
-    })
-});
-
-
-document.querySelectorAll('#shot').forEach(button => {
-    button.addEventListener("mouseout", function () {
-        if (button.textContent === "hit") { button.style.color = "white"; }
-    })
-});
 
 
 //, {

@@ -1,11 +1,13 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+
+
 @model HomeViewModel
 
 <div id="container-home-content">
     <div id="container-welcome">
-        <img id="img-profile" src="~/img/profilepic.jpg" default="Profile Pic" />
+        @await Html.PartialAsync("_imageview")
         <p id="welcome"></p>
     </div>
     <div id="parameter-btns">
@@ -72,6 +74,7 @@
             
             @for (int i = 1; i < Model.TrainingSessions.Count; i++)
             {
+
                <div class="items-other-session">
 
                 <a asp-action="Index" asp-controller="SessionDetails" asp-route-id="@Model.TrainingSessions[i].Id" />
@@ -86,6 +89,7 @@
 
 
 
+
             }
 
 
@@ -96,5 +100,5 @@
    
 </div>
 
- 
+
 

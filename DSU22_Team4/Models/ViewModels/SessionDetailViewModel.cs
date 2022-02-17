@@ -14,23 +14,23 @@ namespace DSU22_Team4.Models.ViewModels
         
         public TrainingSession TrainingSession { get; set; }
 
-        public int NextPage { get; set; } 
-        public int PreviousPage { get; set; }
-
-        public int CurrentPage { get; set; } = 1;
-
         public Athlete Athlete { get; set; }
 
+        
+        
         public SessionDetailViewModel(List<Serie> series, List <TrainingSession> trainingSessions, Athlete athlete)
         {
             Series = series;
-            SplitList(series, CurrentPage);
-            NextPage = CurrentPage + 1;
+            
             TrainingSessions = trainingSessions;
             TrainingSession = GetOneTrainingSession(trainingSessions);
             Athlete = athlete;
+            DisplaySeriesInOrder(series);
+            
            
         }
+
+       
 
         public TrainingSession GetOneTrainingSession(List <TrainingSession> trainingsessions)
         {
@@ -41,19 +41,16 @@ namespace DSU22_Team4.Models.ViewModels
             return null;
         }
 
+     
+        public List <Serie> DisplaySeriesInOrder(List <Serie> series) {
 
-        public List <Serie> SplitList(List <Serie> series, int page)
-        {
-            page = page - 1 * 5;
-            while(series.Count > 0)
-            {
-                
-                return series.Skip(page).Take(5).ToList();
-            }
            
-            return null;
+            return series.OrderByDescending(x => x.DateTime).ToList();
         }
 
+    
+
+      
         public int GetTotalNumOfShots(List <Serie> series)
         {
             int shots = 0;
@@ -101,15 +98,7 @@ namespace DSU22_Team4.Models.ViewModels
             return $"{hitPercentage}";
         }
 
-        //public List <Serie> SkipListItems(List <Serie> series)
-        //{
-
-        //    while (series.Count > 0)
-        //    {
-        //        return series.Skip(5).Take(5).ToList();
-        //    }
-        //    return null;
-        //}
+ 
 
 
     }
