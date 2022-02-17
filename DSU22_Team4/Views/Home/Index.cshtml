@@ -35,7 +35,7 @@
                     <p id="amount">Shooting-series: @Model.TrainingSessions.FirstOrDefault().Results.Count st </p>
                     <p id="hits">Hits: <br /> @Model.GetTotalNumOfHits(Model.TrainingSessions[0]) / @Model.GetTotalNumOfShots(Model.TrainingSessions[0]) st</p>
 
-                    <svg viewBox="0 0 36 36">
+                    <svg class="pie-chart" viewBox="0 0 36 36">
                         <path fill="none" stroke="#eee" stroke-width=1
                               d="M18 2.0845
                                 a 15.9155 15.9155 0 0 1 0 31.831

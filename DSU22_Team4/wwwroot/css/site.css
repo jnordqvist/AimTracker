@@ -136,21 +136,17 @@ p {
       margin-bottom: 10px;
 }
 
-
-
 .last-session-middle {
         display: flex;
         flex-direction: column;
         flex: 33%;
         padding: 20px;
-        font-size: 20px;
-
-        
+        font-size: 20px;       
 }
-svg {
+
+.pie-chart {
     width: 200px;
     height: 200px;
-   
 }
 
 @keyframes progress {
@@ -193,6 +189,23 @@ svg {
 .last-session-percentage {
     margin-left: 10%;
     text-align: center;
+}
+
+#intensity {
+    background: white;
+}
+
+#container-intensity {
+    display: flex;
+    flex-direction: row;
+}
+
+.onon-percentage p {
+    font-size: 24px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    color: #212977;
+    margin-top: 50%;
 }
 
 
@@ -621,101 +634,6 @@ ul .stat text {
             transform: scale(1.04);
         }
 
-       
-  
-   /* ADD DATA*/
-    .btn-scale {
-        min-width: 44px;
-        width: 6%;
-        text-align: center;
-        font-weight: bold;
-        color: black;
-        font-family: 'Lato', sans-serif;
-    }
-
-    .btn-scale-asc-1 {
-        background-color: #33FF00;
-    }
-
-        .btn-scale-asc-1:hover {
-            background-color: #2CDE00;
-        }
-
-    .btn-scale-asc-2 {
-        background-color: #66FF00;
-    }
-
-        .btn-scale-asc-2:hover {
-            background-color: #59DE00;
-        }
-
-    .btn-scale-asc-3 {
-        background-color: #99FF00;
-    }
-
-        .btn-scale-asc-3:hover {
-            background-color: #85DE00;
-        }
-
-    .btn-scale-asc-4{
-        background-color: #CCFF00;
-    }
-
-        .btn-scale-asc-4:hover {
-            background-color: #B1DE00;
-        }
-
-    .btn-scale-asc-5 {
-        background-color: #FFFF00;
-    }
-
-        .btn-scale-asc-5:hover {
-            background-color: #DEDE00;
-        }
-
-    .btn-scale-asc-6{
-        background-color: #FFCC00;
-    }
-
-        .btn-scale-asc-6:hover {
-            background-color: #DEB100;
-        }
-
-    .btn-scale-asc-7 {
-        background-color: #FF9900;
-    }
-
-        .btn-scale-asc-7:hover {
-            background-color: #DE8500;
-        }
-
-    .btn-scale-asc-8 {
-        background-color: #FF6600;
-    }
-
-        .btn-scale-asc-8:hover {
-            background-color: #DE5900;
-        }
-
-    .btn-scale-asc-9 {
-        background-color: #FF3300;
-    }
-
-        .btn-scale-asc-9:hover {
-            background-color: #DE2C00;
-        }
-
-    .btn-scale-asc-10 {
-        background-color: #FF0000;
-    }
-
-        .btn-scale-asc-10:hover {
-            background-color: #DE0000;
-        }
-
-}
-
-
 @media screen and (max-width: 600px)
 {
     .register-login-button {
@@ -723,7 +641,7 @@ ul .stat text {
         margin-left: auto;
     }
 
-    svg {
+    .pie-chart {
         width: 50px;
         height: 50px;
         margin: unset;
@@ -766,7 +684,7 @@ ul .stat text {
     .container-flex {
         flex-direction: column;
     }
-    svg {
+    .pie-chart {
         width: 50px;
         height: 50px;
         margin: unset;

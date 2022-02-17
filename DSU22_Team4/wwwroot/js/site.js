@@ -6,15 +6,9 @@ let intensity = document.getElementById("intensity");
 //let btnOkDate = document.getElementById("btnOkDate");
 //btnOkDate.addEventListener("click", getTrainingSessionFromDate);
 
-//function getTrainingSessionFromDate() {
-
-//}
-
 displayLinks(mediaquery) // Calls function on runtime
-
 mediaquery.addListener(displayLinks) // Attach listener function on state changes
-
-
+intensityColor();
 // Show and hide links depending on topnav style 
 function myFunction() {
  
@@ -36,9 +30,6 @@ function displayLinks(mediaquery) {
 }
 
 
-
-
-
 function intensityColor() {
     if (intensity.value < 50) {
         intensity.style.background = "#00FF00";
@@ -50,6 +41,27 @@ function intensityColor() {
         intensity.style.background = "#FF0000";
     }
 }
+
+//$("p.intensity").colorize();
+
+//$.fn.colorize = function () {
+//    return this.each(function () {
+//        var $this = $(this), number = $this.value();
+//        $this.css({
+//            color: number < 50 ? "green"
+//                : number > 50 && number < 80 ? "yellow"
+//                    : "red"
+//        });
+//    });
+//};
+
+$("p.intensity").each(function () {
+    $(this).html() < 50 ? $(this).css('background', 'green') : null;
+
+    ($(this).html() >= 50 && $(this).html() < 80) ? $(this).css('background', 'yellow') : null;
+
+    $(this).html() >= 80 ? $(this).css('background', 'red') : null;
+});
 
 // change color on button depending on hit.
 document.querySelectorAll('#shot').forEach(button => {
