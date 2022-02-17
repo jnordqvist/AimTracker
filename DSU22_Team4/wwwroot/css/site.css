@@ -1,17 +1,16 @@
-﻿/* HOME*/
+﻿/ /* HOME*/
 body {
     background-color: white;
     margin: 0;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 #content-wrap {
-    padding-bottom: 4rem; 
-   
+    padding-bottom: 4rem;
 }
 
 .container-footer {
-    margin-top:3vh;
+    margin-top: 3vh;
 }
 
 #footer {
@@ -37,13 +36,14 @@ body {
     align-self: center;
     padding-top: 10px;
     padding-left: 200px;
-    
 }
+
 #img-profile {
     border-radius: 100%;
     max-width: 200px;
     height: auto;
 }
+
 #container-welcome {
     display: flex;
     flex-direction: column;
@@ -57,63 +57,65 @@ body {
 }
 
 p {
-    margin-top:0;
-    margin-bottom:0;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 
 
 #parameter-btns {
-    display:flex;
-    flex-direction:row;
+    display: flex;
+    flex-direction: row;
     justify-content: center;
-    align-items:center;
+    align-items: center;
     margin-left: 150px;
-    margin-right:150px;
+    margin-right: 150px;
 }
 
-#parameter-btns .btn {
-     background-color: #212977;
-     border: none;
-     color: white;
-     cursor: pointer;
-     margin: 1.5vh;
-     margin-bottom: 5vh;
-}
+    #parameter-btns .btn {
+        background-color: #212977;
+        border: none;
+        color: white;
+        cursor: pointer;
+        margin: 1.5vh;
+        margin-bottom: 5vh;
+    }
+
 #edit-btn {
     background-color: #212977;
     border: none;
     color: white;
     cursor: pointer;
     font-size: 12px;
-    margin-top:10px;
+    margin-top: 10px;
 }
 
 #parameter-btns .btn:hover {
-   background-color: RoyalBlue;
-
+    background-color: RoyalBlue;
 }
-#edit-btn:hover{
+
+#edit-btn:hover {
     background-color: royalblue;
 }
 
 .container-last-session {
     display: flex;
-    justify-content:center;
+    justify-content: center;
     background-color: #fff;
     border-radius: 50px;
-  
 }
+
     .container-last-session a {
         text-decoration: none;
     }
 
 .container-home-content {
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
 }
-.items-other-session p{
-    color:black;
+
+.items-other-session p {
+    color: #212977;
 }
 
 .container-other-sessions a {
@@ -133,18 +135,20 @@ p {
 }
 
 #previous-sessions {
-      margin-bottom: 10px;
+    margin-bottom: 10px;
 }
+
+
 
 .last-session-middle {
-        display: flex;
-        flex-direction: column;
-        flex: 33%;
-        padding: 20px;
-        font-size: 20px;       
+    display: flex;
+    flex-direction: column;
+    flex: 33%;
+    padding: 20px;
+    font-size: 20px;
 }
 
-.pie-chart {
+svg {
     width: 200px;
     height: 200px;
 }
@@ -157,15 +161,14 @@ p {
 
 #hits, #average-pulse, #stance, #welcome {
     color: #212977;
-    font-size:20px;
+    font-size: 20px;
 }
 
 #average-pulse {
-    text-align:right;
+    text-align: right;
 }
 
 .pie-chart-percentage {
-    
     font-family: sans-serif;
     font-size: .4em;
     text-anchor: middle;
@@ -183,7 +186,7 @@ p {
     margin-bottom: 20px;
     margin-left: 150px;
     margin-right: 150px;
-    font-family:fantasy;
+    font-family: fantasy;
 }
 
 .last-session-percentage {
@@ -191,29 +194,12 @@ p {
     text-align: center;
 }
 
-#intensity {
-    background: white;
-}
-
-#container-intensity {
-    display: flex;
-    flex-direction: row;
-}
-
-.onon-percentage p {
-    font-size: 24px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: bold;
-    color: #212977;
-    margin-top: 50%;
-}
-
 
 .last-session-bottom {
     display: flex;
     flex-direction: column;
     padding: 20px;
-    padding-bottom:10px;
+    padding-bottom: 10px;
     align-items: end;
     justify-content: center;
 }
@@ -225,7 +211,7 @@ p {
 }
 
 .container-other-sessions {
-    display: flex;  
+    display: flex;
     flex-flow: wrap;
     justify-content: center;
 }
@@ -257,52 +243,58 @@ p {
 #stance {
     font-family: fantasy;
 }
+
 #shot {
     border-radius: 50%;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     width: 50px;
     height: 50px;
-   
     background: black;
     color: black;
     margin-bottom: 20px;
     font-size: 0px;
     line-height: 0px;
 }
-#shot:hover{
-    color: white;
-    text-transform: uppercase;
-    font-size:12px;
-}
+
+    #shot:hover {
+        color: white;
+        text-transform: uppercase;
+        font-size: 12px;
+    }
+
 #serie {
     text-align: center;
-   font-family: fantasy;
-   padding-top:10px;
-   padding-bottom:10px;
+    font-family: fantasy;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
- 
-.shot-5{
+
+.shot-5 {
     border: 1px solid #212977;
     display: flex;
 }
-.info-shot{
+
+.info-shot {
     margin: 20px;
 }
+
 .container-shotts {
-   max-height: 400px;
-   overflow: scroll;
+    max-height: 400px;
+    overflow: scroll;
 }
 
-.shots{
+.shots {
     flex-direction: column;
     margin: 10px;
 }
-.detail-container{
+
+.detail-container {
     font-family: fantasy;
     display: flex;
     justify-content: center;
     margin: 30px;
 }
+
 .info-detail {
     background-color: white;
     box-shadow: 0 3px 10px #a3a3a3;
@@ -311,16 +303,29 @@ p {
     display: flex;
     color: #212977;
 }
+
 .detail-procent {
     display: flex;
     flex: 20%;
     margin-left: 50px;
 }
-#detail-svg
-{
+
+#detail-svg {
     width: 100px;
     height: 100px;
 }
+
+/*Statspage*/
+
+#intensity {
+    background: white;
+}
+
+#container-intensity {
+    display: flex;
+    flex-direction: row;
+}
+
 /* NAV*/
 .topnav {
     overflow: hidden;
@@ -328,30 +333,31 @@ p {
     position: relative;
     margin-bottom: 30px;
 }
-.topnav a {
+
+    .topnav a {
         color: white;
         padding: 14px 16px;
         text-decoration: none;
         font-size: 17px;
         justify-items: center;
         display: block;
-}
-    
- .topnav a.icon {
+    }
+
+        .topnav a.icon {
             background: transparent;
             display: flex;
             position: absolute;
             right: 0;
             top: 0;
             padding: 40px;
- }
+        }
 
 .active {
     background-color: #212977;
     color: white;
 }
+
 #navimg {
-    
     max-width: 100px;
 }
 
@@ -361,15 +367,14 @@ p {
 
 
 
- .topnav #myLinks :last-child {
+    .topnav #myLinks :last-child {
+        right: 0;
+        position: absolute;
+    }
 
-    right: 0;
-    position: absolute;
-    
+#name {
+    margin-right: 100px;
 }
- #name{
-     margin-right: 100px;
- }
 
 /* LOGIN*/
 .imgcontainer {
@@ -383,39 +388,43 @@ p {
     width: 80%;
     max-width: 1200px;
     margin: 0 auto;
-    
 }
 
     .container * {
         box-sizing: border-box;
     }
-    .btns {
-        margin-left: auto;
-    }
-    .btns button
-    {
+
+.btns {
+    margin-left: auto;
+}
+
+    .btns button {
         padding: 5px;
     }
 /*Register*/
-#li-coach{
-    position:relative;
+#li-coach {
+    position: relative;
 }
-#coach{
-    position:absolute;
-    right:0;
+
+#coach {
+    position: absolute;
+    right: 0;
 }
+
 #li-athlete {
     position: relative;
 }
+
 #athlete {
     position: absolute;
     right: 0;
 }
 
-.flex-inner{
-    display:flex;
-    justify-content:flex-start;
+.flex-inner {
+    display: flex;
+    justify-content: flex-start;
 }
+
 .flex-outer,
 .flex-inner {
     list-style-type: none;
@@ -425,18 +434,18 @@ p {
 .flex-outer {
     max-width: 800px;
     margin: 0 auto;
-    
 }
- .flex-outer li,
- .flex-inner {
+
+    .flex-outer li,
+    .flex-inner {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
- }
+    }
 
 .flex-inner {
-    display:flex;
-    flex-direction:column;
+    display: flex;
+    flex-direction: column;
     padding: 0 8px;
     justify-content: space-between;
 }
@@ -458,12 +467,13 @@ p {
     flex: 1 0 120px;
     max-width: 220px;
 }
- .flex-outer > li > label + *,
- .flex-inner {
-        flex: 1 0 220px;
- }
 
-.flex-outer li  p {
+    .flex-outer > li > label + *,
+    .flex-inner {
+        flex: 1 0 220px;
+    }
+
+.flex-outer li p {
     margin: 0;
 }
 
@@ -515,50 +525,48 @@ div.login-form-icon {
 }
 
 /*STATS PAGE*/
-/*#container-filter-search{
+
+#container-filter-search{
     display: flex;
     flex-direction: column;
     background-color: ghostwhite;
     border-radius: 50px;
-}Det finns men är kommenterat*/
+}
 
-/*.close {
+.close {
     cursor: pointer;
     position: absolute;
     top: 50%;
     right: 0%;
     padding: 12px 16px;
     transform: translate(0%, -50%);
-}Den finns men är kommenterat*/
-
-
-
-
-
-/*#all-filters {
-    padding: 2vh;
 }
 
+
+
+
+
+#all-filters {
+    padding: 2vh;
+}
 #filter-text {
     font-size: 11px;
-}*/
+}
 
-/*#line-graph {
+#line-graph {
     width: 100%;
     margin-top: 20px;
 }
-*/
-/*
+
+
 * {
     box-sizing: border-box;
 }
-
 ul {
     list-style-type: none;
     margin: 0;
     padding:10px;
 }
-
     ul .stat {
         border: 1px solid #ddd;
         margin-top: -1px;
@@ -570,43 +578,40 @@ ul {
         display: block;
         position: relative;
     }
-
      ul .stat:hover {
             background-color: #eee;
      }
-
 ul .stat text {
-     margin:5px;}*/
+     margin:5px;}
 
-/*#filter-search-header {
+#filter-search-header {
     padding:5px;
     margin:10px;
-}*/
+}
 
 
-
-
-/*.close:hover {
+.close:hover {
    background: #bbb;
-}*/
+}
 
-@media screen and (min-width: 1000px)
-{
-  .topnav #myLinks {
-      display: flex;
-      flex-direction: row;
-      padding-top: 30px;
-  }
+@media screen and (min-width: 1000px) {
+    .topnav #myLinks {
+        display: flex;
+        flex-direction: row;
+        padding-top: 30px;
+    }
+
     .topnav a.icon {
         display: none;
     }
+
     .topnav {
         display: flex;
     }
-    .topnav a
-    {
-        justify-items: center;
-    }
+
+        .topnav a {
+            justify-items: center;
+        }
 
     .icon {
         transition: all .2s ease-in-out;
@@ -618,7 +623,6 @@ ul .stat text {
 
     #myLinks a:hover {
         transform: scale(1.2);
-        
     }
 
     #myLinks a {
@@ -634,23 +638,117 @@ ul .stat text {
             transform: scale(1.04);
         }
 
-@media screen and (max-width: 600px)
-{
+
+
+    /* ADD DATA*/
+    .btn-scale {
+        min-width: 44px;
+        width: 6%;
+        text-align: center;
+        font-weight: bold;
+        color: black;
+        font-family: 'Lato', sans-serif;
+    }
+
+    .btn-scale-asc-1 {
+        background-color: #33FF00;
+    }
+
+        .btn-scale-asc-1:hover {
+            background-color: #2CDE00;
+        }
+
+    .btn-scale-asc-2 {
+        background-color: #66FF00;
+    }
+
+        .btn-scale-asc-2:hover {
+            background-color: #59DE00;
+        }
+
+    .btn-scale-asc-3 {
+        background-color: #99FF00;
+    }
+
+        .btn-scale-asc-3:hover {
+            background-color: #85DE00;
+        }
+
+    .btn-scale-asc-4 {
+        background-color: #CCFF00;
+    }
+
+        .btn-scale-asc-4:hover {
+            background-color: #B1DE00;
+        }
+
+    .btn-scale-asc-5 {
+        background-color: #FFFF00;
+    }
+
+        .btn-scale-asc-5:hover {
+            background-color: #DEDE00;
+        }
+
+    .btn-scale-asc-6 {
+        background-color: #FFCC00;
+    }
+
+        .btn-scale-asc-6:hover {
+            background-color: #DEB100;
+        }
+
+    .btn-scale-asc-7 {
+        background-color: #FF9900;
+    }
+
+        .btn-scale-asc-7:hover {
+            background-color: #DE8500;
+        }
+
+    .btn-scale-asc-8 {
+        background-color: #FF6600;
+    }
+
+        .btn-scale-asc-8:hover {
+            background-color: #DE5900;
+        }
+
+    .btn-scale-asc-9 {
+        background-color: #FF3300;
+    }
+
+        .btn-scale-asc-9:hover {
+            background-color: #DE2C00;
+        }
+
+    .btn-scale-asc-10 {
+        background-color: #FF0000;
+    }
+
+        .btn-scale-asc-10:hover {
+            background-color: #DE0000;
+        }
+}
+
+
+@media screen and (max-width: 600px) {
     .register-login-button {
         flex-direction: column;
         margin-left: auto;
     }
 
-    .pie-chart {
+    svg {
         width: 50px;
         height: 50px;
         margin: unset;
     }
-    .last-session-middle
-    {
+
+    .last-session-middle {
         flex-direction: column;
         font-size: 12px;
     }
+
     .last-session-bottom {
         font-size: 12px;
     }
@@ -658,41 +756,43 @@ ul .stat text {
     #hits {
         font-size: 12px;
     }
-    .items-other-session
-    {
+
+    .items-other-session {
         padding: 2vh;
         font-size: 12px;
     }
+
     .topnav #myLinks :nth-last-child(-n+2) {
         right: unset;
         position: unset;
     }
 
-    .container-shotts{
-        
+    .container-shotts {
     }
+
     .container-series {
-        
     }
-    .shot-5{
+
+    .shot-5 {
         flex-direction: column;
     }
-   
 }
 
 @media screen and (max-width:768px) {
     .container-flex {
         flex-direction: column;
     }
-    .pie-chart {
+
+    svg {
         width: 50px;
         height: 50px;
         margin: unset;
     }
+
     .container-other-sessions {
         flex-direction: column;
     }
-   
+
 
     .last-session-middle {
         flex-direction: column;
@@ -711,37 +811,40 @@ ul .stat text {
         padding: 2vh;
         font-size: 12px;
     }
+
     .register-login-button {
         flex-direction: column;
-        margin-left:auto;
+        margin-left: auto;
     }
+
     .last-session-top, #previous-sessions {
         margin: unset;
     }
-    #flex-container-last-session
-    {
+
+    #flex-container-last-session {
         margin-left: unset;
         margin-right: unset;
         margin-top: 20px;
         margin-bottom: 20px;
-        
     }
-    .date{
-        padding:unset;
 
+    .date {
+        padding: unset;
     }
-    .chart{
+
+    .chart {
         padding: unset;
         align-self: unset;
     }
-    #parameter-btns{
+
+    #parameter-btns {
         margin: unset;
     }
+
     .topnav #myLinks :nth-last-child(-n+2) {
         right: unset;
         position: unset;
     }
-   
 }
 
 @media screen and (max-width:375px) {
@@ -754,6 +857,7 @@ ul .stat text {
     .container-other-sessions {
         flex-direction: column;
     }
+
     .register-login-button {
         flex-direction: column;
         margin-left: auto;

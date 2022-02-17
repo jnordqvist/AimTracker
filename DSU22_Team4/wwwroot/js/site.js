@@ -87,10 +87,6 @@ document.querySelectorAll('#shot').forEach(button => {
 });
 
 
-//Time to fire string gets shorter
-
-let stringTime = document.querySelector('#timetofire');
-stringTime = str.slice(0, str.length - 4);
 /*Start polar scatter chart*/
 
 function getrandom(num, mul) {
