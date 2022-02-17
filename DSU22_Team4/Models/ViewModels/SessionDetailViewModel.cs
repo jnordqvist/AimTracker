@@ -19,13 +19,16 @@ namespace DSU22_Team4.Models.ViewModels
 
         public int CurrentPage { get; set; } = 1;
 
-        public SessionDetailViewModel(List<Serie> series, List <TrainingSession> trainingSessions)
+        public Athlete Athlete { get; set; }
+
+        public SessionDetailViewModel(List<Serie> series, List <TrainingSession> trainingSessions, Athlete athlete)
         {
             Series = series;
             SplitList(series, CurrentPage);
             NextPage = CurrentPage + 1;
             TrainingSessions = trainingSessions;
             TrainingSession = GetOneTrainingSession(trainingSessions);
+            Athlete = athlete;
            
         }
 

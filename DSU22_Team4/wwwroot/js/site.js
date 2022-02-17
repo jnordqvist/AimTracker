@@ -3,28 +3,17 @@
 let topnav = document.getElementById("myLinks");
 let mediaquery = window.matchMedia("(min-width: 1000px)")
 let intensity = document.getElementById("intensity");
-let btnOkDate = document.getElementById("btnOkDate");
-btnOkDate.addEventListener("click", getTrainingSessionFromDate);
+//let btnOkDate = document.getElementById("btnOkDate");
+//btnOkDate.addEventListener("click", getTrainingSessionFromDate);
 
-function getTrainingSessionFromDate() {
+//function getTrainingSessionFromDate() {
 
-}
+//}
 
 displayLinks(mediaquery) // Calls function on runtime
 
 mediaquery.addListener(displayLinks) // Attach listener function on state changes
 
-function intensityColor() {
-    if (intensity.value < 50) {
-        intensity.style.backgroundColor = "#00FF00";
-    }
-    else if (intensity.value > 50 && intensity.value < 80) {
-        intensity.style.backgroundColor = "#FFFF00";
-    }
-    else if (intensity.value > 80) {
-        intensity.style.backgroundColor = "#FF0000";
-    }
-}
 
 // Show and hide links depending on topnav style 
 function myFunction() {
@@ -46,6 +35,21 @@ function displayLinks(mediaquery) {
     }
 }
 
+
+
+
+
+function intensityColor() {
+    if (intensity.value < 50) {
+        intensity.style.backgroundColor = "#00FF00";
+    }
+    else if (intensity.value > 50 && intensity.value < 80) {
+        intensity.style.backgroundColor = "#FFFF00";
+    }
+    else if (intensity.value > 80) {
+        intensity.style.backgroundColor = "#FF0000";
+    }
+}
 /*Start polar scatter chart*/
 
 function getrandom(num, mul) {
@@ -174,27 +178,6 @@ $(document).ready(function () {
     selectMonth.on("change", AdjustDays);
 
 
-document.querySelectorAll('#shot').forEach(button => {
-    if (button.textContent === "hit") {
-        button.style.background = "white";
-        button.style.color = "white";
-        
-    }
-});
-
-    
-document.querySelectorAll('#shot').forEach(button => {
-    button.addEventListener("mouseover", function () {
-        if (button.textContent === "hit") { button.style.color = "black"; }
-    })
-        })
-          
-       
-document.querySelectorAll('#shot').forEach(button => {
-    button.addEventListener("mouseout", function () {
-        if (button.textContent === "hit") { button.style.color = "white"; }
-    })
-})
     
 
     AdjustDays();
@@ -215,6 +198,29 @@ document.querySelectorAll('#shot').forEach(button => {
         }
     }
 });
+
+document.querySelectorAll('#shot').forEach(button => {
+    if (button.textContent === "hit") {
+        button.style.background = "white";
+        button.style.color = "white";
+
+    }
+});
+
+
+document.querySelectorAll('#shot').forEach(button => {
+    button.addEventListener("mouseover", function () {
+        if (button.textContent === "hit") { button.style.color = "black"; }
+    })
+});
+
+
+document.querySelectorAll('#shot').forEach(button => {
+    button.addEventListener("mouseout", function () {
+        if (button.textContent === "hit") { button.style.color = "white"; }
+    })
+});
+
 
 //, {
 //    data: [1600, 1700, 1700, 1900, 2000, 2700, 4000, 5000, 6000, 7000],
