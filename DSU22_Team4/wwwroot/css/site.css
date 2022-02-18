@@ -79,6 +79,7 @@ p {
         cursor: pointer;
         margin: 1.5vh;
         margin-bottom: 5vh;
+        border-radius: 0.25rem;
     }
 
 #edit-btn {
@@ -845,6 +846,11 @@ ul .stat text {
 
 
 @media screen and (max-width: 600px) {
+
+    .radio-btn label {
+        font-size: 12px;
+    }
+
     #select-container, #outer-container-intensity {
         margin-left: 0px;
         margin-right: 0px;
@@ -903,6 +909,10 @@ ul .stat text {
 }
 
 @media screen and (max-width:768px) {
+
+    .radio-btn label {
+        font-size: 12px;
+    }
 
     #select-container, #outer-container-intensity {
         margin-left: 0px;
@@ -985,6 +995,10 @@ ul .stat text {
 }
 
 @media screen and (max-width:375px) {
+
+    .radio-btn label {
+        font-size: 12px;
+    }
 
     #select-container, #outer-container-intensity {
         margin-left: 0px;
