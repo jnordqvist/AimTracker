@@ -8,6 +8,7 @@ namespace DSU22_Team4.Models.ViewModels
 {
     public class SessionDetailViewModel 
     {
+        #region propertys
         public List<Serie> Series { get; set; }
 
         public List <TrainingSession> TrainingSessions { get; set; }
@@ -16,8 +17,8 @@ namespace DSU22_Team4.Models.ViewModels
 
         public Athlete Athlete { get; set; }
 
-        
-        
+        #endregion
+        #region ctor
         public SessionDetailViewModel(List<Serie> series, List <TrainingSession> trainingSessions, Athlete athlete)
         {
             Series = series;
@@ -29,12 +30,13 @@ namespace DSU22_Team4.Models.ViewModels
             
            
         }
-
-       /// <summary>
-       /// Gets one trainingsession
-       /// </summary>
-       /// <param name="trainingsessions"></param>
-       /// <returns>one trainingsession from list</returns>
+        #endregion
+        
+        /// <summary>
+        /// Gets one trainingsession
+        /// </summary>
+        /// <param name="trainingsessions"></param>
+        /// <returns>one trainingsession from list</returns>
 
         public TrainingSession GetOneTrainingSession(List <TrainingSession> trainingsessions)
         {
