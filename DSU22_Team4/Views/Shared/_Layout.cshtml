@@ -7,37 +7,41 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link href="~/css/font-awesome/css/fontawesome.min.css" rel="stylesheet" />
-</head>
-<body>
     
 
-        <!-- Top Navigation Menu -->
-        <div class="topnav">
-            <a href="#home" class="active">Logo</a>
-            <div id="myLinks">
-                <a href="#news">News</a>
-                <a href="#contact">Contact</a>
-                <a href="#about">About</a>
-            </div>
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                <i class="fa fa-bars"></i>
-            </a>
-        </div>
-        
-        <div class="container">
-            <main role="main" class="pb-3">
-                @RenderBody()
-            </main>
-        </div>
+    @*<link rel="stylesheet" href="~/lib/Font-Awesome/css/all.min.css">*@
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-        <footer class="border-top footer text-muted">
-            <div class="container">
-                &copy; 2022 - DSU22_Team4 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <script src="https://use.fontawesome.com/42b241fb0c.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+</head>
+    <body>
+        <div id="page-container">
+            <div id="content-wrap">
+                <!-- Top Navigation Menu -->
+                <div class="topnav">
+                    <a asp-action="Index" asp-controller="Home" class="active"><img id="navimg" class="grow" src="~/img/aimlogo.png"></a>
+                    <partial name="_LoginPartial" />
+                </div>
+                <div class="container">
+                    <main role="main" class="pb-3">
+           
+                        @RenderBody()
+                        
+                    </main>
+                </div>
             </div>
-        </footer>
-        <script src="~/lib/jquery/dist/jquery.min.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
-        @await RenderSectionAsync("Scripts", required: false)
+            <footer id="footer">
+                <div class="container-footer">
+                    &copy; AimTracker - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                </div>
+            </footer>
+            <script src="~/lib/jquery/dist/jquery.min.js"></script>
+            <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="~/js/site.js" asp-append-version="true"></script>
+            @await RenderSectionAsync("Scripts", required: false)
+        </div>
 </body>
 </html>

@@ -1,0 +1,73 @@
+﻿@model SessionDetailViewModel
+
+    <h2 id="serie">This session contains @Model.Series.Count Series </h2>
+     
+    <div class="detail-container">
+        <div class="info-detail">
+            <div class="info">
+            <p id="date-info">@Model.TrainingSession.Date.DayOfWeek: @Model.TrainingSession.Date.ToShortDateString()</p>
+            <p id="detail-p"> Hits: @Model.GetTotalNumOfHits(Model.Series)/ @Model.GetTotalNumOfShots(Model.Series)</p>
+            <p id="detail-p">Location: @Model.TrainingSession.Location</p>
+                </div>
+            <div class="detail-procent">
+                <svg id="detail-svg" viewBox="0 0 36 36">
+                    <path fill="none" stroke="#eee" stroke-width=1
+                          d="M18 2.0845
+                                a 15.9155 15.9155 0 0 1 0 31.831
+                                a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    <path class="circle"
+                          stroke-dasharray="@Model.GetSessionTotalHitPercentageRounded(Model.Series), 100"
+                          fill="none"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          style="stroke: #00ff21;
+                        animation: progress 1s ease-out forwards"
+                          d="M18 2.0845
+                                a 15.9155 15.9155 0 0 1 0 31.831
+                                a 15.9155 15.9155 0 0 1 0 -31.831" />
+                    <text x="18" y="20.35" class="pie-chart-percentage">@Model.GetSessionTotalHitPercentage(Model.Series)</text>
+                </svg>
+            </div>
+
+        </div>
+       
+        </div>
+
+    <div class="container-series">
+         
+        
+            <div class="container-shotts">
+                @foreach (var serie in Model.DisplaySeriesInOrder(Model.Series))
+                {   
+                    <div class="shots">
+                        <div class="date-stance">
+                        <h3 id="stance">Tidpunkt: @serie.DateTime.ToLongTimeString()</h3>
+                        <h3 id="stance">@serie.Stance </h3>
+                            </div>
+                        <div class="shot-5">
+                            @foreach (var shot in serie.Shots.OrderBy(x=> x.ShotNr))
+                            {<div class="info-shot">
+                                    <p>@shot.ShotNr</p>
+                                    <button id="shot" type="submit">@shot.Result</button>
+                                    <p> <i class="fa fa-heartbeat" style="color:crimson"></i>@shot.HeartRate </p>
+                                    <p id="timetofire">Time to fire: <br/> @shot.TimeToFire sec</p>
+                           
+                                    
+                                </div>
+                            }
+
+                        
+                        </div>
+
+
+                    </div>
+
+                }
+
+            </div>
+    </div>
+          
+        
+
+    
+

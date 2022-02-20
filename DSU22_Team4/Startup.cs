@@ -1,8 +1,11 @@
 using DSU22_Team4.Data;
+using DSU22_Team4.Infrastructure;
 using DSU22_Team4.Repositories;
+using DSU22_Team4.Repositories.OpenWeather;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -26,11 +29,41 @@ namespace DSU22_Team4
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<IStatsDbRepository, MockRepository>();
+            services.AddScoped<IRepository, Repository>();
+            services.AddSingleton<IApiClient, ApiClient>();
+            services.AddScoped<IDbRepository, DbRepository>();
 
-            string connection = Configuration["ConnectionString:Default"];
+            string connection = Configuration["ConnectionStrings:Default"];
+
+            try
+            {
+                string weatherKey = Configuration["ConnectionStrings:Weather"];
+                services.AddSingleton<IOpenWeather>(provider => new OpenWeather(provider.GetService<IApiClient>(), weatherKey));
+            }
+            catch
+            {
+
+            }                                                      
+
             services.AddDbContext<AppDbContext>(o => o.UseNpgsql(connection,
-            options => options.SetPostgresVersion(new Version(14, 1))));
+            options => options.SetPostgresVersion(new Version(9, 5))));
+
+            services.AddDbContext<LoginDbContext>(o => o.UseNpgsql(connection,
+            options => options.SetPostgresVersion(new Version(9, 5))));
+
+            services.AddIdentity<IdentityUser, IdentityRole>()
+            .AddEntityFrameworkStores<LoginDbContext>(); ;
+
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.Password.RequireDigit = false;
+                options.Password.RequiredLength = 5;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
+            }
+            );
+
             services.AddControllersWithViews();
         }
 
@@ -52,6 +85,7 @@ namespace DSU22_Team4
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

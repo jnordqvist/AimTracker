@@ -1,0 +1,25 @@
+﻿@model LoginViewModel
+
+@{ 
+    Layout = "~/Views/Account/_AccountLayout.cshtml";
+}
+
+<div class="container">
+    <form method="post">
+        <ul class="flex-outer">
+            <li id="login-form">
+                <label asp-for="Email">Email</label>
+                <input asp-for="Email" id="email" placeholder="Enter your email here">
+            </li>
+            <li id="login-form">
+                <label asp-for="Password">Password</label>
+                <input asp-for="Password" id="phone" placeholder="Enter your password here">
+            </li>
+            <li id="login-form">
+                <div class="btns">
+                    <button type="submit">Log in</button>
+                </div>
+            </li>
+        </ul>
+    </form>
+</div>

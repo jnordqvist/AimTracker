@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace DSU22_Team4.Models.Poco
 {
-    public abstract class User
+    public class ShotCoords
     {
-        public string Id { get; set; }
-        public string Name { get; set; }
+        public double x { get; set; }
+        public double y { get; set; }
     }
 }

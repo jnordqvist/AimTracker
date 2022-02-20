@@ -1,0 +1,73 @@
+﻿@model StatisticsViewModel
+<div id="container-stats-page">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <div id="left-container-stats">
+        <div id="select-container">
+            <div id="select-dates-container">
+                <div id="choose-date">
+                    <p class="header-statistics">Choose Date</p>
+                    <select id="year"></select>
+                    <select id="month"></select>
+                    <select id="day"></select>
+                    <button id="btnOkDate">OK</button>
+                </div>
+            </div>
+            <div id="select-trainingsession-container" name="sessions">
+                <label for="sessions" class="header-statistics">Choose a training session</label>
+                @Html.DropDownListFor(m => m.SelectedTrainingSession.Date, Model.DropDownTrainingSessions)
+
+            </div>
+            <button id="btn-get-ts" class="btn">Get Training Session</button>
+        </div>
+        <div id="outer-container-intensity">
+            <div id="container-intensity">
+                <p class="header-statistics">Workout Intensity</p>
+                <p id="intensity" class="intensity">@Model.Intensity</p>
+                <p>%</p>
+            </div>
+            <div id="container-intensity-colors">
+                <div id="container-dots">
+                    <span class="dot" id="dot-green"></span>
+                    <span class="dot" id="dot-yellow"></span>
+                    <span class="dot" id="dot-red"></span>
+                </div>
+                <div id="container-dot-texts">
+                    <p id="easy">Easy</p>
+                    <p id="medium">Medium</p>
+                    <p id="hard">Hard</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="hit-image-container">
+        <canvas id="scatterChart" style="max-width:100%; width:480px;"></canvas>
+    </div>
+</div>
+
+<script>
+    new Chart("scatterChart", {
+        type: "scatter",
+        data: {
+            datasets: [{
+                pointRadius: 4,
+                pointBackgroundColor: "rgb(0,0,255)",
+                data: JSON.parse('@Html.Raw(ViewBag.DataLatest)')
+            },
+                {
+                pointRadius: 6,
+                pointBackgroundColor: "rgb(255,0,0)",
+                data: JSON.parse('@Html.Raw(ViewBag.DataAverage)')
+            }
+            ]
+        },
+        options: {
+            maintainAspectRatio: false,
+            legend: { display: false },
+            scales: {
+                yAxes: [{ ticks: { min: -200, max: 200 } }],
+                xAxes: [{ ticks: { min: -200, max: 200} }],
+            }
+        }
+    });
+</script>

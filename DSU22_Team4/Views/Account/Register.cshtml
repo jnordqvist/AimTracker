@@ -1,0 +1,56 @@
+﻿@model RegisterViewModel
+
+@{
+    Layout = "~/Views/Account/_AccountLayout.cshtml";
+}
+
+<div class="container">
+    <form method="post">
+        <ul class="flex-outer">
+            <li id="register-form">
+                <label asp-for="Email">Email</label>
+                <input asp-for="Email" id="email" placeholder="Enter your email here">
+            </li>
+            <li id="register-form">
+                <label asp-for="FirstName">Firstname</label>
+                <input asp-for="FirstName" id="firstname" placeholder="Enter your first name here">
+            </li>
+            <li id="register-form">
+                <label asp-for="LastName">Lastname</label>
+                <input asp-for="LastName" id="lastname" placeholder="Enter your last name here">
+            </li>
+            <li id="register-form">
+                <label asp-for="IbuId">IbuId</label>
+                <input asp-for="IbuId" id="ibuid" placeholder="Enter your IbuID here">
+            </li>
+            <li id="register-form">
+                <label asp-for="Password">Password</label>
+                <input asp-for="Password" id="phone" placeholder="Enter your password here">
+            </li>
+            <li id="register-form">
+                <label asp-for="ConfirmPassword">Confirm Password</label>
+                <input asp-for="ConfirmPassword" id="phone" placeholder="Enter your password here">
+            </li>
+            
+            <li id="register-form">
+                <label  for="role"> I am:</label>
+                <ul class="flex-inner">
+                    <li id="li-coach">
+                        <input type="checkbox" id="coach" asp-for="IsCoach">
+                        <label for="coach">Coach</label>
+                    </li>
+                    <li id="li-athlete">
+                        <input type="checkbox" id="athlete" asp-for="IsAthlete">
+                        <label for="athlete">Athlete</label>
+                    </li>
+                </ul>
+            </li>
+            <li id="register-form">
+                <div class="btns">
+                    <button id="register-submit" type="submit">Register</button>
+                </div>
+            </li>
+
+        </ul>
+    </form>
+</div>

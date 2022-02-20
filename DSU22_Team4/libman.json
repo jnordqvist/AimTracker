@@ -8,6 +8,10 @@
       "files": [
         "css/fontawesome.min.css"
       ]
+    },
+    {
+      "library": "fontawesome-iconpicker@3.2.0",
+      "destination": "wwwroot/css/fontawesome-iconpicker/"
     }
   ]
 }
