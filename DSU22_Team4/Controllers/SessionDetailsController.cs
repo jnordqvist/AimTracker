@@ -28,8 +28,9 @@ namespace DSU22_Team4.Controllers
             var user = await _userManager.GetUserAsync(HttpContext.User);
             string athleteId = user.Id;
             var athlete = _db.GetAthleteById(athleteId);
-            var series = _db.GetResultsByTrainingSessionsId(id);
             var trainingsessions = _db.GetTrainingSessions(athleteId);
+            var series = _db.GetResultsByTrainingSessionsId(trainingsessions.FirstOrDefault());
+
             var sessionDetailViewModel = new SessionDetailViewModel(series,trainingsessions,athlete);
 
             return View(sessionDetailViewModel);

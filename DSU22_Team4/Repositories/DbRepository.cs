@@ -70,10 +70,11 @@ namespace DSU22_Team4.Repositories
         /// <returns> A list of trainingsessions </returns>
         public List<TrainingSession> GetTrainingSessions(string ibuId)
         {
-            var trainingSessions = _db.TrainingSession.Where(x => x.IbuId == ibuId).OrderByDescending(y => y.Date).Take(5).Include(x => x.Results)
-                .ThenInclude(y => y.Shots);
+            var trainingSessions = _db.TrainingSession.Where(x => x.IbuId == ibuId).OrderByDescending(y => y.Date)
+                .Take(5).Include(x => x.Results).ThenInclude(y => y.Shots);
             return trainingSessions.ToList();
         }
+
         /// <summary>
         /// Gets the history by stance from one athlete
         /// </summary>
@@ -121,37 +122,34 @@ namespace DSU22_Team4.Repositories
         /// </summary>
         /// <param name="id"></param>
         /// <returns> A list of series</returns>
-        public List<Serie> GetResultsByTrainingSessionsId(string id)
+        public List<Serie> GetResultsByTrainingSessionsId(TrainingSession session)
         {
-            List<Serie> series = _db.Serie.Where(x => x.TrainingSessionId == id).Include(z => z.Shots).ToList();
+            List<Serie> series = _db.Serie.Where(x => x.TrainingSessionId == session.Id).OrderBy(y => y.DateTime)
+                .Include(z => z.Shots).ToList();
             return series;
         }
 
         #endregion
 
         #region shotmethods
+
         /// <summary>
         /// get at list of shots by serieId
         /// </summary>
         /// <param name="id"></param>
         /// <returns>a list of shots</returns>
-        public List<Shot> GetShotsBySerieId(int id)
+        public List<Shot> GetShotsBySerieId(Serie serie)
         {
-            List<Shot> shots = _db.Shot.Where(x => x.SerieId == id).ToList();
+            List<Shot> shots = _db.Shot.Where(x => x.SerieId == serie.Id).OrderBy(y => y.ShotNr).ToList();
             return shots;
         }
-
-
-
 
         #endregion
 
 
 
         #region statistics 
-
-
-       
+     
         /// <summary>
         /// Test 
         /// </summary>
