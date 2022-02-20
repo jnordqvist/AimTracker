@@ -47,7 +47,6 @@ namespace DSU22_Team4.Controllers
             var defaultSession = getDefaultSession(id);
             var series = _statsdb.GetResultsByTrainingSessionsId(defaultSession);
             var shots = _statsdb.GetShotsBySerieId(series.FirstOrDefault());
-            int intensity = _statsdb.TrainingSessionIntensity();
             var statisticsViewModel = new StatisticsViewModel(athlete, defaultSession, shots, sessions);
             ViewBag.DataLatest = JsonConvert.SerializeObject(statisticsViewModel.LatestShooting);
             ViewBag.DataAverage = JsonConvert.SerializeObject(statisticsViewModel.ShootingAverage);

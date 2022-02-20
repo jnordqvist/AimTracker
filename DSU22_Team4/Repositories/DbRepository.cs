@@ -37,7 +37,6 @@ namespace DSU22_Team4.Repositories
             return athlete.FirstOrDefault();
         }
 
-     
         /// <summary>
         /// Add athletes to the database
         /// </summary>
@@ -53,11 +52,8 @@ namespace DSU22_Team4.Repositories
                 }
 
             }
-
-
             _db.SaveChanges();
         }
-
 
         #endregion
 
@@ -142,21 +138,6 @@ namespace DSU22_Team4.Repositories
         {
             List<Shot> shots = _db.Shot.Where(x => x.SerieId == serie.Id).OrderBy(y => y.ShotNr).ToList();
             return shots;
-        }
-
-        #endregion
-
-
-
-        #region statistics 
-     
-        /// <summary>
-        /// Test 
-        /// </summary>
-        /// <returns></returns>
-        public int TrainingSessionIntensity()
-        {
-            return 70;
         }
 
         #endregion

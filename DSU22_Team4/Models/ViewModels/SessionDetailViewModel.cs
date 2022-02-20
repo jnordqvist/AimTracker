@@ -8,7 +8,7 @@ namespace DSU22_Team4.Models.ViewModels
 {
     public class SessionDetailViewModel 
     {
-        #region propertys
+        #region properties
         public List<Serie> Series { get; set; }
 
         public List <TrainingSession> TrainingSessions { get; set; }
@@ -109,7 +109,5 @@ namespace DSU22_Team4.Models.ViewModels
         }
 
         #endregion
-
-
     }
 }

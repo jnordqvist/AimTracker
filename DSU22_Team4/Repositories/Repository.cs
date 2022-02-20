@@ -34,11 +34,8 @@ namespace DSU22_Team4.Repositories
         /// <param name="athleteId"></param>
         /// <returns> the latest trainingsession</returns>
         public async Task <TrainingSessionDto> GetLatestTrainingSession(string athleteId)
-        {
-            
+        {           
             var trainingSession = await _apiClient.GetAsync<TrainingSessionDto>($"{baseEndPoint}{athleteId}");
-
-
 
             return trainingSession;
         }
@@ -50,8 +47,7 @@ namespace DSU22_Team4.Repositories
         /// <param name="endDate"></param>
         /// <returns>trainingsessions by date</returns>
         public async Task<List<TrainingSessionDto>> GetTrainingSessionsByDate(string athleteId, string startDate, string endDate)
-        {    
-            
+        {               
             var trainingSessions = await _apiClient.GetAsync <List<TrainingSessionDto>>($"{basePoint}" +
             $"{athleteId}?{startDateEndpoint}{startDate}&{endDateEndpoint}{endDate}");
            

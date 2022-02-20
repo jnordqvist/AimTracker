@@ -13,8 +13,7 @@ namespace DSU22_Team4.Controllers
     public class SessionDetailsController : Controller
     {
         private readonly IDbRepository _db;
-        private readonly UserManager<IdentityUser> _userManager;
-       
+        private readonly UserManager<IdentityUser> _userManager;     
 
         public SessionDetailsController(IDbRepository db, UserManager<IdentityUser> userManager)
         {
@@ -34,8 +33,6 @@ namespace DSU22_Team4.Controllers
             var sessionDetailViewModel = new SessionDetailViewModel(series,trainingsessions,athlete);
 
             return View(sessionDetailViewModel);
-        }
-
-     
+        }     
     }
 }

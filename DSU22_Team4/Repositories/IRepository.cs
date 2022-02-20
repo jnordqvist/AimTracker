@@ -8,17 +8,9 @@ using System.Threading.Tasks;
 namespace DSU22_Team4.Repositories
 {
     public interface IRepository
-    {
-
-   
-        Task<List<AthleteDto>> GetAthletesAsync();
-      
-
-        Task<List<TrainingSessionDto>> GetTrainingSessionsByDate(string athleteId, string startDate, string endDate);
-       
-        
-       
-      
+    {  
+        Task<List<AthleteDto>> GetAthletesAsync();   
+        Task<List<TrainingSessionDto>> GetTrainingSessionsByDate(string athleteId, string startDate, string endDate);                  
         Task <TrainingSessionDto> GetLatestTrainingSession(string athleteId);
     }
 }

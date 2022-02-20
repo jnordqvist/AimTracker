@@ -11,6 +11,7 @@ namespace DSU22_Team4.Models.ViewModels
 {
     public class StatisticsViewModel
     {
+        #region Properties
         public Athlete Athlete { get; set; }
         [Display(Name = "Training Session")]
         public TrainingSession SelectedTrainingSession { get; set; }
@@ -18,6 +19,9 @@ namespace DSU22_Team4.Models.ViewModels
         public int Intensity { get; set; }
         public ShotCoords[] LatestShooting { get; set; }
         public ShotCoords[] ShootingAverage { get; set; }
+        #endregion
+
+        #region Ctor
         public StatisticsViewModel(Athlete athlete, TrainingSession session, List<Shot> shots, IEnumerable<SelectListItem> selectListItems)
         {
             Athlete = athlete;
@@ -27,10 +31,11 @@ namespace DSU22_Team4.Models.ViewModels
             LatestShooting = GetShotCoordinatesInSeries(shots);
             ShootingAverage = GetHistoricShotCoordinateAverage(session);
         }
+        #endregion
 
+        #region CalculateMethods
         public int GetHeartrateForSession(TrainingSession session)
         {
-
             int heartrates = 0;
             int shotcounter = 0;
 
@@ -85,5 +90,6 @@ namespace DSU22_Team4.Models.ViewModels
             int avHR = (int)avHRdbl;
             return avHR;
         }
+        #endregion
     }
 }
