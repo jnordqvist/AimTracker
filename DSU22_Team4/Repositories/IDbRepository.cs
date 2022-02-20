@@ -21,11 +21,11 @@ namespace DSU22_Team4.Repositories
         List<TrainingSession> GetTrainingSessions(string ibuId);
         
         
-        List<Shot> GetShotsBySerieId(int id);
+        List<Shot> GetShotsBySerieId(Serie serie);
        
         List<TrainingSession> GetStandingShootingHistory(string ibuId);
         int TrainingSessionIntensity();
-        List<Serie> GetResultsByTrainingSessionsId(string id);
+        List<Serie> GetResultsByTrainingSessionsId(TrainingSession session);
 
     }
 }

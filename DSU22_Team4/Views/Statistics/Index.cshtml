@@ -1,6 +1,7 @@
 ﻿@model StatisticsViewModel
 <div id="container-stats-page">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <div id="left-container-stats">
         <div id="select-container">
             <div id="select-dates-container">
@@ -39,24 +40,34 @@
             </div>
         </div>
     </div>
+    <canvas id="scatterChart" style="max-width:100%; width:360px;"></canvas>
     <div id="hit-image-container">
-        <img id="hit-image" src="~/img/traff.png" />
-        <div id="container-radio-btns">
-            <div class="radio-btn">
-                <input type="radio" id="prone" value="prone">
-                <label for="prone">Prone</label><br>
-            </div>
-            <div class="radio-btn">
-                <input type="radio" id="standing" value="standing">
-                <label for="standing">Standing</label><br>
-            </div>
-        </div>
     </div>
 </div>
-<!-- Numeric.js -->
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.min.js"></script>-->
-<!-- Plotly.js -->
-<!--<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>-->
 
-
-
+<script>
+    new Chart("scatterChart", {
+        type: "scatter",
+        data: {
+            datasets: [{
+                pointRadius: 4,
+                pointBackgroundColor: "rgb(0,0,255)",
+                data: JSON.parse('@Html.Raw(ViewBag.DataLatest)')
+            },
+                {
+                pointRadius: 6,
+                pointBackgroundColor: "rgb(255,0,0)",
+                data: JSON.parse('@Html.Raw(ViewBag.DataAverage)')
+            }
+            ]
+        },
+        options: {
+            maintainAspectRatio: false,
+            legend: { display: false },
+            scales: {
+                yAxes: [{ ticks: { min: -200, max: 200 } }],
+                xAxes: [{ ticks: { min: -200, max: 200} }],
+            }
+        }
+    });
+</script>
